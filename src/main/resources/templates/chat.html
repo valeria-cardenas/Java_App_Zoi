@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:class="${esDueno ? 'viewer-owner' : 'viewer-vet'}"
+      th:attr="data-chat-state=${chat.estado},data-chat-priority=${chat.prioridad}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Consulta | Zoi</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+    <link rel="stylesheet" th:href="@{/css/chat.css}">
+</head>
+<body class="zoi-ui chat-page">
+<header class="profile-header"><a th:href="${esDueno ? '/dueno/home' : '/veterinario/home'}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
+    <nav><a th:href="${esDueno ? '/dueno/veterinarios' : '/veterinario/consultas'}">← Volver</a></nav>
+</header>
+<main class="chat-layout">
+    <aside class="pet-context">
+        <div class="pet-photo-wrap"><img th:if="${chat.mascota.fotoUrl}" th:src="${chat.mascota.fotoUrl}"
+                                         th:alt="${'Foto de '+chat.mascota.nombre}"><span
+                th:unless="${chat.mascota.fotoUrl}" class="pet-photo-placeholder" aria-hidden="true">🐾</span></div>
+        <p class="context-label">Paciente de esta consulta</p>
+        <h2 th:text="${chat.mascota.nombre}"></h2>
+        <p class="pet-summary" th:text="${chat.mascota.especie+' · '+(chat.mascota.raza ?: 'Raza no registrada')}"></p>
+        <dl>
+            <div>
+                <dt>Edad</dt>
+                <dd th:text="${chat.mascota.edad != null ? chat.mascota.edad+' años' : 'Sin registrar'}"></dd>
+            </div>
+            <div>
+                <dt>Vacunas</dt>
+                <dd th:text="${chat.mascota.vacunas ?: 'Sin registrar'}"></dd>
+            </div>
+            <div>
+                <dt>Enfermedades</dt>
+                <dd th:text="${chat.mascota.enfermedades ?: 'Sin registrar'}"></dd>
+            </div>
+            <div>
+                <dt>Antecedentes</dt>
+                <dd th:text="${chat.mascota.antecedentes ?: 'Sin registrar'}"></dd>
+            </div>
+        </dl>
+    </aside>
+    <section class="chat-panel">
+        <header class="conversation-header">
+            <div class="conversation-avatar" aria-hidden="true"
+                 th:text="${esDueno ? #strings.substring(chat.veterinario.usuario.nombre,0,1) : #strings.substring(chat.dueno.nombre,0,1)}">
+                V
+            </div>
+            <div><p class="conversation-status"><span></span> Conversación veterinaria</p>
+                <h1 th:text="${esDueno ? 'Dr(a). '+chat.veterinario.usuario.nombre+' '+chat.veterinario.usuario.apellido : chat.dueno.nombre+' '+chat.dueno.apellido}"></h1>
+                <p th:text="${'Consulta sobre '+chat.mascota.nombre}"></p></div>
+        </header>
+        <div class="messages" id="chatMessages">
+            <div class="chat-empty" th:if="${#lists.isEmpty(mensajes)}"><span aria-hidden="true">💬</span><strong>Aún no
+                hay mensajes</strong>
+                <p th:text="${esDueno ? 'Inicia la conversación contando tu inquietud.' : 'Responde la consulta con una orientación clara.'}"></p>
+            </div>
+            <article th:each="m:${mensajes}"
+                     th:class="${m.autor.id == chat.dueno.id ? 'message owner' : 'message vet'}"><strong
+                    th:text="${m.autor.id == chat.dueno.id ? chat.dueno.nombre : 'Dr(a). '+chat.veterinario.usuario.nombre}"></strong>
+                <p th:if="${!#strings.isEmpty(m.contenido)}" th:text="${m.contenido}"></p><a class="message-image-link"
+                                                                                             th:if="${m.imagenUrl}"
+                                                                                             th:href="${m.imagenUrl}"
+                                                                                             target="_blank"
+                                                                                             rel="noopener"
+                                                                                             title="Abrir imagen"><img
+                        class="message-image" th:src="${m.imagenUrl}" alt="Imagen adjunta a la consulta"></a>
+                <time th:text="${#temporals.format(m.enviadoEn,'dd/MM/yyyy · HH:mm')}"></time>
+            </article>
+        </div>
+        <div class="flash error-flash" th:if="${errorPerfil}" th:text="${errorPerfil}"></div>
+        <form class="composer" th:action="@{/chat/{id}/mensajes(id=${chat.id})}" method="post"
+              enctype="multipart/form-data"><input type="hidden" th:name="${_csrf.parameterName}"
+                                                   th:value="${_csrf.token}">
+            <div class="attachment-preview" id="attachmentPreview" hidden><img id="attachmentImage"
+                                                                               alt="Vista previa del archivo seleccionado"><span
+                    id="attachmentName"></span>
+                <button type="button" id="removeAttachment" aria-label="Quitar archivo" title="Quitar archivo">×
+                </button>
+            </div>
+            <div class="composer-row"><label class="attach-button" for="chatImage" aria-label="Adjuntar imagen"
+                                             title="Adjuntar imagen">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16.5 6.5 8.7 14.3a2.5 2.5 0 0 0 3.5 3.5l7.1-7.1a4.5 4.5 0 0 0-6.4-6.4L5.1 12.1a6.5 6.5 0 0 0 9.2 9.2l6.2-6.2"/>
+                </svg>
+                <input id="chatImage" type="file" name="imagen"
+                       accept="image/jpeg,image/png,image/webp,image/gif"></label><textarea name="contenido"
+                                                                                            maxlength="2000" rows="1"
+                                                                                            th:required="${!esDueno}"
+                                                                                            th:placeholder="${esDueno ? 'Escribe tu pregunta...' : 'Escribe tu respuesta profesional...'}"
+                                                                                            aria-label="Mensaje"></textarea>
+                <button class="send-button" type="submit" aria-label="Enviar mensaje" title="Enviar mensaje"><span>Enviar</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 4 17 8-17 8 3-8-3-8Zm3 8h14"/>
+                    </svg>
+                </button>
+            </div>
+            <small class="composer-help">Puedes adjuntar imágenes JPG, PNG, WEBP o GIF.</small></form>
+    </section>
+</main>
+<script th:src="@{/js/chat.js}"></script>
+</body>
+</html>

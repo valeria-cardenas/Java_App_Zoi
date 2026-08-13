@@ -1,0 +1,514 @@
+:root {
+    --zoi-purple-900: #49206f;
+    --zoi-purple-700: #7040a5;
+    --zoi-purple-100: #f2ebf8;
+    --zoi-yellow: #f6b90f;
+    --zoi-ink: #292535;
+    --zoi-muted: #6d6877;
+    --zoi-line: #e7dfed;
+    --zoi-page: #f8f6fa;
+    --zoi-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.zoi-page {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--zoi-page);
+    color: var(--zoi-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.zoi-page a[class*="btn"],
+.zoi-page a[class*="button"],
+.zoi-page a[role="button"],
+.zoi-page .auth-buttons a,
+.zoi-page .auth-buttons a:hover,
+.zoi-page .auth-buttons a:focus,
+.zoi-page .auth-buttons a:active {
+    text-decoration: none !important;
+}
+
+.zoi-page .site-header {
+    min-height: 76px;
+    padding: 12px max(24px, calc((100% - 1160px) / 2));
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    align-items: center;
+    gap: 28px;
+    background: var(--zoi-white);
+    border-bottom: 1px solid var(--zoi-line);
+}
+
+.zoi-page .logo-zoi {
+    margin: 0;
+    text-align: left;
+}
+
+.zoi-page .logo-zoi a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.zoi-page .logo-zoi .logo-img {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+}
+
+.zoi-page .main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+}
+
+.zoi-page .main-nav a {
+    margin: 0;
+    padding: 9px 0 7px;
+    border-bottom: 2px solid transparent;
+    color: var(--zoi-purple-900);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.zoi-page .main-nav a:hover,
+.zoi-page .main-nav a.active-link {
+    color: var(--zoi-purple-700);
+    border-bottom-color: var(--zoi-yellow);
+}
+
+.zoi-page .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.zoi-page .auth-buttons a,
+.zoi-page .btn-action,
+.zoi-page .large-btn {
+    min-height: 42px;
+    padding: 0 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.zoi-page .auth-buttons .btn-secondary {
+    background: var(--zoi-white);
+    border-color: #cbb7da;
+    color: var(--zoi-purple-900);
+}
+
+.zoi-page .auth-buttons .btn-primary,
+.zoi-page .btn-action,
+.zoi-page .large-btn {
+    background: var(--zoi-purple-700);
+    color: var(--zoi-white);
+    box-shadow: none;
+}
+
+.zoi-page .auth-buttons a:hover,
+.zoi-page .btn-action:hover,
+.zoi-page .large-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 11px 22px rgba(73, 32, 111, 0.2);
+}
+
+.zoi-page .values-container,
+.zoi-page .benefits-container,
+.zoi-page .purpose-container,
+.zoi-page .content-wrapper {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 58px 0 70px;
+    flex: 1;
+}
+
+.zoi-page .main-title,
+.zoi-page .bienvenida-section h1 {
+    max-width: 780px;
+    margin: 0 auto 14px;
+    color: var(--zoi-purple-900);
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.12;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.zoi-page .subtitle,
+.zoi-page .slogan {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    color: var(--zoi-muted);
+    font-size: 17px;
+    text-align: center;
+}
+
+.zoi-page .values-grid,
+.zoi-page .benefits-grid,
+.zoi-page .role-specific-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.zoi-page .value-card,
+.zoi-page .benefit-card,
+.zoi-page .action-card {
+    min-width: 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--zoi-white);
+    border: 1px solid var(--zoi-line);
+    border-top: 3px solid var(--zoi-purple-700);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(73, 32, 111, 0.05);
+}
+
+.zoi-page .value-card:hover,
+.zoi-page .benefit-card:hover,
+.zoi-page .action-card:hover {
+    transform: translateY(px);
+    box-shadow: 0 8px 20px rgba(73, 32, 111, 0.09);
+}
+
+.zoi-page .value-icon,
+.zoi-page .benefit-icon,
+.zoi-page .action-card h3 i {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    margin: 0 0 18px;
+    border-radius: 8px;
+    background: var(--zoi-purple-100);
+    color: var(--zoi-purple-700);
+    font-size: 21px;
+}
+
+.zoi-page .card-title,
+.zoi-page .action-card h3 {
+    margin: 0 0 10px;
+    color: var(--zoi-purple-900);
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.zoi-page .card-description,
+.zoi-page .action-card p {
+    margin: 0;
+    color: var(--zoi-muted);
+    font-size: 15px;
+}
+
+.zoi-page .action-card .btn-action {
+    margin-top: auto;
+    padding-top: 0;
+}
+
+.zoi-page .purpose-section {
+    margin: 28px 0 0;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    align-items: center;
+    gap: 38px;
+    background: var(--zoi-white);
+    border: 1px solid var(--zoi-line);
+    border-radius: 8px;
+    box-shadow: 0 10px 28px rgba(73, 32, 111, 0.07);
+}
+
+.zoi-page .purpose-section.reverse-layout {
+    grid-template-columns: 420px minmax(0, 1fr);
+}
+
+.zoi-page .reverse-layout .text-content {
+    grid-column: 2;
+}
+
+.zoi-page .reverse-layout .image-placeholder {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.zoi-page .section-title {
+    margin: 0 0 14px;
+    color: var(--zoi-purple-900);
+    font-size: 27px;
+    line-height: 1.25;
+}
+
+.zoi-page .section-description {
+    color: var(--zoi-muted);
+}
+
+.zoi-page .image-placeholder,
+.zoi-page .image-placeholder img {
+    width: 100%;
+    min-width: 0;
+}
+
+.zoi-page .image-placeholder img {
+    height: 270px;
+    display: block;
+    border-radius: 7px;
+    object-fit: cover;
+}
+
+.zoi-page .separator {
+    display: none;
+}
+
+.zoi-page .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.zoi-page .stat-item {
+    padding: 17px;
+    background: var(--zoi-purple-100);
+    border: 1px solid var(--zoi-line);
+}
+
+.zoi-page .cta-section {
+    margin: 28px 0 0;
+    padding: 34px;
+    background: var(--zoi-purple-900);
+    color: var(--zoi-white);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.zoi-page .cta-title {
+    margin-top: 0;
+    color: var(--zoi-white);
+}
+
+.zoi-page .cta-text {
+    color: #eee5f4;
+}
+
+.zoi-page .cta-section .large-btn {
+    background: var(--zoi-yellow);
+    color: var(--zoi-purple-900);
+    box-shadow: none;
+}
+
+.zoi-page .site-footer,
+.zoi-page footer.site-footer {
+    margin: auto 0 0;
+    padding: 22px 20px;
+    background: var(--zoi-white);
+    border-top: 1px solid var(--zoi-line);
+    color: var(--zoi-muted);
+    text-align: center;
+}
+
+.zoi-page .site-footer p {
+    margin: 0;
+}
+
+.zoi-page .hero {
+    width: min(1160px, calc(100% - 40px));
+    max-width: none;
+    margin: 0 auto;
+    padding: 58px 0 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+    align-items: center;
+    gap: 52px;
+    background: transparent;
+}
+
+.zoi-page .hero h1 {
+    margin: 0 0 16px;
+    color: var(--zoi-purple-900);
+    font-size: clamp(38px, 5vw, 54px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: 0;
+}
+
+.zoi-page .hero .slogan {
+    margin: 0 0 27px;
+    color: var(--zoi-muted);
+    font-size: 18px;
+    text-align: left;
+}
+
+.zoi-page .hero-image {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.zoi-page .hero-image img {
+    display: block;
+    max-height: 430px;
+    object-fit: contain;
+}
+
+.zoi-page .btn-primary-hero-btn {
+    min-height: 48px;
+    padding: 0 22px;
+    background: var(--zoi-purple-700);
+    color: var(--zoi-white);
+    border-radius: 7px;
+    box-shadow: none;
+    font-size: 15px;
+}
+
+.zoi-page .key-features {
+    padding: 54px max(20px, calc((100% - 1160px) / 2));
+    background: var(--zoi-white);
+}
+
+.zoi-page .key-features h2 {
+    margin: 0 0 10px;
+    color: var(--zoi-purple-900);
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.zoi-page .key-subtitle {
+    max-width: 680px;
+    margin: 0 auto 32px;
+    color: var(--zoi-muted);
+    font-size: 16px;
+}
+
+.zoi-page .features-grid {
+    max-width: 1160px;
+    gap: 18px;
+}
+
+.zoi-page .feature-item {
+    padding: 24px;
+    border: 1px solid var(--zoi-line);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.zoi-page .feature-icon {
+    font-size: 25px;
+    color: var(--zoi-purple-700);
+}
+
+.zoi-page .feature-title {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.zoi-page .cta-secondary {
+    padding: 34px 20px 60px;
+}
+
+.zoi-page .cta-card {
+    max-width: 900px;
+    padding: 29px;
+    border-color: var(--zoi-line);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+@media (max-width: 900px) {
+    .zoi-page .site-header {
+        grid-template-columns: 1fr auto;
+    }
+
+    .zoi-page .main-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .zoi-page .values-grid,
+    .zoi-page .benefits-grid,
+    .zoi-page .role-specific-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .zoi-page .purpose-section,
+    .zoi-page .purpose-section.reverse-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .zoi-page .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .zoi-page .reverse-layout .text-content,
+    .zoi-page .reverse-layout .image-placeholder {
+        grid-column: 1;
+    }
+
+    .zoi-page .reverse-layout .image-placeholder {
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 620px) {
+    .zoi-page .site-header {
+        grid-template-columns: 1fr;
+    }
+
+    .zoi-page .auth-buttons,
+    .zoi-page .main-nav {
+        width: 100%;
+    }
+
+    .zoi-page .main-nav {
+        grid-row: auto;
+        grid-column: auto;
+        gap: 18px;
+    }
+
+    .zoi-page .auth-buttons a {
+        flex: 1;
+    }
+
+    .zoi-page .values-grid,
+    .zoi-page .benefits-grid,
+    .zoi-page .role-specific-actions,
+    .zoi-page .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .zoi-page .purpose-section,
+    .zoi-page .cta-section {
+        padding: 22px;
+    }
+
+    .zoi-page .hero {
+        width: min(100% - 32px, 1160px);
+        padding-top: 38px;
+    }
+
+    .zoi-page .hero h1,
+    .zoi-page .hero .slogan {
+        text-align: left;
+    }
+}

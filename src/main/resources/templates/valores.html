@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoi - Nuestros Valores</title>
+    <link rel="stylesheet" th:href="@{/css/registro.css}">
+    <link rel="stylesheet" th:href="@{/css/valores.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-pages.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="zoi-page">
+
+<header class="site-header">
+    <div class="logo-zoi">
+        <a th:href="@{/}"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
+    </div>
+    <nav class="main-nav">
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/proposito}">Propósito</a>
+        <a th:href="@{/beneficios}">Beneficios</a>
+        <a th:href="@{/valores}" class="active-link">Valores</a>
+    </nav>
+    <div class="auth-buttons">
+        <a th:href="@{/login}" class="btn-secondary">Iniciar Sesión</a>
+        <a th:href="@{/registro}" class="btn-primary">Regístrate</a>
+    </div>
+</header>
+
+<main class="values-container">
+    <h1 class="main-title">Guiados por el Amor y el Bienestar Animal</h1>
+    <p class="subtitle">En Zoi, cada acción se basa en principios fundamentales que aseguran la mejor experiencia para
+        ti y tu mascota.</p>
+
+    <section class="values-grid">
+
+        <div class="value-card">
+            <i class="fas fa-shield-alt value-icon"></i>
+            <h3 class="card-title">Confianza y Veracidad</h3>
+            <p class="card-description">Garantizamos información de salud y cuidado revisada, minimizando la
+                desinformación. Tu mascota merece la verdad y tú la tranquilidad.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-heart value-icon"></i>
+            <h3 class="card-title">Empatía y Respeto</h3>
+            <p class="card-description">Entendemos el vínculo especial que compartes. Tratamos a cada mascota con el
+                respeto y la compasión que merecen, priorizando su bienestar emocional.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-hands-helping value-icon"></i>
+            <h3 class="card-title">Colaboración Abierta</h3>
+            <p class="card-description">Fomentamos la conexión entre dueños y veterinarios. Facilitamos el intercambio
+                de información esencial para un cuidado integral y coordinado.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-lightbulb value-icon"></i>
+            <h3 class="card-title">Innovación Constante</h3>
+            <p class="card-description">Estamos comprometidos con el desarrollo de herramientas intuitivas y modernas
+                que simplifiquen el seguimiento de la salud y el cuidado diario de tu compañero.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-hand-holding-heart value-icon"></i>
+            <h3 class="card-title">Transparencia Activa</h3>
+            <p class="card-description">Mantenemos una comunicación clara y honesta sobre el uso de tus datos. Tu
+                privacidad y la seguridad de la información de tu mascota son nuestra prioridad.</p>
+        </div>
+        <div class="value-card">
+            <i class="fas fa-paw value-icon"></i>
+            <h3 class="card-title">Cuidado Integral</h3>
+            <p class="card-description">Abordamos la salud de las mascotas desde una perspectiva holística: cubriendo no
+                solo las necesidades médicas, sino también nutricionales, emocionales y de comportamiento.</p>
+        </div>
+
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>© 2026 Zoi - Con cariño para tus mascotas | Plataforma Digital de Cuidado</p>
+</footer>
+
+</body>
+</html>

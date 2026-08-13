@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoi - Administrador</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+</head>
+<body class="zoi-ui">
+<header class="admin-header">
+    <a th:href="@{/admin}" class="brand">
+        <img th:src="@{/img/logo.png}" alt="Zoi" class="brand-logo">
+        <span>Administrador</span>
+    </a>
+    <nav class="admin-nav">
+        <a th:href="@{/dueno/home}">Panel dueño</a>
+        <form th:action="@{/logout}" method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <button type="submit" class="zoi-btn-secondary">Salir</button>
+        </form>
+    </nav>
+</header>
+
+<main class="admin-main">
+    <div class="flash success-flash" role="status" th:if="${successAdmin}" th:text="${successAdmin}">Operación
+        correcta.
+    </div>
+    <div class="flash error-flash" role="alert" th:if="${errorAdmin}" th:text="${errorAdmin}">No se pudo completar.
+    </div>
+
+    <section class="summary-band">
+        <div>
+            <p class="eyebrow">Usuarios registrados</p>
+            <h1 th:text="${totalUsuarios}">0</h1>
+        </div>
+        <div class="summary-breakdown">
+            <span><strong th:text="${totalDuenos}">0</strong> Dueños</span>
+            <span><strong th:text="${totalAdministradores}">0</strong> Administradores</span>
+            <span><strong th:text="${totalMascotas}">0</strong> Mascotas</span>
+        </div>
+        <a th:href="@{/admin/reporte-usuarios.xlsx(tipo=${tipoSeleccionado}, busqueda=${busqueda})}"
+           class="download-button">Descargar Excel</a>
+    </section>
+
+    <section class="form-section">
+        <div class="section-title">
+            <h2>Crear administrador</h2>
+            <span>Nuevo acceso administrativo</span>
+        </div>
+
+        <form th:action="@{/admin/usuarios}" method="post" class="create-user-form" data-zoi-validate>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+            <label>
+                Nombre
+                <input type="text" name="nombre" minlength="2" maxlength="80" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,80}"
+                       data-error="Usa solo letras y espacios." required>
+            </label>
+
+            <label>
+                Apellido
+                <input type="text" name="apellido" minlength="2" maxlength="80" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,80}"
+                       data-error="Usa solo letras y espacios." required>
+            </label>
+
+            <label>
+                Correo
+                <input type="email" name="email" maxlength="120" data-error="Ingresa un correo válido." required>
+            </label>
+
+            <label>
+                Contraseña
+                <input type="password" name="password" minlength="8" maxlength="72"
+                       pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,72}"
+                       data-error="Incluye mayúscula, minúscula y número." required>
+            </label>
+
+            <label>
+                Confirmar contraseña
+                <input type="password" name="confirmPassword" minlength="8" maxlength="72"
+                       data-match="password" data-match-error="Las contraseñas no coinciden."
+                       data-error="Vuelve a escribir la contraseña." aria-describedby="confirmPasswordBackendError"
+                       required>
+                <small id="confirmPasswordBackendError" class="field-error" th:if="${errorConfirmPassword}"
+                       th:text="${errorConfirmPassword}"></small>
+            </label>
+
+            <label>
+                Teléfono
+                <input type="tel" name="telefono" maxlength="20" pattern="[0-9 +()\-]{7,20}"
+                       data-error="Ingresa un teléfono válido.">
+            </label>
+
+            <button type="submit" class="zoi-btn-primary">Crear administrador</button>
+        </form>
+    </section>
+
+    <section class="table-section">
+        <form th:action="@{/admin}" method="get" class="filter-bar">
+            <label>
+                Tipo de usuario
+                <select name="tipo">
+                    <option value="todos" th:selected="${tipoSeleccionado == 'todos'}">Todos</option>
+                    <option value="duenos" th:selected="${tipoSeleccionado == 'duenos'}">Dueños</option>
+                    <option value="veterinarios" th:selected="${tipoSeleccionado == 'veterinarios'}">Veterinarios
+                    </option>
+                    <option value="administradores" th:selected="${tipoSeleccionado == 'administradores'}">
+                        Administradores
+                    </option>
+                </select>
+            </label>
+
+            <label>
+                Buscar
+                <input type="search" name="busqueda" th:value="${busqueda}" placeholder="Nombre, correo o telefono">
+            </label>
+
+            <div class="filter-actions">
+                <button type="submit" class="zoi-btn-primary">Filtrar</button>
+                <a th:href="@{/admin}">Limpiar</a>
+            </div>
+        </form>
+
+        <div class="section-title">
+            <h2>Registro de usuarios</h2>
+            <span th:text="${totalFiltrado + ' encontrados'}">0 encontrados</span>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Mascotas</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.id}">1</td>
+                    <td>
+                        <span class="type-pill admin-pill"
+                              th:if="${usuario.email == adminEmail or usuario.tipoPerfil == 'ADMIN'}">Administrador</span>
+                        <span class="type-pill vet-pill"
+                              th:if="${usuario.email != adminEmail and usuario.tipoPerfil != 'ADMIN' and usuario.tipoPerfil == 'VETERINARIO'}">Veterinario</span>
+                        <span class="type-pill owner-pill"
+                              th:if="${usuario.email != adminEmail and usuario.tipoPerfil != 'ADMIN' and usuario.tipoPerfil != 'VETERINARIO'}">Dueño</span>
+                    </td>
+                    <td th:text="${usuario.nombre}">Nombre</td>
+                    <td th:text="${usuario.apellido}">Apellido</td>
+                    <td th:text="${usuario.email}">correo@zoi.com</td>
+                    <td th:text="${usuario.telefono ?: 'Sin registrar'}">Sin registrar</td>
+                    <td th:text="${conteoMascotas[usuario.id] ?: 0}">0</td>
+                    <td>
+                        <form th:if="${usuario.tipoPerfil == 'ADMIN' and usuario.email != adminEmail}"
+                              th:action="@{/admin/administradores/{id}/eliminar(id=${usuario.id})}"
+                              method="post" class="account-delete-form"
+                              th:attr="data-user-name=${usuario.nombre + ' ' + usuario.apellido}">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                            <button type="submit" class="zoi-btn-danger">Eliminar</button>
+                        </form>
+                        <span th:if="${usuario.email == adminEmail}" class="locked-action">Principal protegido</span>
+                        <span th:if="${usuario.tipoPerfil != 'ADMIN' and usuario.email != adminEmail}"
+                              class="locked-action">Sin acciones</span>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(usuarios)}">
+                    <td colspan="8" class="empty-state">No hay usuarios para esos filtros.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <nav class="pagination" th:if="${totalPaginas > 1}" aria-label="Paginación">
+            <a th:if="${paginaActual > 0}"
+               th:href="@{/admin(tipo=${tipoSeleccionado},busqueda=${busqueda},pagina=${paginaActual - 1})}">Anterior</a>
+            <span th:text="${'Página ' + (paginaActual + 1) + ' de ' + totalPaginas}">Página 1</span>
+            <a th:if="${paginaActual + 1 < totalPaginas}"
+               th:href="@{/admin(tipo=${tipoSeleccionado},busqueda=${busqueda},pagina=${paginaActual + 1})}">Siguiente</a>
+        </nav>
+    </section>
+</main>
+<script th:src="@{/js/zoi-validation.js}"></script>
+<script th:src="@{/js/account-delete.js}"></script>
+</body>
+</html>

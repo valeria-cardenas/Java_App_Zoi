@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Programar cuidado | Zoi</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"><link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+    <link rel="stylesheet" th:href="@{/css/recordatorios.css}"><link rel="stylesheet" th:href="@{/css/recordatorio-form.css}">
+</head>
+<body class="zoi-ui">
+<header class="profile-header"><a th:href="@{/dueno/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a><nav><a th:href="@{/dueno/recordatorios}">← Volver a recordatorios</a></nav></header>
+<main class="reminder-editor-page"><section class="reminder-editor-shell">
+    <aside class="reminder-context"><span class="context-icon" aria-hidden="true">🔔</span><p class="eyebrow">Agenda de cuidados</p>
+        <h1 th:text="${recordatorio.id == null ? 'Nuevo recordatorio' : 'Editar recordatorio'}">Nuevo recordatorio</h1>
+        <p>Organiza los cuidados importantes de tu mascota y consúltalos fácilmente desde el calendario.</p>
+        <ul><li><span>✓</span> Alimentación y medicamentos</li><li><span>✓</span> Baños y cuidados</li><li><span>✓</span> Citas veterinarias</li></ul>
+    </aside>
+    <section class="reminder-form-card">
+        <div class="form-card-heading"><div><p class="eyebrow">Información del recordatorio</p><h2>Programa el próximo cuidado</h2></div><span>Paso único</span></div>
+        <div class="flash error-flash" role="alert" th:if="${errorPerfil}" th:text="${errorPerfil}"></div>
+        <form class="reminder-form" th:action="@{/dueno/recordatorios}" method="post" data-zoi-validate>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><input th:if="${recordatorio.id}" type="hidden" name="id" th:value="${recordatorio.id}">
+            <label class="field-control"><span>Mascota</span><small>¿Para quién es este cuidado?</small><select name="mascotaId" required data-error="Selecciona una mascota."><option value="">Selecciona una mascota</option><option th:each="m:${mascotas}" th:value="${m.id}" th:text="${m.nombre}" th:selected="${m.id == mascotaSeleccionada}"></option></select></label>
+            <label class="field-control"><span>Tipo de cuidado</span><small>Selecciona una categoría</small><select name="tipo" required data-error="Selecciona el tipo de cuidado."><option value="ALIMENTACION" th:selected="${recordatorio.tipo=='ALIMENTACION'}">Alimentación</option><option value="BANO" th:selected="${recordatorio.tipo=='BANO'}">Baño</option><option value="MEDICAMENTO" th:selected="${recordatorio.tipo=='MEDICAMENTO'}">Medicamento</option><option value="CITA" th:selected="${recordatorio.tipo=='CITA'}">Cita veterinaria</option><option value="OTRO" th:selected="${recordatorio.tipo=='OTRO'}">Otro</option></select></label>
+            <label class="field-control full"><span>Título</span><small>Escribe una descripción corta y fácil de reconocer</small><input name="titulo" minlength="2" maxlength="120" required data-error="Escribe un título de 2 a 120 caracteres." th:value="${recordatorio.titulo}" placeholder="Ej. Dar alimento de la mañana"></label>
+            <div class="reminder-datetime full"><div class="datetime-heading"><span class="datetime-heading-icon" aria-hidden="true">🗓️</span><div><strong>Fecha y hora</strong><small>Indica cuándo quieres recibir este recordatorio.</small></div></div>
+                <div class="datetime-controls"><label class="datetime-card" for="recordatorioFecha"><span class="datetime-icon" aria-hidden="true">📅</span><span class="datetime-field"><strong>Fecha</strong><input id="recordatorioFecha" type="date" required data-error="Selecciona la fecha del recordatorio." th:value="${recordatorio.fechaHora != null ? #temporals.format(recordatorio.fechaHora,'yyyy-MM-dd') : ''}"></span></label>
+                    <label class="datetime-card" for="recordatorioHora"><span class="datetime-icon" aria-hidden="true">🕐</span><span class="datetime-field"><strong>Hora</strong><input id="recordatorioHora" type="time" required step="300" data-error="Selecciona la hora del recordatorio." th:value="${recordatorio.fechaHora != null ? #temporals.format(recordatorio.fechaHora,'HH:mm') : ''}"></span></label></div>
+                <input id="fechaHora" type="hidden" name="fechaHora" th:value="${recordatorio.fechaHora != null ? #temporals.format(recordatorio.fechaHora,'yyyy-MM-dd''T''HH:mm') : ''}"></div>
+            <label class="field-control full"><span>Repetición</span><small>Elige si este cuidado debe volver a programarse</small><select name="repeticion"><option value="NINGUNA" th:selected="${recordatorio.repeticion=='NINGUNA'}">No repetir</option><option value="DIARIA" th:selected="${recordatorio.repeticion=='DIARIA'}">Todos los días</option><option value="SEMANAL" th:selected="${recordatorio.repeticion=='SEMANAL'}">Cada semana</option><option value="MENSUAL" th:selected="${recordatorio.repeticion=='MENSUAL'}">Cada mes</option></select></label>
+            <label class="field-control full"><span>Notas adicionales</span><small>Agrega dosis, lugar, indicaciones u otra información útil</small><textarea name="descripcion" maxlength="600" th:text="${recordatorio.descripcion}" placeholder="Indicaciones, lugar de la cita, dosis..."></textarea></label>
+            <div class="reminder-form-actions full"><a class="zoi-btn-secondary" th:href="@{/dueno/recordatorios}">Cancelar</a><button type="submit" class="zoi-btn-primary">Guardar recordatorio</button></div>
+        </form>
+    </section>
+</section></main>
+<script th:src="@{/js/zoi-validation.js}"></script><script>
+const reminderForm=document.querySelector('form.reminder-form'),reminderDate=document.getElementById('recordatorioFecha'),reminderTime=document.getElementById('recordatorioHora'),reminderDateTime=document.getElementById('fechaHora');
+const combineReminderDateTime=()=>{reminderDateTime.value=reminderDate.value&&reminderTime.value?`${reminderDate.value}T${reminderTime.value}`:''};
+reminderDate.addEventListener('change',combineReminderDateTime);reminderTime.addEventListener('change',combineReminderDateTime);reminderForm.addEventListener('submit',combineReminderDateTime);
+</script></body></html>

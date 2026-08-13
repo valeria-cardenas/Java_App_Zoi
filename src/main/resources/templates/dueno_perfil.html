@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tu perfil | Zoi</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+    <link rel="stylesheet" th:href="@{/css/cuenta.css}">
+</head>
+<body class="zoi-ui">
+<header class="profile-header"><a th:href="@{/dueno/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
+    <nav><a th:href="@{/dueno/home}">← Volver al inicio</a>
+        <form th:action="@{/logout}" method="post"><input type="hidden" th:name="${_csrf.parameterName}"
+                                                          th:value="${_csrf.token}">
+            <button class="zoi-btn-secondary">Salir</button>
+        </form>
+    </nav>
+</header>
+<main class="account-page">
+    <aside class="account-aside">
+        <div class="account-avatar" th:text="${#strings.substring(usuario.nombre,0,1)}">U</div>
+        <h1 th:text="${usuario.nombre+' '+usuario.apellido}">Usuario</h1>
+        <p th:text="${usuario.email}"></p>
+        <nav><a href="#datos">Información personal</a><a href="#seguridad">Contraseña y seguridad</a><a
+                href="#eliminar">Eliminar cuenta</a></nav>
+    </aside>
+    <div class="account-content">
+        <section id="datos" class="account-card"><p class="eyebrow">Tu perfil</p>
+            <h2>Información personal</h2>
+            <p class="card-intro">Mantén actualizados tus datos de contacto.</p>
+            <div class="flash success-flash" th:if="${successPerfil}" th:text="${successPerfil}"></div>
+            <div class="flash error-flash" th:if="${errorPerfil}" th:text="${errorPerfil}"></div>
+            <form class="account-form" th:action="@{/dueno/perfil}" method="post"><input type="hidden"
+                                                                                         th:name="${_csrf.parameterName}"
+                                                                                         th:value="${_csrf.token}"><label>Nombre<input
+                    name="nombre" minlength="2" maxlength="80" required th:value="${usuario.nombre}"></label><label>Apellido<input
+                    name="apellido" minlength="2" maxlength="80" required th:value="${usuario.apellido}"></label><label
+                    class="full">Correo electrónico<input type="email" name="email" maxlength="120" required
+                                                          th:value="${usuario.email}"><small>Si cambias tu correo
+                tendrás que iniciar sesión nuevamente.</small></label><label>Teléfono<input type="tel" name="telefono"
+                                                                                            maxlength="20"
+                                                                                            th:value="${usuario.telefono}"></label><label>Fecha
+                de nacimiento<input type="date" name="fechaNacimiento" th:value="${usuario.fechaNacimiento}"></label>
+                <div class="full form-actions">
+                    <button class="zoi-btn-primary">Guardar cambios</button>
+                </div>
+            </form>
+        </section>
+        <section id="seguridad" class="account-card"><p class="eyebrow">Seguridad</p>
+            <h2>Cambiar contraseña</h2>
+            <p class="card-intro">Usa una contraseña que no utilices en otros sitios.</p>
+            <div class="flash success-flash" th:if="${successPassword}" th:text="${successPassword}"></div>
+            <div class="flash error-flash" th:if="${errorPassword}" th:text="${errorPassword}"></div>
+            <form class="security-form" th:action="@{/dueno/perfil/contrasena}" method="post"><input type="hidden"
+                                                                                                     th:name="${_csrf.parameterName}"
+                                                                                                     th:value="${_csrf.token}"><label>Contraseña
+                actual<input type="password" name="passwordActual" autocomplete="current-password"
+                             required></label><label>Nueva contraseña<input type="password" name="passwordNueva"
+                                                                            minlength="8" maxlength="72"
+                                                                            autocomplete="new-password" required><small>Mínimo
+                8 caracteres, mayúscula, minúscula y número.</small></label><label>Confirmar nueva contraseña<input
+                    type="password" name="confirmarPassword" minlength="8" maxlength="72" autocomplete="new-password"
+                    required></label>
+                <button class="zoi-btn-primary">Actualizar contraseña</button>
+            </form>
+        </section>
+        <section id="eliminar" class="account-card danger-zone"><p class="eyebrow">Zona de riesgo</p>
+            <h2>Eliminar mi cuenta</h2>
+            <p>Se eliminarán definitivamente tus mascotas, conversaciones, mensajes, recordatorios y datos personales.
+                Esta acción no se puede deshacer.</p>
+            <div class="flash error-flash" th:if="${errorEliminar}" th:text="${errorEliminar}"></div>
+            <form th:action="@{/perfil/eliminar}" method="post" class="account-delete-form"
+                  th:attr="data-user-name=${usuario.nombre}"><input type="hidden" th:name="${_csrf.parameterName}"
+                                                                    th:value="${_csrf.token}"><label>Escribe tu
+                contraseña para confirmar<input type="password" name="password" autocomplete="current-password"
+                                                required></label>
+                <button class="zoi-btn-danger">Eliminar mi cuenta definitivamente</button>
+            </form>
+        </section>
+        <a class="bottom-return" th:href="@{/dueno/home}">← Volver al inicio</a></div>
+</main>
+<script th:src="@{/js/account-delete.js}"></script>
+</body>
+</html>

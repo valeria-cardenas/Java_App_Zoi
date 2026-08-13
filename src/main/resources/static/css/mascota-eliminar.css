@@ -1,0 +1,57 @@
+.pet-danger-zone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    border-color: #efc6cd;
+    background: #fffafb;
+}
+
+.pet-danger-zone h2 {
+    margin: 3px 0 7px;
+    color: #8f2032;
+}
+
+.pet-danger-zone p {
+    margin: 0;
+    color: #695d61;
+}
+
+.pet-danger-zone form {
+    flex: 0 0 auto;
+}
+
+.pet-delete-button {
+    padding: 12px 18px;
+    border: 1px solid #b72e44;
+    border-radius: 10px;
+    background: #b72e44;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.pet-delete-button:hover {
+    background: #941f32;
+    transform: translateY(-1px);
+}
+
+.pet-delete-button:focus-visible {
+    outline: 3px solid rgba(183, 46, 68, .25);
+    outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+    .pet-danger-zone {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pet-danger-zone form,
+    .pet-delete-button {
+        width: 100%;
+    }
+}

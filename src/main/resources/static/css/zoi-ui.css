@@ -1,0 +1,237 @@
+:root {
+    --ui-purple-900: #49206f;
+    --ui-purple-700: #7040a5;
+    --ui-purple-100: #f2ebf8;
+    --ui-yellow: #f6b90f;
+    --ui-page: #f8f6fa;
+    --ui-white: #ffffff;
+    --ui-ink: #292535;
+    --ui-muted: #6d6877;
+    --ui-line: #e7dfed;
+}
+
+body.zoi-ui {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--ui-page);
+    color: var(--ui-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* Los controles con apariencia de botón nunca deben mostrarse subrayados. */
+.zoi-ui a[class*="btn"],
+.zoi-ui a[class*="button"],
+.zoi-ui a[class*="action"],
+.zoi-ui a[role="button"],
+.zoi-ui .form-back-link,
+.zoi-ui .profile-view-link,
+.zoi-ui .bottom-return,
+.zoi-ui .bottom-back,
+.zoi-ui .download-button,
+.zoi-ui .admin-return-link {
+    text-decoration: none !important;
+}
+
+.zoi-ui a[class*="btn"]:hover,
+.zoi-ui a[class*="btn"]:focus,
+.zoi-ui a[class*="btn"]:active,
+.zoi-ui a[class*="button"]:hover,
+.zoi-ui a[class*="button"]:focus,
+.zoi-ui a[class*="button"]:active,
+.zoi-ui a[class*="action"]:hover,
+.zoi-ui a[class*="action"]:focus,
+.zoi-ui a[class*="action"]:active,
+.zoi-ui a[role="button"]:hover,
+.zoi-ui a[role="button"]:focus,
+.zoi-ui a[role="button"]:active,
+.zoi-ui .form-back-link:hover,
+.zoi-ui .profile-view-link:hover,
+.zoi-ui .bottom-return:hover,
+.zoi-ui .bottom-back:hover,
+.zoi-ui .download-button:hover,
+.zoi-ui .admin-return-link:hover {
+    text-decoration: none !important;
+}
+
+.zoi-ui *,
+.zoi-ui *::before,
+.zoi-ui *::after {
+    box-sizing: border-box;
+    letter-spacing: 0;
+}
+
+.zoi-ui .logo-img,
+.zoi-ui .brand-logo {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+.zoi-ui .profile-header .logo-img,
+.zoi-ui .admin-header .brand-logo {
+    display: block;
+    width: 100px;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    object-fit: contain;
+}
+
+.zoi-ui .header-logo-link {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.zoi-ui .admin-return-link {
+    padding: 8px 12px;
+    border: 1px solid var(--ui-purple-700);
+    border-radius: 7px;
+    color: var(--ui-purple-700);
+    font-weight: 700;
+}
+
+.zoi-ui .admin-return-link:hover {
+    background: var(--ui-purple-100);
+}
+
+.zoi-ui h1,
+.zoi-ui h2,
+.zoi-ui h3 {
+    color: var(--ui-purple-900);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.zoi-ui input,
+.zoi-ui select,
+.zoi-ui textarea {
+    border-color: var(--ui-line);
+    border-radius: 7px;
+    background: var(--ui-white);
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+.zoi-ui input:focus,
+.zoi-ui select:focus,
+.zoi-ui textarea:focus {
+    border-color: var(--ui-purple-700);
+    box-shadow: 0 0 0 3px rgba(112, 64, 165, 0.1);
+}
+
+.zoi-ui button,
+.zoi-ui .zoi-btn-primary,
+.zoi-ui .zoi-btn-secondary,
+.zoi-ui .zoi-btn-danger,
+.zoi-ui .boton-primario,
+.zoi-ui .btn-primary,
+.zoi-ui .btn-secondary,
+.zoi-ui .download-button,
+.zoi-ui .secondary-action {
+    border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.zoi-ui .zoi-btn-primary,
+.zoi-ui .boton-primario,
+.zoi-ui .btn-primary,
+.zoi-ui .download-button,
+.zoi-ui .secondary-action {
+    background: var(--ui-purple-700);
+    color: var(--ui-white);
+}
+
+.zoi-ui .zoi-btn-primary:hover,
+.zoi-ui .boton-primario:hover,
+.zoi-ui .btn-primary:hover,
+.zoi-ui .download-button:hover,
+.zoi-ui .secondary-action:hover {
+    background: var(--ui-purple-900);
+    transform: translateY(-1px);
+    box-shadow: none;
+}
+
+.zoi-ui .tarjeta-registro,
+.zoi-ui .choice-panel,
+.zoi-ui .form-panel,
+.zoi-ui .empty-panel,
+.zoi-ui .profile-card,
+.zoi-ui .login-card,
+.zoi-ui .form-section,
+.zoi-ui .table-section,
+.zoi-ui .test-container {
+    border: 1px solid var(--ui-line);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(73, 32, 111, 0.05);
+}
+
+.zoi-ui .profile-header,
+.zoi-ui .admin-header,
+.zoi-ui .logged-in-header {
+    min-height: 72px;
+    background: var(--ui-white);
+    border-bottom: 1px solid var(--ui-line);
+    box-shadow: none;
+}
+
+.zoi-ui .owner-hero,
+.zoi-ui .vet-hero,
+.zoi-ui .summary-band {
+    background: var(--ui-purple-900);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.zoi-ui .pet-social-card,
+.zoi-ui .vet-profile-main,
+.zoi-ui .action-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(73, 32, 111, 0.06);
+}
+
+.zoi-ui .choice-card {
+    border: 1px solid var(--ui-line);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.zoi-ui .choice-card:hover {
+    border-color: var(--ui-purple-700);
+    background: var(--ui-purple-100);
+}
+
+.zoi-ui .pie-pagina,
+.zoi-ui footer {
+    margin-top: auto;
+    background: var(--ui-white);
+    border-top: 1px solid var(--ui-line);
+    color: var(--ui-muted);
+}
+
+.zoi-ui .form-error,
+.zoi-ui .error-flash,
+.zoi-ui .success-flash,
+.zoi-ui .flash {
+    border-radius: 7px;
+    font-weight: 600;
+}
+
+.zoi-ui .field-error {
+    display: block;
+    min-height: 16px;
+    margin: -8px 0 8px;
+    color: #a33131;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.zoi-ui .field-hint {
+    display: block;
+    margin: -8px 0 8px;
+    color: var(--ui-muted);
+    font-size: 12px;
+}

@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net" agent="Codex">
+  <diagram id="problema-ordenado" name="Problema antes de APP ZOI">
+    <mxGraphModel dx="1940" dy="1012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Problema antes de APP ZOI: dudas de salud sin orientación profesional" vertex="1">
+          <mxGeometry height="32" width="1080" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="owner" parent="1" style="swimlane;html=1;horizontal=0;startSize=140;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="145" width="1360" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="owner" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="150" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="doubt" parent="owner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Observa un síntoma o tiene una duda sobre su mascota" vertex="1">
+          <mxGeometry height="72" width="190" x="260" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="input" parent="owner" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: síntoma observado o duda de salud" vertex="1">
+          <mxGeometry height="48" width="275" x="580" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="web" parent="1" style="swimlane;html=1;horizontal=0;startSize=140;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Internet o inteligencia artificial" vertex="1">
+          <mxGeometry height="260" width="1360" x="30" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="search" parent="web" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Busca información en internet o pregunta a una IA" vertex="1">
+          <mxGeometry height="70" width="190" x="260" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="answer" parent="web" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Recibe una respuesta general" vertex="1">
+          <mxGeometry height="70" width="170" x="530" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" parent="web" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La respuesta es correcta para esa mascota?" vertex="1">
+          <mxGeometry height="90" width="115" x="780" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="correct" parent="web" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Respuesta aparentemente útil, pero sin revisión veterinaria" vertex="1">
+          <mxGeometry height="75" width="155" x="945" y="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="wrong" parent="web" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Respuesta incorrecta, incompleta o alarmante" vertex="1">
+          <mxGeometry height="45" width="155" x="760" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="g-WIZzHXRZUlmoYEtJUY-1" parent="web" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin: con una información&lt;br&gt;aparentemente util" vertex="1">
+          <mxGeometry height="52" width="115" x="1190" y="49" as="geometry" />
+        </mxCell>
+        <mxCell id="g-WIZzHXRZUlmoYEtJUY-2" edge="1" parent="web" source="correct" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="g-WIZzHXRZUlmoYEtJUY-1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1110" y="60" as="sourcePoint" />
+            <mxPoint x="1160" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="impact" parent="1" style="swimlane;html=1;horizontal=0;startSize=140;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Posibles consecuencias" vertex="1">
+          <mxGeometry height="340" width="1360" x="30" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="uncertainty" parent="impact" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Siente incertidumbre, preocupación o pánico" vertex="1">
+          <mxGeometry height="70" width="180" x="270" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="moreSearch" parent="impact" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Busca más respuestas y puede encontrar información contradictoria" vertex="1">
+          <mxGeometry height="70" width="185" x="480" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="output" parent="impact" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Resultado: información general que puede no ser adecuada para la mascota" vertex="1">
+          <mxGeometry height="40" width="250" x="200" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="delay" parent="impact" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Puede retrasar la consulta con un veterinario" vertex="1">
+          <mxGeometry height="70" width="170" x="700" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="impact" source="moreSearch" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="delay" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="impact" source="delay" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="g-WIZzHXRZUlmoYEtJUY-3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g-WIZzHXRZUlmoYEtJUY-3" parent="impact" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Contacta a un veterinario?" vertex="1">
+          <mxGeometry height="90" width="115" x="910" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="g-WIZzHXRZUlmoYEtJUY-5" edge="1" parent="impact" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="g-WIZzHXRZUlmoYEtJUY-7" value="Sí">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="1025" y="124.62" as="sourcePoint" />
+            <mxPoint x="1075" y="124.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g-WIZzHXRZUlmoYEtJUY-7" parent="impact" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Se le da la atención adecuada" vertex="1">
+          <mxGeometry height="60" width="115" x="1080" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="g-WIZzHXRZUlmoYEtJUY-8" parent="impact" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Decide tomar la información que encuentra en internet o una IA y podría tomar decisiones erróneas frente a su mascota" vertex="1">
+          <mxGeometry height="90" width="145" x="895" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="g-WIZzHXRZUlmoYEtJUY-6" edge="1" parent="impact" source="g-WIZzHXRZUlmoYEtJUY-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="g-WIZzHXRZUlmoYEtJUY-8" value="No">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="240" as="sourcePoint" />
+            <mxPoint x="967.49" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="doubt" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="doubt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="search" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="answer" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="answer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="decision" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="correct" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="wrong" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="wrong" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="uncertainty" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="uncertainty" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="moreSearch" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Bienvenido a Zoi!</title>
+
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/header_u_registrado.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="zoi-ui">
+
+<header class="logged-in-header">
+    <div class="logo-zoi">
+        <a th:href="@{/dashboard}">
+            <img th:src="@{/img/logo.png}" alt="logo Zoi" class="logo-img">
+        </a>
+    </div>
+
+    <nav class="app-nav">
+        <a th:href="@{/dashboard}" class="nav-item active-app-link">Dashboard</a>
+        <a th:href="@{/mis-mascotas}" class="nav-item">Mis Mascotas</a>
+        <a th:href="@{/faq}" class="nav-item">Q&A Salud</a>
+        <a th:href="@{/citas}" class="nav-item">Citas</a>
+    </nav>
+
+    <div class="user-controls">
+        <button class="btn-icon">
+            <i class="fas fa-bell"></i>
+        </button>
+
+        <a th:href="@{/perfil}" class="user-profile-btn">JS</a>
+
+        <form th:action="@{/logout}" method="post" style="display: inline;">
+            <button type="submit" class="btn-secondary logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Salir
+            </button>
+        </form>
+    </div>
+</header>
+
+<main class="login-container">
+    <div class="login-card welcome-card">
+        <i class="fas fa-paw welcome-icon"></i>
+        <h2 class="welcome-title">¡Hola! Ya eres parte de Zoi.</h2>
+        <p class="welcome-message">
+            Estamos encantados de ayudarte a simplificar el cuidado de tu(s) compañero(s).
+            El siguiente paso es crear su perfil.
+        </p>
+
+        <hr class="welcome-separator">
+
+        <a th:href="@{/encuesta/usuario}" class="btn-primary welcome-btn">
+            <i class="fas fa-arrow-right"></i> Empecemos
+        </a>
+
+        <a th:href="@{/dashboard}" class="skip-link">Quizás más tarde, ir al Panel Principal</a>
+    </div>
+</main>
+
+<footer class="pie-pagina">
+    <p>© 2026 Zoi - Con cariño para tus mascotas | Plataforma Digital de Cuidado</p>
+</footer>
+
+</body>
+</html>

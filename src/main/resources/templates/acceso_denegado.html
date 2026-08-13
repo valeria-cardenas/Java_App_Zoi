@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoi - Acceso denegado</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+</head>
+<body class="zoi-ui">
+<main class="profile-main">
+    <section class="form-panel">
+        <h1>Acceso denegado</h1>
+        <p>Tu perfil no tiene permiso para entrar en esta sección.</p>
+        <a th:href="@{/dashboard}" class="zoi-btn-primary">Volver a mi panel</a>
+    </section>
+</main>
+</body>
+</html>

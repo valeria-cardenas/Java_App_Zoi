@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoi - Tipo de perfil</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+</head>
+<body class="zoi-ui">
+<main class="profile-main">
+    <section class="choice-panel">
+        <h1>Elige tu perfil</h1>
+        <p>Selecciona como usaras Zoi para preparar tu experiencia.</p>
+        <div class="flash error-flash" th:if="${errorPerfil}" th:text="${errorPerfil}"></div>
+
+        <form th:action="@{/seleccionar-perfil}" method="post" class="choice-grid">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+            <button type="submit" name="tipoPerfil" value="DUENO" class="choice-card">
+                <span>Dueño de mascota</span>
+                <small>Crear perfil de mascota y ver tus registros.</small>
+            </button>
+
+            <button type="submit" name="tipoPerfil" value="VETERINARIO" class="choice-card">
+                <span>Veterinario</span>
+                <small>Crear perfil profesional para atender mascotas.</small>
+            </button>
+        </form>
+    </section>
+</main>
+<script th:src="@{/js/zoi-validation.js}"></script>
+</body>
+</html>

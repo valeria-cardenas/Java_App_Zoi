@@ -1,0 +1,2000 @@
+<mxfile host="app.diagrams.net" agent="Codex" pages="29">
+  <diagram id="p1" name="Navegación Publica">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p1t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Navegación pública" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p1a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Visitante" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p1s" parent="p1a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p1u" parent="p1a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir sitio web" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p1i" parent="p1a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Opción del menú" vertex="1">
+          <mxGeometry height="57" width="215" x="720" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p1z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p1v" parent="p1z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Seleccionar la página elegida" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p1g" parent="p1z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La página está disponible?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p1f" parent="p1z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p1fe" parent="p1z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin operación" vertex="1">
+          <mxGeometry height="50" width="95" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p1o" parent="p1z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar inicio, propósito, beneficios o valores" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p1r" parent="p1z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Página informativa" vertex="1">
+          <mxGeometry height="60" width="230" x="860" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e" parent="p1z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p11" edge="1" parent="1" source="p1s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p1u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p12" edge="1" parent="1" source="p1u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p1v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p13" edge="1" parent="1" source="p1v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p1g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p14" edge="1" parent="1" source="p1g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p1f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p15" edge="1" parent="1" source="p1f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p1fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p16" edge="1" parent="1" source="p1g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p1o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p17" edge="1" parent="1" source="p1o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p1e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p2" name="Crear una cuenta">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p2t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Crear una cuenta" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p2a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Visitante" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p2s" parent="p2a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p2u" parent="p2a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Llenar el formulario de registro" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p2i" parent="p2a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Nombre, correo, teléfono y contraseña" vertex="1">
+          <mxGeometry height="57" width="290" x="530" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p2z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p2v" parent="p2z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar los datos escritos" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2g" parent="p2z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Los datos están completos, el correo no existe, la contraseña cumple con las caracteristicas requeridas?" vertex="1">
+          <mxGeometry height="129" width="169.63" x="482.69" y="4.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p2f" parent="p2z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500.01" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="p2fe" parent="p2z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="p2o" parent="p2z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Crear la cuenta y guardar la contraseña protegida" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2r" parent="p2z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Cuenta creada" vertex="1">
+          <mxGeometry height="60" width="250" x="840" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p2e" parent="p2z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p21" edge="1" parent="1" source="p2s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p2u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p22" edge="1" parent="1" source="p2u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p2v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p23" edge="1" parent="1" source="p2v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p2g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p24" edge="1" parent="1" source="p2g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p2f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p25" edge="1" parent="1" source="p2f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p2fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p26" edge="1" parent="1" source="p2g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p2o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p27" edge="1" parent="1" source="p2o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p2e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p3" name="Inicio de Sesion">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p3t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Inicio de sesion" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p3a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Usuario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p3s" parent="p3a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p3u" parent="p3a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Escribir correo y contraseña" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p3i" parent="p3a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Correo y contraseña" vertex="1">
+          <mxGeometry height="57" width="252.5" x="567.5" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p3z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p3v" parent="p3z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Comprobar los datos de ingreso" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="37" as="geometry" />
+        </mxCell>
+        <mxCell id="p3g" parent="p3z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El correo y contraseña son correctos?" vertex="1">
+          <mxGeometry height="88" width="112" x="510" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="p3f" parent="p3z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p3fe" parent="p3z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin inciar sesion" vertex="1">
+          <mxGeometry height="50" width="95" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p3o" parent="p3z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir el panel que corresponde al usuario" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p3r" parent="p3z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Sesión iniciada" vertex="1">
+          <mxGeometry height="60" width="210" x="880" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e" parent="p3z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p31" edge="1" parent="1" source="p3s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p3u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p32" edge="1" parent="1" source="p3u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p3v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p33" edge="1" parent="1" source="p3v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p3g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p34" edge="1" parent="1" source="p3g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p3f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p35" edge="1" parent="1" source="p3f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p3fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p36" edge="1" parent="1" source="p3g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p3o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p37" edge="1" parent="1" source="p3o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p3e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p4" name="Elegir tipo de usuario">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p4t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Elegir tipo de usuario" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p4a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Usuario nuevo" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p4s" parent="p4a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p4u" parent="p4a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Elegir dueño o veterinario" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p4i" parent="p4a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Tipo de usuario" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p4z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p4v" parent="p4z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar la opción elegida" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p4g" parent="p4z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La opción es dueño o veterinario?" vertex="1">
+          <mxGeometry height="88" width="112" x="510" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p4f" parent="p4z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p4fe" parent="p4z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p4o" parent="p4z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar el tipo de usuario y abrir el siguiente paso" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p4r" parent="p4z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Tipo de usuario guardado" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p4e" parent="p4z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p41" edge="1" parent="1" source="p4s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p4u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p42" edge="1" parent="1" source="p4u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p4v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p43" edge="1" parent="1" source="p4v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p4g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p44" edge="1" parent="1" source="p4g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p4f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p45" edge="1" parent="1" source="p4f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p4fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p46" edge="1" parent="1" source="p4g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p4o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p47" edge="1" parent="1" source="p4o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p4e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p6" name="Crear perfil de la mascota">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p6t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Crear perfil de la mascota" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p6a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p6s" parent="p6a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p6u" parent="p6a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Llenar los datos de la mascota" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p6i" parent="p6a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Datos, salud y foto" vertex="1">
+          <mxGeometry height="57" width="210" x="610" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p6z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p6v" parent="p6z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar los datos y la foto" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p6g" parent="p6z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Los datos y la foto son correctos?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p6f" parent="p6z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p6o" parent="p6z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar la mascota en la cuenta del dueño" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p6r" parent="p6z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Mascota registrada" vertex="1">
+          <mxGeometry height="60" width="210" x="880" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p6e" parent="p6z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p61" edge="1" parent="1" source="p6s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p6u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p62" edge="1" parent="1" source="p6u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p6v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p63" edge="1" parent="1" source="p6v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p6g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p64" edge="1" parent="1" source="p6g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p6f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p66" edge="1" parent="1" source="p6g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p6o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p67" edge="1" parent="1" source="p6o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p6e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yqi30ggfASFjoBGBY_i8-1" edge="1" parent="1" source="p6f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p6u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="381" />
+              <mxPoint x="260" y="150.5" />
+            </Array>
+            <mxPoint x="610" y="260" as="sourcePoint" />
+            <mxPoint x="260" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p7" name="Ver mascota">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p7t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver mascota" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p7a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p7s" parent="p7a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p7u" parent="p7a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Elegir una mascota" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p7i" parent="p7a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Mascota elegida" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p7z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p7v" parent="p7z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar que la mascota sea del dueño" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p7g" parent="p7z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La mascota pertenece al dueño?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p7f" parent="p7z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p7fe" parent="p7z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p7o" parent="p7z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar datos, consultas y recordatorios" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p7r" parent="p7z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Ficha de la mascota" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p7e" parent="p7z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p71" edge="1" parent="1" source="p7s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p7u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p72" edge="1" parent="1" source="p7u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p7v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p73" edge="1" parent="1" source="p7v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p7g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p74" edge="1" parent="1" source="p7g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p7f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p75" edge="1" parent="1" source="p7f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p7fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p76" edge="1" parent="1" source="p7g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p7o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p77" edge="1" parent="1" source="p7o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p7e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p8" name="Cambiar datos de mascota">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p8t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Cambiar datos de mascota" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p8a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p8s" parent="p8a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p8u" parent="p8a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Modificar los datos de la mascota" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p8i" parent="p8a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Datos nuevos y foto" vertex="1">
+          <mxGeometry height="57" width="252.5" x="567.5" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p8z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p8v" parent="p8z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar los cambios y la foto" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p8g" parent="p8z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Los cambios son correctos?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p8f" parent="p8z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p8o" parent="p8z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar los cambios de la mascota" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p8r" parent="p8z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Mascota actualizada" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p8e" parent="p8z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p81" edge="1" parent="1" source="p8s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p8u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p82" edge="1" parent="1" source="p8u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p8v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p83" edge="1" parent="1" source="p8v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p8g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p84" edge="1" parent="1" source="p8g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p8f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p86" edge="1" parent="1" source="p8g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p8o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p87" edge="1" parent="1" source="p8o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p8e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AHHM3dhuwpshz87mQDrw-2" edge="1" parent="1" source="p8f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p8u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="381" />
+              <mxPoint x="250" y="150.5" />
+            </Array>
+            <mxPoint x="250" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p9" name="Borrar mascotas">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p9t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Borrar mascota" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p9a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p9s" parent="p9a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p9u" parent="p9a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Pedir eliminar la mascota" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p9i" parent="p9a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Mascota elegida" vertex="1">
+          <mxGeometry height="57" width="275" x="545" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p9z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p9v" parent="p9z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar que la mascota sea del dueño" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p9g" parent="p9z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La mascota pertenece al dueño?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p9f" parent="p9z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="p9fe" parent="p9z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="p9o" parent="p9z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Borrar mascota, recordatorios y foto" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p9r" parent="p9z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Mascota eliminada" vertex="1">
+          <mxGeometry height="60" width="210" x="880" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p9e" parent="p9z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p91" edge="1" parent="1" source="p9s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p9u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p92" edge="1" parent="1" source="p9u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p9v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p93" edge="1" parent="1" source="p9v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p9g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p94" edge="1" parent="1" source="p9g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p9f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p95" edge="1" parent="1" source="p9f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p9fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p96" edge="1" parent="1" source="p9g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p9o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p97" edge="1" parent="1" source="p9o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p9e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p10" name="Ver panel del dueño">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p10t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver panel del dueño" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p10a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p10s" parent="p10a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p10u" parent="p10a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir mi panel" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p10i" parent="p10a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Sesión del dueño" vertex="1">
+          <mxGeometry height="57" width="275" x="545" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p10z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p10v" parent="p10z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Buscar mascotas, mensajes y tareas pendientes" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p10g" parent="p10z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El dueño inició sesión?" vertex="1">
+          <mxGeometry height="88" width="123.5" x="505.75" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p10f" parent="p10z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p10fe" parent="p10z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="707" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p10o" parent="p10z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar el resumen del dueño" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p10r" parent="p10z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Panel del dueño" vertex="1">
+          <mxGeometry height="60" width="240" x="850" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p10e" parent="p10z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p101" edge="1" parent="1" source="p10s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p10u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p102" edge="1" parent="1" source="p10u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p10v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p103" edge="1" parent="1" source="p10v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p10g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p104" edge="1" parent="1" source="p10g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p10f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p105" edge="1" parent="1" source="p10f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p10fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p106" edge="1" parent="1" source="p10g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p10o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p107" edge="1" parent="1" source="p10o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p10e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p11" name="Crear perfil de veterinario">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p11t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Crear perfil de veterinario" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p11a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p11s" parent="p11a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p11u" parent="p11a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Llenar o cambiar mi perfil profesional" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p11i" parent="p11a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Datos profesionales, foto y PDF" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p11z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p11v" parent="p11z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar datos, foto y certificado" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p11g" parent="p11z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La información está completa?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p11f" parent="p11z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p11o" parent="p11z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar el perfil del veterinario" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p11r" parent="p11z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Perfil profesional guardado" vertex="1">
+          <mxGeometry height="60" width="233" x="857" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p11e" parent="p11z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p111" edge="1" parent="1" source="p11s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p11u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p112" edge="1" parent="1" source="p11u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p11v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p113" edge="1" parent="1" source="p11v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p11g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p114" edge="1" parent="1" source="p11g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p11f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p116" edge="1" parent="1" source="p11g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p11o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p117" edge="1" parent="1" source="p11o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p11e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mEsdmAKAsuIlDnqLRG8R-2" edge="1" parent="1" source="p11f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p11u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="381" />
+              <mxPoint x="250" y="150.5" />
+            </Array>
+            <mxPoint x="270" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p12" name="Ver panel del veterinario">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p12t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver panel del veterinario" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p12a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p12s" parent="p12a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p12u" parent="p12a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir mi panel" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p12i" parent="p12a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Sesión del veterinario" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p12z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p12v" parent="p12z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Buscar consultas y datos del perfil" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p12g" parent="p12z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El veterinario tiene perfil?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p12f" parent="p12z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p12fe" parent="p12z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p12o" parent="p12z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar consultas pendientes y atendidas" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p12r" parent="p12z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Panel del veterinario" vertex="1">
+          <mxGeometry height="60" width="210" x="880" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p12e" parent="p12z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p121" edge="1" parent="1" source="p12s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p12u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p122" edge="1" parent="1" source="p12u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p12v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p123" edge="1" parent="1" source="p12v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p12g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p124" edge="1" parent="1" source="p12g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p12f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p125" edge="1" parent="1" source="p12f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p12fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p126" edge="1" parent="1" source="p12g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p12o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p127" edge="1" parent="1" source="p12o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p12e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p13" name="Buscar veterinarios">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p13t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Buscar veterinarios" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p13a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p13s" parent="p13a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p13u" parent="p13a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir la lista de veterinarios" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p13i" parent="p13a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Solicitud de búsqueda" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p13z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p13v" parent="p13z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Buscar perfiles y calificaciones" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p13g" parent="p13z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Hay veterinarios disponibles?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p13f" parent="p13z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p13fe" parent="p13z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p13o" parent="p13z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar los veterinarios disponibles" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p13r" parent="p13z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Lista de veterinarios" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p13e" parent="p13z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p131" edge="1" parent="1" source="p13s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p13u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p132" edge="1" parent="1" source="p13u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p13v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p133" edge="1" parent="1" source="p13v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p13g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p134" edge="1" parent="1" source="p13g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p13f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p135" edge="1" parent="1" source="p13f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p13fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p136" edge="1" parent="1" source="p13g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p13o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p137" edge="1" parent="1" source="p13o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p13e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p14" name="Ver información de un veterinario">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p14t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver información de un veterinario" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p14a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p14s" parent="p14a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p14u" parent="p14a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Elegir un veterinario" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p14i" parent="p14a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Veterinario elegido" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p14z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p14v" parent="p14z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Buscar su información y calificaciones" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p14g" parent="p14z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El veterinario existe?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p14f" parent="p14z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p14fe" parent="p14z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin" vertex="1">
+          <mxGeometry height="50" width="72" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p14o" parent="p14z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar la información del veterinario" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p14r" parent="p14z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Perfil y opiniones" vertex="1">
+          <mxGeometry height="60" width="233" x="857" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p14e" parent="p14z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p141" edge="1" parent="1" source="p14s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p14u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p142" edge="1" parent="1" source="p14u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p14v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p143" edge="1" parent="1" source="p14v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p14g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p144" edge="1" parent="1" source="p14g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p14f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p145" edge="1" parent="1" source="p14f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p14fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p146" edge="1" parent="1" source="p14g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p14o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p147" edge="1" parent="1" source="p14o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p14e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p15" name="Empezar una consulta">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p15t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Empezar una consulta" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p15a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p15s" parent="p15a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p15u" parent="p15a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Elegir veterinario y mascota" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p15i" parent="p15a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Veterinario y mascota" vertex="1">
+          <mxGeometry height="57" width="252.5" x="567.5" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p15z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p15v" parent="p15z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar veterinario y mascota" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p15g" parent="p15z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La mascota es del dueño y el veterinario existe?" vertex="1">
+          <mxGeometry height="88" width="112" x="510" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p15f" parent="p15z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p15fe" parent="p15z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p15o" parent="p15z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir una conversación nueva o anterior" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p15r" parent="p15z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Conversación disponible" vertex="1">
+          <mxGeometry height="60" width="233" x="857" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p15e" parent="p15z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p151" edge="1" parent="1" source="p15s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p15u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p152" edge="1" parent="1" source="p15u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p15v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p153" edge="1" parent="1" source="p15v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p15g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p154" edge="1" parent="1" source="p15g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p15f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p155" edge="1" parent="1" source="p15f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p15fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p156" edge="1" parent="1" source="p15g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p15o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p157" edge="1" parent="1" source="p15o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p15e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p16" name="Ver una conversación">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p16t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver una conversación" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p16a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño o veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p16s" parent="p16a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="170" y="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p16u" parent="p16a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Elegir una conversación" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p16i" parent="p16a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Conversación elegida" vertex="1">
+          <mxGeometry height="57" width="252.5" x="567.5" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p16z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p16v" parent="p16z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar que la persona participe en ella" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p16g" parent="p16z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La persona participa en el chat?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p16f" parent="p16z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p16fe" parent="p16z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p16o" parent="p16z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar mensajes y marcar los nuevos como leídos" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p16r" parent="p16z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Historial de mensajes" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p16e" parent="p16z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p161" edge="1" parent="1" source="p16s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p16u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p162" edge="1" parent="1" source="p16u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p16v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p163" edge="1" parent="1" source="p16v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p16g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p164" edge="1" parent="1" source="p16g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p16f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p165" edge="1" parent="1" source="p16f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p16fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p166" edge="1" parent="1" source="p16g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p16o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p167" edge="1" parent="1" source="p16o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p16e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p17" name="Enviar mensaje">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p17t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Enviar mensaje" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p17a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño o veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p17s" parent="p17a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p17u" parent="p17a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Escribir mensaje o adjuntar imagen" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p17i" parent="p17a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Texto e imagen" vertex="1">
+          <mxGeometry height="57" width="275" x="545" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p17z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p17v" parent="p17z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar mensaje, imagen y participante" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p17g" parent="p17z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El mensaje se puede enviar?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p17f" parent="p17z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p17fe" parent="p17z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p17o" parent="p17z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar mensaje y actualizar la consulta" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p17r" parent="p17z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Mensaje enviado" vertex="1">
+          <mxGeometry height="60" width="233" x="857" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p17e" parent="p17z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p171" edge="1" parent="1" source="p17s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p17u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p172" edge="1" parent="1" source="p17u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p17v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p173" edge="1" parent="1" source="p17v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p17g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p174" edge="1" parent="1" source="p17g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p17f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p175" edge="1" parent="1" source="p17f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p17fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p176" edge="1" parent="1" source="p17g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p17o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p177" edge="1" parent="1" source="p17o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p17e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p18" name="Organizar consulta">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p18t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Organizar consulta" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p18a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p18s" parent="p18a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p18u" parent="p18a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Elegir estado y prioridad" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p18i" parent="p18a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Estado y prioridad" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p18z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p18v" parent="p18z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar que el veterinario pueda cambiarla" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p18g" parent="p18z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Puede cambiar la consulta?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p18f" parent="p18z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p18fe" parent="p18z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin cambios" vertex="1">
+          <mxGeometry height="50" width="90" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p18o" parent="p18z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar estado y prioridad" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p18r" parent="p18z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Consulta organizada" vertex="1">
+          <mxGeometry height="60" width="240" x="850" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p18e" parent="p18z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p181" edge="1" parent="1" source="p18s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p18u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p182" edge="1" parent="1" source="p18u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p18v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p183" edge="1" parent="1" source="p18v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p18g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p184" edge="1" parent="1" source="p18g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p18f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p185" edge="1" parent="1" source="p18f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p18fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p186" edge="1" parent="1" source="p18g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p18o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p187" edge="1" parent="1" source="p18o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p18e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p19" name="Ver recordatorios">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p19t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver recordatorios" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p19a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p19s" parent="p19a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="41" as="geometry" />
+        </mxCell>
+        <mxCell id="p19u" parent="p19a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir recordatorios" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p19i" parent="p19a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Sesión del dueño" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p19z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p19v" parent="p19z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Buscar tareas de sus mascotas" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p19g" parent="p19z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El dueño inició sesión?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p19f" parent="p19z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p19fe" parent="p19z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p19o" parent="p19z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar tareas pendientes y realizadas" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p19r" parent="p19z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Lista de recordatorios" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p19e" parent="p19z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p191" edge="1" parent="1" source="p19s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p19u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p192" edge="1" parent="1" source="p19u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p19v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p193" edge="1" parent="1" source="p19v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p19g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p194" edge="1" parent="1" source="p19g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p19f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p195" edge="1" parent="1" source="p19f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p19fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p196" edge="1" parent="1" source="p19g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p19o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p197" edge="1" parent="1" source="p19o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p19e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p20" name="Crear recordatorio">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p20t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Crear recordatorio" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p20a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p20s" parent="p20a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p20u" parent="p20a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Llenar el recordatorio" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p20i" parent="p20a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Mascota, título, fecha y repetición" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p20z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p20v" parent="p20z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar mascota, fecha y tipo de cuidado" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p20g" parent="p20z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La información es correcta?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p20f" parent="p20z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p20fe" parent="p20z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p20o" parent="p20z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar el recordatorio" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p20r" parent="p20z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Recordatorio creado" vertex="1">
+          <mxGeometry height="60" width="240" x="850" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p20e" parent="p20z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p201" edge="1" parent="1" source="p20s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p20u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p202" edge="1" parent="1" source="p20u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p20v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p203" edge="1" parent="1" source="p20v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p20g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p204" edge="1" parent="1" source="p20g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p20f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p205" edge="1" parent="1" source="p20f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p20fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p206" edge="1" parent="1" source="p20g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p20o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p207" edge="1" parent="1" source="p20o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p20e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p21" name="Cambiar recordatorio">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p21t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Cambiar recordatorio" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p21a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p21s" parent="p21a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="p21u" parent="p21a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Modificar el recordatorio" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="33" as="geometry" />
+        </mxCell>
+        <mxCell id="p21i" parent="p21a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Datos nuevos" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p21z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p21v" parent="p21z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar que sea del dueño y de la mascota correspondiente y que los cambios sean correctos" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p21g" parent="p21z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Se puede guardar el cambio?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p21f" parent="p21z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p21o" parent="p21z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar los cambios" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p21r" parent="p21z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Recordatorio actualizado" vertex="1">
+          <mxGeometry height="60" width="233" x="857" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p21e" parent="p21z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p211" edge="1" parent="1" source="p21s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p21u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p212" edge="1" parent="1" source="p21u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p21v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p213" edge="1" parent="1" source="p21v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p21g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p214" edge="1" parent="1" source="p21g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p21f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p216" edge="1" parent="1" source="p21g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p21o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p217" edge="1" parent="1" source="p21o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p21e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sj4oN_It64a57eeLHrBN-2" edge="1" parent="1" source="p21f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p21u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="381" />
+              <mxPoint x="240" y="150.52" />
+            </Array>
+            <mxPoint x="780" y="50" as="sourcePoint" />
+            <mxPoint x="290" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p22" name="Completar recordatorio">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p22t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Completar recordatorio" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p22a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p22s" parent="p22a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="41" as="geometry" />
+        </mxCell>
+        <mxCell id="p22u" parent="p22a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Marcar tarea como realizada" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p22i" parent="p22a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Recordatorio elegido" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p22z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p22v" parent="p22z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar si se repite" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="37" as="geometry" />
+        </mxCell>
+        <mxCell id="p22g" parent="p22z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La tarea se repite?" vertex="1">
+          <mxGeometry height="88" width="112" x="510" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="p22f" parent="p22z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p22fe" parent="p22z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p22o" parent="p22z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Completar la tarea y crear la siguiente si es necesario" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p22r" parent="p22z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Tarea completada" vertex="1">
+          <mxGeometry height="60" width="233" x="857" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p22e" parent="p22z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p221" edge="1" parent="1" source="p22s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p22u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p222" edge="1" parent="1" source="p22u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p22v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p223" edge="1" parent="1" source="p22v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p22g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p224" edge="1" parent="1" source="p22g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p22f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p225" edge="1" parent="1" source="p22f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p22fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p226" edge="1" parent="1" source="p22g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p22o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p227" edge="1" parent="1" source="p22o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p22e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p23" name="Borrar recordatorio">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p23t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Borrar recordatorio" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p23a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p23s" parent="p23a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="41" as="geometry" />
+        </mxCell>
+        <mxCell id="p23u" parent="p23a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Solicitar eliminar el recordatorio" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p23i" parent="p23a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Recordatorio elegido" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p23z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p23v" parent="p23z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar que el recordatorio sea del dueño y la mascota correspondiente" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p23g" parent="p23z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El recordatorio pertenece al dueño y la mascota correspondiente?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p23f" parent="p23z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p23fe" parent="p23z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p23o" parent="p23z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Borrar el recordatorio" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p23r" parent="p23z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Recordatorio eliminado" vertex="1">
+          <mxGeometry height="60" width="240" x="850" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p23e" parent="p23z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p231" edge="1" parent="1" source="p23s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p23u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p232" edge="1" parent="1" source="p23u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p23v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p233" edge="1" parent="1" source="p23v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p23g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p234" edge="1" parent="1" source="p23g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p23f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p235" edge="1" parent="1" source="p23f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p23fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p236" edge="1" parent="1" source="p23g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p23o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p237" edge="1" parent="1" source="p23o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p23e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p24" name="Calificar veterinario">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p24t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Calificar veterinario" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p24a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño de mascota" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p24s" parent="p24a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p24u" parent="p24a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Elegir número de estrellas y escribir comentario" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p24i" parent="p24a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Estrellas y comentario" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p24z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p24v" parent="p24z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar si tuvo conversación con el veterinario y validar la calificación" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p24g" parent="p24z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Puede calificar al veterinario?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p24f" parent="p24z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p24fe" parent="p24z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin sin guardar" vertex="1">
+          <mxGeometry height="50" width="72" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p24o" parent="p24z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar en el perfil del veterinario" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p24r" parent="p24z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Calificación guardada" vertex="1">
+          <mxGeometry height="60" width="240" x="850" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p24e" parent="p24z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p241" edge="1" parent="1" source="p24s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p24u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p242" edge="1" parent="1" source="p24u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p24v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p243" edge="1" parent="1" source="p24v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p24g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p244" edge="1" parent="1" source="p24g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p24f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p245" edge="1" parent="1" source="p24f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p24fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p246" edge="1" parent="1" source="p24g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p24o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p247" edge="1" parent="1" source="p24o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p24e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p25" name="Ver mi cuenta &quot;tu perfil&quot;">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p25t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver mi cuenta &quot;Tu perfil&quot;" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p25a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño o veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p25s" parent="p25a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p25u" parent="p25a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir &quot;Tu perfin&quot;" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p25i" parent="p25a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Sesión del usuario" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p25z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p25v" parent="p25z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Buscar datos personales y calificaciones" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p25g" parent="p25z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿El usuario inició sesión?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p25f" parent="p25z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p25fe" parent="p25z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin" vertex="1">
+          <mxGeometry height="50" width="72" x="700" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p25o" parent="p25z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar los datos de su cuenta" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p25r" parent="p25z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Información de cuenta" vertex="1">
+          <mxGeometry height="60" width="210" x="880" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p25e" parent="p25z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p251" edge="1" parent="1" source="p25s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p25u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p252" edge="1" parent="1" source="p25u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p25v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p253" edge="1" parent="1" source="p25v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p25g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p254" edge="1" parent="1" source="p25g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p25f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p255" edge="1" parent="1" source="p25f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p25fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p256" edge="1" parent="1" source="p25g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p25o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p257" edge="1" parent="1" source="p25o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p25e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p26" name="Cambiar datos de mi cuenta">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p26t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Cambiar datos de mi cuenta" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p26a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño o veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p26s" parent="p26a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="41" as="geometry" />
+        </mxCell>
+        <mxCell id="p26u" parent="p26a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Modificar datos personales" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p26i" parent="p26a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Datos personales" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p26z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p26v" parent="p26z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar los datos y el correo" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p26g" parent="p26z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La información es correcta?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p26f" parent="p26z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p26o" parent="p26z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar cambios; pedir iniciar sesión si cambió el correo" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p26r" parent="p26z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Cuenta actualizada" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p26e" parent="p26z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p261" edge="1" parent="1" source="p26s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p26u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p262" edge="1" parent="1" source="p26u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p26v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p263" edge="1" parent="1" source="p26v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p26g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p264" edge="1" parent="1" source="p26g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p26f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p265" edge="1" parent="1" source="p26f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p26u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="381" />
+              <mxPoint x="270" y="149.5" />
+            </Array>
+            <mxPoint x="260" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p266" edge="1" parent="1" source="p26g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p26o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p267" edge="1" parent="1" source="p26o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p26e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p27" name="Cambiar contraseña">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p27t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Cambiar contraseña" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p27a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño o veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p27s" parent="p27a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="170" y="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p27u" parent="p27a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Escribir contraseña actual y nueva" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p27i" parent="p27a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Contraseña actual, nueva y confirmación" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p27z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p27v" parent="p27z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar las contraseñas" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p27g" parent="p27z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La contraseña actual y la nueva son correctas?" vertex="1">
+          <mxGeometry height="88" width="112" x="517" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p27f" parent="p27z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="505.5" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="p27o" parent="p27z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar la nueva contraseña protegida" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p27r" parent="p27z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Contraseña cambiada" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p27e" parent="p27z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p271" edge="1" parent="1" source="p27s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p27u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p272" edge="1" parent="1" source="p27u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p27v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p273" edge="1" parent="1" source="p27v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p27g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p274" edge="1" parent="1" source="p27g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p27f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p275" edge="1" parent="1" source="p27f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p27u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="380" />
+              <mxPoint x="270" y="149.5" />
+            </Array>
+            <mxPoint x="725" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p276" edge="1" parent="1" source="p27g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p27o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p277" edge="1" parent="1" source="p27o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p27e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p28" name="Eliminar mi cuenta">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p28t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Eliminar mi cuenta" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p28a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Dueño o veterinario" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p28s" parent="p28a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="160" y="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p28u" parent="p28a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Confirmar que quiere eliminar la cuenta" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p28i" parent="p28a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Contraseña de confirmación" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p28z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p28v" parent="p28z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar contraseña y restricciones" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p28g" parent="p28z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Se puede eliminar la cuenta?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p28f" parent="p28z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p28o" parent="p28z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Borrar cuenta, información y cerrar sesión" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p28r" parent="p28z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Cuenta eliminada" vertex="1">
+          <mxGeometry height="60" width="220" x="870" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p28e" parent="p28z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p281" edge="1" parent="1" source="p28s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p28u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p282" edge="1" parent="1" source="p28u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p28v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p283" edge="1" parent="1" source="p28v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p28g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p284" edge="1" parent="1" source="p28g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p28f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p285" edge="1" parent="1" source="p28f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p28u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="381" />
+              <mxPoint x="260" y="149.5" />
+            </Array>
+            <mxPoint x="725" y="381" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p286" edge="1" parent="1" source="p28g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p28o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p287" edge="1" parent="1" source="p28o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p28e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p29" name="Ver y buscar usuarios">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p29t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Ver y buscar usuarios" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p29a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Administrador" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p29s" parent="p29a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="41" as="geometry" />
+        </mxCell>
+        <mxCell id="p29u" parent="p29a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Abrir el panel y usar filtros" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p29i" parent="p29a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Tipo de usuario, búsqueda y página" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p29z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p29v" parent="p29z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar que sea administrador y buscar usuarios" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="37" as="geometry" />
+        </mxCell>
+        <mxCell id="p29g" parent="p29z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿Es administrador?" vertex="1">
+          <mxGeometry height="88" width="112" x="510" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="p29f" parent="p29z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p29fe" parent="p29z" style="ellipse;html=1;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;fontSize=10;" value="Fin" vertex="1">
+          <mxGeometry height="50" width="72" x="695" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="p29o" parent="p29z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Mostrar datos y cantidades de usuarios" vertex="1">
+          <mxGeometry height="68" width="185" x="704" y="37" as="geometry" />
+        </mxCell>
+        <mxCell id="p29r" parent="p29z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Usuarios y resumen" vertex="1">
+          <mxGeometry height="60" width="202.5" x="887.5" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p29e" parent="p29z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="962.75" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p291" edge="1" parent="1" source="p29s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p29u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p292" edge="1" parent="1" source="p29u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p29v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p293" edge="1" parent="1" source="p29v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p29g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p294" edge="1" parent="1" source="p29g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p29f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p295" edge="1" parent="1" source="p29f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p29fe" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p296" edge="1" parent="1" source="p29g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p29o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p297" edge="1" parent="1" source="p29o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p29e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p30" name="HU-30 - Gestionar administradores y descargar reporte">
+    <mxGraphModel dx="1261" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p30t" parent="1" style="text;html=1;fontSize=19;fontStyle=1;align=left;verticalAlign=middle;" value="Gestionar administradores y descargar reporte" vertex="1">
+          <mxGeometry height="32" width="1060" x="30" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="p30a" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Administrador" vertex="1">
+          <mxGeometry height="140" width="1090" x="30" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p30s" parent="p30a" style="ellipse;html=1;aspect=fixed;fillColor=#E2F0D9;strokeColor=#70AD47;strokeWidth=2;" value="Inicio" vertex="1">
+          <mxGeometry height="52" width="52" x="155" y="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="p30u" parent="p30a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Crear, eliminar administrador o pedir reporte" vertex="1">
+          <mxGeometry height="70" width="175" x="265" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p30i" parent="p30a" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Entrada: Datos de administrador o filtros" vertex="1">
+          <mxGeometry height="57" width="315" x="505" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p30z" parent="1" style="swimlane;html=1;horizontal=0;startSize=130;fillColor=#FFFFFF;swimlaneFillColor=#F2F2F2;strokeColor=#7F7F7F;fontStyle=1;" value="Aplicación Zoi" vertex="1">
+          <mxGeometry height="245" width="1090" x="30" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="p30v" parent="p30z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Revisar datos y permisos" vertex="1">
+          <mxGeometry height="68" width="175" x="265" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p30g" parent="p30z" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=10;" value="¿La operación se puede realizar?" vertex="1">
+          <mxGeometry height="88" width="112" x="511.5" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p30f" parent="p30z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Mostrar aviso" vertex="1">
+          <mxGeometry height="42" width="135" x="500" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p30o" parent="p30z" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0070C0;fontSize=11;" value="Guardar el cambio o crear el archivo Excel" vertex="1">
+          <mxGeometry height="68" width="185" x="705" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p30r" parent="p30z" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=10;" value="Salida: Administrador gestionado o reporte Excel" vertex="1">
+          <mxGeometry height="60" width="280" x="810" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="p30e" parent="p30z" style="ellipse;html=1;aspect=fixed;fillColor=#FCE4D6;strokeColor=#C00000;strokeWidth=2;" value="Fin" vertex="1">
+          <mxGeometry height="52" width="52" x="970" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="p301" edge="1" parent="1" source="p30s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p30u" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p302" edge="1" parent="1" source="p30u" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p30v" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p303" edge="1" parent="1" source="p30v" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p30g" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p304" edge="1" parent="1" source="p30g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p30f" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p305" edge="1" parent="1" source="p30f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="p30u" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="381" />
+              <mxPoint x="260" y="149.5" />
+            </Array>
+            <mxPoint x="725" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p306" edge="1" parent="1" source="p30g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p30o" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p307" edge="1" parent="1" source="p30o" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="p30e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

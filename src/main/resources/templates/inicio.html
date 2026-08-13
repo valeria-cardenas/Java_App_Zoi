@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoi | Inicio - Cuidado de Mascotas</title>
+    <link rel="stylesheet" th:href="@{/css/proposito.css}">
+    <link rel="stylesheet" th:href="@{/css/inicio.css}">
+    <link rel="stylesheet" th:href="@{/css/valores.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-pages.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="zoi-page">
+
+<header class="site-header">
+    <div class="logo-zoi">
+        <a th:href="@{/}"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
+    </div>
+    <nav class="main-nav">
+        <a th:href="@{/}" class="active-link">Inicio</a>
+        <a th:href="@{/proposito}">Propósito</a>
+        <a th:href="@{/beneficios}">Beneficios</a>
+        <a th:href="@{/valores}">Valores</a>
+    </nav>
+    <div class="auth-buttons">
+        <a th:href="@{/login}" class="btn-secondary">Iniciar Sesión</a>
+        <a th:href="@{/registro}" class="btn-primary">Regístrate</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Información Segura, Mascota Feliz.</h1>
+        <p class="slogan">Tu plataforma digital para organizar la información y cuidar la salud de tus compañeros.</p>
+        <a th:href="@{/registro}" class="btn-primary-hero-btn">¡Comienza Aquí! Crea el Perfil de tu
+            Mascota</a>
+    </div>
+    <div class="hero-image">
+        <img th:src="@{/img/animales3.png}" alt="animales" class="hero-image">
+    </div>
+</section>
+
+<section class="key-features">
+    <h2>¿Qué hace Zoi por ti?</h2>
+    <p class="key-subtitle">Diseñada para simplificar el cuidado y ofrecer tranquilidad en cada etapa de la vida de
+        tu mascota.</p>
+
+    <div class="features-grid">
+
+        <div class="feature-item">
+            <i class="fas fa-question-circle feature-icon"></i>
+            <h3 class="feature-title">Consultas Verificadas</h3>
+            <p>Accede a información segura y verificada sobre salud, alimentación y cuidado general.</p>
+        </div>
+
+        <div class="feature-item">
+            <i class="fas fa-id-card feature-icon"></i>
+            <h3 class="feature-title">Perfil Único por Mascota</h3>
+            <p>Crea un perfil detallado para cada compañero, organizando sus registros, historia y preferencias
+                individuales.</p>
+        </div>
+
+        <div class="feature-item">
+            <i class="fas fa-calendar-alt feature-icon"></i>
+            <h3 class="feature-title">Recordatorios Esenciales</h3>
+            <p>Configura alertas automáticas para vacunas, citas veterinarias y desparasitaciones pendientes.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-secondary">
+    <div class="cta-card">
+        <i class="fas fa-file-medical cta-icon"></i>
+        <h3>Tu Registro Médico Centralizado</h3>
+        <p>Lleva un control completo de vacunas, peso, desparasitaciones, tratamientos y comparte la ficha
+            fácilmente con tu veterinario.</p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <p>© 2026 Zoi - Con cariño para tus mascotas | Plataforma Digital de Cuidado</p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoi - Perfil veterinario</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+</head>
+<body class="zoi-ui">
+<header class="profile-header">
+    <a th:href="@{/veterinario/home}" class="header-logo-link">
+        <img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img">
+    </a>
+    <nav><a th:href="@{/veterinario/home}">← Panel veterinario</a></nav>
+</header>
+<main class="profile-main">
+    <section class="form-panel wide-panel">
+        <h1>Perfil veterinario</h1>
+        <p class="form-hint">Completa tu información profesional. Los datos se mostrarán de forma organizada en tu perfil público.</p>
+        <div th:if="${errorPerfil}" class="form-error" th:text="${errorPerfil}">Error</div>
+
+        <form th:action="@{/veterinario/perfil}" method="post" enctype="multipart/form-data"
+              class="stack-form detail-form" data-zoi-validate>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+            <fieldset>
+                <legend>Identidad profesional</legend>
+                <div class="image-upload full-field">
+                    <div class="image-preview-frame round-preview">
+                        <img id="fotoPreview" th:if="${perfil.fotoUrl}" th:src="${perfil.fotoUrl}"
+                             alt="Foto de perfil actual">
+                        <div id="fotoPlaceholder" th:classappend="${perfil.fotoUrl} ? ' is-hidden' : ''">Perfil</div>
+                    </div>
+                    <label>Foto de perfil
+                        <input id="fotoInput" type="file" name="foto" accept="image/png,image/jpeg,image/webp,image/gif"
+                               th:required="${perfil.fotoUrl == null or #strings.isEmpty(perfil.fotoUrl)}"
+                               data-max-bytes="5242880" data-file-types="image/png,image/jpeg,image/webp,image/gif"
+                               data-size-error="La imagen no puede superar 5 MB."
+                               data-error="Usa una imagen PNG, JPG, WebP o GIF.">
+                        <small>Usa una foto clara. PNG, JPG, WebP o GIF; maximo 5 MB.</small>
+                    </label>
+                </div>
+                <label>Especialidad
+                    <input type="text" name="especialidad" th:value="${perfil.especialidad}"
+                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,80}" maxlength="80"
+                           data-error="Usa solo letras y espacios." required>
+                </label>
+
+                <label>Numero de documento
+                    <input type="text" name="numeroDocumento" th:value="${perfil.numeroDocumento}"
+                           pattern="[0-9]{5,30}" maxlength="30" data-error="Usa entre 5 y 30 números." required>
+                </label>
+
+                <label class="full-field">Tarjeta profesional
+                    <input type="text" name="tarjetaProfesional" th:value="${perfil.tarjetaProfesional}"
+                           pattern="[A-Za-z0-9 -]{3,80}" title="Letras, numeros, espacios y guiones" required>
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Formación y credenciales</legend>
+                <div class="document-upload full-field">
+                    <div class="document-icon">PDF</div>
+                    <div>
+                        <label>Título o certificado profesional
+                            <input id="tituloPdfInput" type="file" name="tituloPdf" accept="application/pdf,.pdf"
+                                   th:required="${perfil.tituloUrl == null or #strings.isEmpty(perfil.tituloUrl)}"
+                                   data-max-bytes="10485760" data-file-types="application/pdf"
+                                   data-size-error="El PDF no puede superar 10 MB."
+                                   data-error="Selecciona un archivo PDF válido.">
+                            <small>Documento PDF de máximo 10 MB.</small>
+                        </label>
+                        <a th:if="${perfil.tituloUrl}" th:href="${perfil.tituloUrl}"
+                           class="current-document" target="_blank" rel="noopener">
+                            Ver documento guardado
+                        </a>
+                        <p id="documentName" class="selected-document" aria-live="polite"></p>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Presentacion</legend>
+                <label>Experiencia
+                    <input type="text" name="experiencia" th:value="${perfil.experiencia}" maxlength="120"
+                           data-error="Máximo 120 caracteres." placeholder="5 años en medicina felina" required>
+                </label>
+
+                <label>Telefono
+                    <input type="tel" name="telefono" th:value="${perfil.telefono}"
+                           pattern="[0-9 +()\-]{7,20}" maxlength="20" data-error="Ingresa un teléfono válido." required>
+                </label>
+
+                <label>Clínica veterinaria
+                    <input type="text" name="clinica" th:value="${perfil.clinica}" placeholder="Nombre de la clínica veterinaria"
+                           required pattern="[^0-9]{2,120}">
+                </label>
+
+                <label>Ubicación en Bogotá
+                    <select name="localidad" required data-error="Selecciona la localidad donde atiendes.">
+                        <option value="">Selecciona una localidad</option>
+                        <option th:each="opcion:${localidades}" th:value="${opcion}" th:text="${opcion}"
+                                th:selected="${perfil.localidad == opcion}"></option>
+                    </select>
+                    <small>Indica la localidad principal donde prestas tus servicios.</small>
+                </label>
+
+                <label class="full-field">Descripcion profesional
+                    <textarea name="descripcion" maxlength="800" th:text="${perfil.descripcion}"
+                              placeholder="Resumen de experiencia, enfoque clinico y servicios." required></textarea>
+                </label>
+            </fieldset>
+
+            <button type="submit" class="zoi-btn-primary">Guardar perfil</button>
+        </form>
+    </section>
+</main>
+<script th:src="@{/js/zoi-validation.js}"></script>
+<script>
+    const fotoInput = document.getElementById('fotoInput');
+    const fotoPreview = document.getElementById('fotoPreview');
+    const fotoPlaceholder = document.getElementById('fotoPlaceholder');
+    fotoInput.addEventListener('change', () => {
+        const archivo = fotoInput.files[0];
+        if (!archivo) return;
+        const url = URL.createObjectURL(archivo);
+        if (fotoPreview) {
+            fotoPreview.src = url;
+            fotoPreview.hidden = false;
+        } else {
+            const imagen = document.createElement('img');
+            imagen.id = 'fotoPreview';
+            imagen.src = url;
+            imagen.alt = 'Vista previa del perfil';
+            fotoPlaceholder.parentElement.prepend(imagen);
+        }
+        fotoPlaceholder.classList.add('is-hidden');
+    });
+    const tituloPdfInput = document.getElementById('tituloPdfInput');
+    const documentName = document.getElementById('documentName');
+    tituloPdfInput.addEventListener('change', () => {
+        const archivo = tituloPdfInput.files[0];
+        documentName.textContent = archivo ? `Seleccionado: ${archivo.name}` : '';
+    });
+</script>
+</body>
+</html>

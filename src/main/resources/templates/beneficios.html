@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoi - Beneficios y Funcionalidades</title>
+    <link rel="stylesheet" th:href="@{/css/proposito.css}">
+    <link rel="stylesheet" th:href="@{/css/valores.css}">
+    <link rel="stylesheet" th:href="@{/css/zoi-pages.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="zoi-page">
+
+<header class="site-header">
+    <div class="logo-zoi">
+        <a th:href="@{/}"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
+    </div>
+    <nav class="main-nav">
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/proposito}">Propósito</a>
+        <a th:href="@{/beneficios}" class="active-link">Beneficios</a>
+        <a th:href="@{/valores}">Valores</a>
+    </nav>
+    <div class="auth-buttons">
+        <a th:href="@{/login}" class="btn-secondary">Iniciar Sesión</a>
+        <a th:href="@{/registro}" class="btn-primary">Regístrate</a>
+    </div>
+</header>
+
+<main class="benefits-container">
+    <h1 class="main-title">Funcionalidades Clave para el Cuidado Diario</h1>
+    <p class="subtitle">Zoi te ofrece las herramientas más sencillas y confiables para que la salud y el bienestar de tu
+        mascota nunca sean una preocupación.</p>
+
+    <section class="benefits-grid">
+
+        <div class="benefit-card">
+            <i class="fas fa-paw benefit-icon" aria-hidden="true"></i>
+            <h3 class="card-title">Perfil completo de cada una de tus mascotas</h3>
+            <p class="card-description">Registra información como especie, raza, edad, tipo de sangre, vacunas,
+                enfermedades y antecedentes.</p>
+        </div>
+
+        <div class="benefit-card">
+            <i class="fas fa-notes-medical benefit-icon" aria-hidden="true"></i>
+            <h3 class="card-title">Historial de salud organizado</h3>
+            <p class="card-description">Consulta en un solo lugar las vacunas, enfermedades, antecedentes y diagnosticos
+                de cada mascota.</p>
+        </div>
+
+        <div class="benefit-card">
+            <i class="fas fa-comments benefit-icon" aria-hidden="true"></i>
+            <h3 class="card-title">Comunicación directa con veterinarios</h3>
+            <p class="card-description">Permite realizar consultas mediante un chat asociado específicamente a cada
+                mascota.</p>
+        </div>
+
+        <div class="benefit-card">
+            <i class="fas fa-clipboard-check benefit-icon" aria-hidden="true"></i>
+            <h3 class="card-title">Seguimiento de las consultas veterinarias</h3>
+            <p class="card-description">Conserva las conversaciones relacionadas con los veterinarios para facilitar el
+                seguimiento de cada caso.</p>
+        </div>
+
+        <div class="benefit-card">
+            <i class="fas fa-bell benefit-icon" aria-hidden="true"></i>
+            <h3 class="card-title">Recordatorios para el cuidado</h3>
+            <p class="card-description">Permite programar actividades como alimentacion, baños, vacunas, desparacitación
+                o citas con fecha, hora y repetición.</p>
+        </div>
+
+        <div class="benefit-card">
+            <i class="fas fa-user-doctor benefit-icon" aria-hidden="true"></i>
+            <h3 class="card-title">Selección y valoracion de veterinarios</h3>
+            <p class="card-description">Permite consultar perfiles profesionales, conocer su especialidad, expericia y
+                calificarlos despues de una consulta. </p>
+        </div>
+
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; Zoi - Con cariño para tus mascotas | Plataforma Digital de Cuidado</p>
+</footer>
+
+</body>
+</html>
