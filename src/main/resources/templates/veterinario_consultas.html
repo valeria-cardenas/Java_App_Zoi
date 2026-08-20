@@ -1,57 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Consultas | Zoi</title>
-    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
-    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
-    <link rel="stylesheet" th:href="@{/css/veterinario-consultas.css}">
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/veterinario-consultas.css}"/>
 </head>
 <body class="zoi-ui">
 <header class="profile-header">
-    <a th:href="@{/veterinario/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
-    <nav><a th:href="@{/veterinario/home}">Volver al panel</a><a th:href="@{/veterinario/mi-perfil}">Tu perfil</a></nav>
+    <a th:href="@{/veterinario/home}" class="header-logo-link"
+    ><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"
+    /></a>
+    <nav>
+        <a th:href="@{/veterinario/home}">Volver al panel</a
+        ><a th:href="@{/veterinario/mi-perfil}">Tu perfil</a>
+    </nav>
 </header>
 
 <main class="consult-page">
     <section class="consult-hero">
-        <div><p class="eyebrow">Centro de atención</p><h1>Consultas de tus pacientes</h1><p>Revisa primero las preguntas pendientes y accede al perfil de la mascota desde cada conversación.</p></div>
+        <div>
+            <p class="eyebrow">Centro de atención</p>
+            <h1>Consultas de tus pacientes</h1>
+            <p>
+                Revisa primero las preguntas pendientes y accede al perfil de la
+                mascota desde cada conversación.
+            </p>
+        </div>
         <div class="consult-summary" th:if="${perfil != null}">
-            <div class="pending"><strong th:text="${#lists.size(pendientes)}">0</strong><span>Por responder</span></div>
-            <div><strong th:text="${#lists.size(atendidas)}">0</strong><span>Atendidas</span></div>
-            <div><strong th:text="${totalMascotas}">0</strong><span>Mascotas</span></div>
+            <div class="pending">
+                <strong th:text="${#lists.size(pendientes)}">0</strong
+                ><span>Por responder</span>
+            </div>
+            <div>
+                <strong th:text="${#lists.size(atendidas)}">0</strong
+                ><span>Atendidas</span>
+            </div>
+            <div>
+                <strong th:text="${totalMascotas}">0</strong><span>Mascotas</span>
+            </div>
         </div>
     </section>
 
     <section class="profile-warning" th:if="${perfil == null}">
-        <div><h2>Completa tu perfil profesional</h2><p>Debes completar tus datos antes de recibir consultas.</p></div>
-        <a class="zoi-btn-primary" th:href="@{/veterinario/perfil}">Completar perfil</a>
+        <div>
+            <h2>Completa tu perfil profesional</h2>
+            <p>Debes completar tus datos antes de recibir consultas.</p>
+        </div>
+        <a class="zoi-btn-primary" th:href="@{/veterinario/perfil}"
+        >Completar perfil</a
+        >
     </section>
 
     <div class="consult-columns" th:if="${perfil != null}">
         <section class="consult-section pending-section">
-            <div class="consult-heading"><div><p class="eyebrow">Prioridad de atención</p><h2>Por responder</h2></div><span th:text="${#lists.size(pendientes)}">0</span></div>
+            <div class="consult-heading">
+                <div>
+                    <p class="eyebrow">Prioridad de atención</p>
+                    <h2>Por responder</h2>
+                </div>
+                <span th:text="${#lists.size(pendientes)}">0</span>
+            </div>
             <div class="consult-list" th:if="${!#lists.isEmpty(pendientes)}">
-                <article class="consult-card waiting" th:each="consulta:${pendientes}">
-                    <div class="consult-pet"><img th:if="${consulta.mascota.fotoUrl}" th:src="${consulta.mascota.fotoUrl}" th:alt="${consulta.mascota.nombre}"><span th:unless="${consulta.mascota.fotoUrl}" th:text="${#strings.substring(consulta.mascota.nombre,0,1)}">M</span></div>
-                    <div class="consult-info"><div class="consult-title"><h3 th:text="${consulta.mascota.nombre}">Mascota</h3><span>Esperando respuesta</span></div><p th:text="${consulta.mascota.especie+(consulta.mascota.raza != null and !#strings.isEmpty(consulta.mascota.raza) ? ' · '+consulta.mascota.raza : '')}"></p><small th:text="${'Dueño: '+consulta.dueno.nombre+' '+consulta.dueno.apellido}"></small><time th:text="${#temporals.format(consulta.actualizadaEn,'dd/MM/yyyy · HH:mm')}"></time></div>
-                    <a class="zoi-btn-primary" th:href="@{/chat/{id}(id=${consulta.id})}">Responder</a>
+                <article
+                        class="consult-card waiting"
+                        th:each="consulta:${pendientes}"
+                >
+                    <div class="consult-pet">
+                        <img
+                                th:if="${consulta.mascota.fotoUrl}"
+                                th:src="${consulta.mascota.fotoUrl}"
+                                th:alt="${consulta.mascota.nombre}"
+                        /><span
+                            th:unless="${consulta.mascota.fotoUrl}"
+                            th:text="${#strings.substring(consulta.mascota.nombre,0,1)}"
+                    >M</span
+                    >
+                    </div>
+                    <div class="consult-info">
+                        <div class="consult-title">
+                            <h3 th:text="${consulta.mascota.nombre}">Mascota</h3>
+                            <span>Esperando respuesta</span>
+                        </div>
+                        <p
+                                th:text="${consulta.mascota.especie+(consulta.mascota.raza != null and !#strings.isEmpty(consulta.mascota.raza) ? ' · '+consulta.mascota.raza : '')}"
+                        ></p>
+                        <small
+                                th:text="${'Dueño: '+consulta.dueno.nombre+' '+consulta.dueno.apellido}"
+                        ></small
+                        >
+                        <time
+                                th:text="${#temporals.format(consulta.actualizadaEn,'dd/MM/yyyy · HH:mm')}"
+                        ></time>
+                    </div>
+                    <a
+                            class="zoi-btn-primary"
+                            th:href="@{/chat/{id}(id=${consulta.id})}"
+                    >Responder</a
+                    >
                 </article>
             </div>
-            <div class="consult-empty" th:if="${#lists.isEmpty(pendientes)}"><span>✓</span><h3>Todo está al día</h3><p>No tienes preguntas pendientes por responder.</p></div>
+            <div class="consult-empty" th:if="${#lists.isEmpty(pendientes)}">
+                <span>✓</span>
+                <h3>Todo está al día</h3>
+                <p>No tienes preguntas pendientes por responder.</p>
+            </div>
         </section>
 
         <section class="consult-section">
-            <div class="consult-heading"><div><p class="eyebrow">Seguimiento</p><h2>Atendidas</h2></div><span th:text="${#lists.size(atendidas)}">0</span></div>
+            <div class="consult-heading">
+                <div>
+                    <p class="eyebrow">Seguimiento</p>
+                    <h2>Atendidas</h2>
+                </div>
+                <span th:text="${#lists.size(atendidas)}">0</span>
+            </div>
             <div class="consult-list" th:if="${!#lists.isEmpty(atendidas)}">
                 <article class="consult-card" th:each="consulta:${atendidas}">
-                    <div class="consult-pet"><img th:if="${consulta.mascota.fotoUrl}" th:src="${consulta.mascota.fotoUrl}" th:alt="${consulta.mascota.nombre}"><span th:unless="${consulta.mascota.fotoUrl}" th:text="${#strings.substring(consulta.mascota.nombre,0,1)}">M</span></div>
-                    <div class="consult-info"><div class="consult-title"><h3 th:text="${consulta.mascota.nombre}">Mascota</h3><span>Atendida</span></div><p th:text="${consulta.mascota.especie+(consulta.mascota.raza != null and !#strings.isEmpty(consulta.mascota.raza) ? ' · '+consulta.mascota.raza : '')}"></p><small th:text="${'Dueño: '+consulta.dueno.nombre+' '+consulta.dueno.apellido}"></small><time th:text="${#temporals.format(consulta.actualizadaEn,'dd/MM/yyyy · HH:mm')}"></time></div>
-                    <a class="zoi-btn-secondary" th:href="@{/chat/{id}(id=${consulta.id})}">Ver conversación</a>
+                    <div class="consult-pet">
+                        <img
+                                th:if="${consulta.mascota.fotoUrl}"
+                                th:src="${consulta.mascota.fotoUrl}"
+                                th:alt="${consulta.mascota.nombre}"
+                        /><span
+                            th:unless="${consulta.mascota.fotoUrl}"
+                            th:text="${#strings.substring(consulta.mascota.nombre,0,1)}"
+                    >M</span
+                    >
+                    </div>
+                    <div class="consult-info">
+                        <div class="consult-title">
+                            <h3 th:text="${consulta.mascota.nombre}">Mascota</h3>
+                            <span>Atendida</span>
+                        </div>
+                        <p
+                                th:text="${consulta.mascota.especie+(consulta.mascota.raza != null and !#strings.isEmpty(consulta.mascota.raza) ? ' · '+consulta.mascota.raza : '')}"
+                        ></p>
+                        <small
+                                th:text="${'Dueño: '+consulta.dueno.nombre+' '+consulta.dueno.apellido}"
+                        ></small
+                        >
+                        <time
+                                th:text="${#temporals.format(consulta.actualizadaEn,'dd/MM/yyyy · HH:mm')}"
+                        ></time>
+                    </div>
+                    <a
+                            class="zoi-btn-secondary"
+                            th:href="@{/chat/{id}(id=${consulta.id})}"
+                    >Ver conversación</a
+                    >
                 </article>
             </div>
-            <div class="consult-empty" th:if="${#lists.isEmpty(atendidas)}"><span>💬</span><h3>Aún no hay consultas atendidas</h3><p>Las conversaciones respondidas aparecerán aquí.</p></div>
+            <div class="consult-empty" th:if="${#lists.isEmpty(atendidas)}">
+                <span>💬</span>
+                <h3>Aún no hay consultas atendidas</h3>
+                <p>Las conversaciones respondidas aparecerán aquí.</p>
+            </div>
         </section>
     </div>
 </main>

@@ -13,7 +13,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.security.Principal;
 import java.time.LocalDate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -48,32 +47,31 @@ public class PerfilController {
 
     private final SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
 
-    @Autowired
-    private UsuarioRepositorio usuarioRepository;
+    private final UsuarioRepositorio usuarioRepository;
+    private final MascotaRepositorio mascotaRepository;
+    private final VeterinarioPerfilRepositorio veterinarioPerfilRepository;
+    private final AlmacenamientoImagenService almacenamientoImagenService;
+    private final AlmacenamientoDocumentoService almacenamientoDocumentoService;
+    private final com.appzoi.appzoi.repository.ConversacionRepositorio conversacionRepository;
+    private final com.appzoi.appzoi.repository.MensajeRepositorio mensajeRepository;
+    private final com.appzoi.appzoi.repository.RecordatorioRepositorio recordatorioRepository;
 
-    @Autowired
-    private MascotaRepositorio mascotaRepository;
-
-    @Autowired
-    private VeterinarioPerfilRepositorio veterinarioPerfilRepository;
-
-    @Autowired
-    private AlmacenamientoImagenService almacenamientoImagenService;
-
-    @Autowired
-    private AlmacenamientoDocumentoService almacenamientoDocumentoService;
-
-    @Autowired
-    private com.appzoi.appzoi.repository.ConversacionRepositorio conversacionRepository;
-
-    @Autowired
-    private com.appzoi.appzoi.repository.MensajeRepositorio mensajeRepository;
-
-    @Autowired
-    private com.appzoi.appzoi.repository.RecordatorioRepositorio recordatorioRepository;
-
-    @Autowired
-    private com.appzoi.appzoi.repository.CalificacionVeterinarioRepositorio calificacionRepository;
+    public PerfilController(UsuarioRepositorio usuarioRepository, MascotaRepositorio mascotaRepository,
+            VeterinarioPerfilRepositorio veterinarioPerfilRepository,
+            AlmacenamientoImagenService almacenamientoImagenService,
+            AlmacenamientoDocumentoService almacenamientoDocumentoService,
+            com.appzoi.appzoi.repository.ConversacionRepositorio conversacionRepository,
+            com.appzoi.appzoi.repository.MensajeRepositorio mensajeRepository,
+            com.appzoi.appzoi.repository.RecordatorioRepositorio recordatorioRepository) {
+        this.usuarioRepository = usuarioRepository;
+        this.mascotaRepository = mascotaRepository;
+        this.veterinarioPerfilRepository = veterinarioPerfilRepository;
+        this.almacenamientoImagenService = almacenamientoImagenService;
+        this.almacenamientoDocumentoService = almacenamientoDocumentoService;
+        this.conversacionRepository = conversacionRepository;
+        this.mensajeRepository = mensajeRepository;
+        this.recordatorioRepository = recordatorioRepository;
+    }
 
     @GetMapping("/seleccionar-perfil")
     public String seleccionarPerfil() {
@@ -315,17 +313,6 @@ public class PerfilController {
         return "redirect:/dueno/home";
     }
 
-    @GetMapping("/dueno/home")
-    public String homeDueno(Model model, Principal principal) {
-        UsuarioEntity dueno = obtenerUsuario(principal);
-        model.addAttribute("usuario", dueno);
-        model.addAttribute("mascotas", mascotaRepository.findByDueno(dueno));
-        model.addAttribute("totalMascotas", mascotaRepository.countByDueno(dueno));
-        model.addAttribute("conversaciones", conversacionRepository.findByDuenoOrderByActualizadaEnDesc(dueno));
-        model.addAttribute("recordatoriosVencidos", recordatorioRepository.countByMascotaDuenoAndCompletadoFalseAndFechaHoraBefore(dueno, java.time.LocalDateTime.now()));
-        return "dueno_home";
-    }
-
     @GetMapping("/veterinario/perfil")
     public String perfilVeterinario(Model model, Principal principal) {
         UsuarioEntity usuario = obtenerUsuario(principal);
@@ -422,70 +409,6 @@ public class PerfilController {
 
         redirectAttributes.addFlashAttribute("successPerfil", "Perfil veterinario guardado correctamente.");
         return "redirect:/veterinario/mi-perfil";
-    }
-
-    @GetMapping("/veterinario/home")
-    public String homeVeterinario(Model model, Principal principal) {
-        UsuarioEntity usuario = obtenerUsuario(principal);
-        model.addAttribute("usuario", usuario);
-        VeterinarioPerfilEntity perfil = veterinarioPerfilRepository.findByUsuario(usuario).orElse(null);
-        model.addAttribute("perfil", perfil);
-        if (perfil != null) {
-            java.util.List<com.appzoi.appzoi.model.ConversacionEntity> conversaciones =
-                    conversacionRepository.findByVeterinarioOrderByPendienteVeterinarioDescActualizadaEnDesc(perfil);
-            model.addAttribute("conversaciones", conversaciones);
-            model.addAttribute("pendientes", conversacionRepository.countByVeterinarioAndPendienteVeterinarioTrue(perfil));
-            model.addAttribute("totalConsultas", conversaciones.size());
-            model.addAttribute("totalMascotas", conversaciones.stream().map(c -> c.getMascota().getId()).distinct().count());
-            model.addAttribute("consultasSemana", conversaciones.stream()
-                    .filter(c -> c.getActualizadaEn() != null && c.getActualizadaEn().isAfter(java.time.LocalDateTime.now().minusDays(7)))
-                    .count());
-            model.addAttribute("recientes", conversaciones.stream().limit(3).toList());
-            model.addAttribute("proximaConsulta", conversaciones.stream()
-                    .filter(com.appzoi.appzoi.model.ConversacionEntity::isPendienteVeterinario)
-                    .min(java.util.Comparator.comparing(com.appzoi.appzoi.model.ConversacionEntity::getActualizadaEn))
-                    .orElse(null));
-            java.util.List<com.appzoi.appzoi.model.CalificacionVeterinarioEntity> calificaciones =
-                    calificacionRepository.findByVeterinarioOrderByActualizadaEnDesc(perfil);
-            model.addAttribute("promedio", calificacionRepository.promedio(perfil));
-            model.addAttribute("totalCalificaciones", calificaciones.size());
-            model.addAttribute("ultimaCalificacion", calificaciones.isEmpty() ? null : calificaciones.get(0));
-            model.addAttribute("porcentajePerfil", porcentajePerfilVeterinario(perfil));
-        }
-        return "veterinario_home";
-    }
-
-    private int porcentajePerfilVeterinario(VeterinarioPerfilEntity perfil) {
-        java.util.List<String> datos = java.util.Arrays.asList(
-                perfil.getEspecialidad(), perfil.getNumeroDocumento(), perfil.getExperiencia(),
-                perfil.getDescripcion(), perfil.getFotoUrl(), perfil.getTituloUrl(),
-                perfil.getTarjetaProfesional(), perfil.getClinica(), perfil.getLocalidad(), perfil.getTelefono());
-        long completos = datos.stream().filter(dato -> dato != null && !dato.isBlank()).count();
-        return (int) (completos * 100 / datos.size());
-    }
-
-    @GetMapping("/veterinario/consultas")
-    public String consultasVeterinario(Model model, Principal principal) {
-        UsuarioEntity usuario = obtenerUsuario(principal);
-        VeterinarioPerfilEntity perfil = veterinarioPerfilRepository.findByUsuario(usuario).orElse(null);
-        model.addAttribute("usuario", usuario);
-        model.addAttribute("perfil", perfil);
-        if (perfil == null) {
-            model.addAttribute("pendientes", java.util.List.of());
-            model.addAttribute("atendidas", java.util.List.of());
-            return "veterinario_consultas";
-        }
-
-        java.util.List<com.appzoi.appzoi.model.ConversacionEntity> conversaciones =
-                conversacionRepository.findByVeterinarioOrderByPendienteVeterinarioDescActualizadaEnDesc(perfil);
-        model.addAttribute("pendientes", conversaciones.stream()
-                .filter(com.appzoi.appzoi.model.ConversacionEntity::isPendienteVeterinario).toList());
-        model.addAttribute("atendidas", conversaciones.stream()
-                .filter(conversacion -> !conversacion.isPendienteVeterinario()).toList());
-        model.addAttribute("totalConsultas", conversaciones.size());
-        model.addAttribute("totalMascotas", conversaciones.stream()
-                .map(conversacion -> conversacion.getMascota().getId()).distinct().count());
-        return "veterinario_consultas";
     }
 
     private UsuarioEntity obtenerUsuario(Principal principal) {

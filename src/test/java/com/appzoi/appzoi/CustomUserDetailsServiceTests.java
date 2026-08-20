@@ -7,7 +7,9 @@ import com.appzoi.appzoi.config.AdminUserSeeder;
 import com.appzoi.appzoi.model.UsuarioEntity;
 import com.appzoi.appzoi.repository.UsuarioRepositorio;
 import com.appzoi.appzoi.service.CustomUserDetailsService;
+
 import java.util.Optional;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

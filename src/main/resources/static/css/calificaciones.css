@@ -1,1 +1,78 @@
-.rating-summary{display:flex;align-items:center;gap:8px;margin:8px 0}.stars{color:#f2ad16;letter-spacing:2px}.rating-section{margin-top:20px;padding:24px;background:#fff;border:1px solid #e7dfed;border-radius:16px}.rating-form{display:grid;gap:14px;padding:18px;background:#faf8fb;border-radius:12px}.rating-form textarea{width:100%;min-height:100px;padding:11px;border:1px solid #cbb7da;border-radius:8px}.star-picker{display:flex;flex-direction:row-reverse;justify-content:flex-end;border:0;padding:0}.star-picker legend{margin-bottom:8px}.star-picker input{position:absolute;opacity:0}.star-picker label{font-size:34px;color:#ccc;cursor:pointer}.star-picker label:hover,.star-picker label:hover~label,.star-picker input:checked~label{color:#f2ad16}.reviews{display:grid;gap:10px}.reviews article{padding:15px;border:1px solid #e7dfed;border-radius:10px}.reviews article>div{display:flex;justify-content:space-between}.reviews p{white-space:pre-wrap}.reviews small{color:#6d6877}.vet-rating{margin:6px 0;color:#6d6877}
+.rating-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+.stars {
+  color: #f2ad16;
+  letter-spacing: 2px;
+}
+.rating-section {
+  margin-top: 20px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e7dfed;
+  border-radius: 16px;
+}
+.rating-form {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  background: #faf8fb;
+  border-radius: 12px;
+}
+.rating-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 11px;
+  border: 1px solid #cbb7da;
+  border-radius: 8px;
+}
+.star-picker {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  border: 0;
+  padding: 0;
+}
+.star-picker legend {
+  margin-bottom: 8px;
+}
+.star-picker input {
+  position: absolute;
+  opacity: 0;
+}
+.star-picker label {
+  font-size: 34px;
+  color: #ccc;
+  cursor: pointer;
+}
+.star-picker label:hover,
+.star-picker label:hover ~ label,
+.star-picker input:checked ~ label {
+  color: #f2ad16;
+}
+.reviews {
+  display: grid;
+  gap: 10px;
+}
+.reviews article {
+  padding: 15px;
+  border: 1px solid #e7dfed;
+  border-radius: 10px;
+}
+.reviews article > div {
+  display: flex;
+  justify-content: space-between;
+}
+.reviews p {
+  white-space: pre-wrap;
+}
+.reviews small {
+  color: #6d6877;
+}
+.vet-rating {
+  margin: 6px 0;
+  color: #6d6877;
+}

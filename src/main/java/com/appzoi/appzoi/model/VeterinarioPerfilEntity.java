@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
-@Table(name = "VeterinarioPerfil")
+@Table(name = "veterinario_perfil")
 public class VeterinarioPerfilEntity {
     @Transient private Double promedioCalificacion;
     @Transient private Long totalCalificaciones;
@@ -52,7 +52,7 @@ public class VeterinarioPerfilEntity {
     private String localidad;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_dueno", nullable = false, unique = true)
+    @JoinColumn(name = "id_usuario", nullable = false, unique = true)
     private UsuarioEntity usuario;
 
     public Integer getId() {

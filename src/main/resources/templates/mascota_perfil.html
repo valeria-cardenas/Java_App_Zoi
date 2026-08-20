@@ -1,134 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title th:text="${mascota.nombre+' | Zoi'}">Perfil mascota</title>
-    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
-    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
-    <link rel="stylesheet" th:href="@{/css/mascota-perfil.css}">
-    <link rel="stylesheet" th:href="@{/css/mascota-eliminar.css}">
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/mascota-perfil.css}"/>
+    <link rel="stylesheet" th:href="@{/css/mascota-eliminar.css}"/>
 </head>
 <body class="zoi-ui">
-<header class="profile-header"><a th:href="@{/dueno/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
-    <nav><a class="back-link" th:href="@{/dueno/home}">← Volver a mis mascotas</a><a
-            th:href="@{/mascotas/{id}/editar(id=${mascota.id})}">Editar perfil</a></nav>
+<header class="profile-header">
+    <a th:href="@{/dueno/home}" class="header-logo-link"
+    ><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"
+    /></a>
+    <nav>
+        <a class="back-link" th:href="@{/dueno/home}">← Volver a mis mascotas</a
+        ><a th:href="@{/mascotas/{id}/editar(id=${mascota.id})}"
+    >Editar perfil</a
+    >
+    </nav>
 </header>
 <main class="pet-profile-page">
     <section class="pet-profile-hero">
-        <div class="pet-photo-wrap"><img th:if="${mascota.fotoUrl}" th:src="${mascota.fotoUrl}"
-                                         th:alt="${'Foto de '+mascota.nombre}">
-            <div th:unless="${mascota.fotoUrl}" class="pet-photo-empty"
-                 th:text="${#strings.substring(mascota.nombre,0,1)}">M
+        <div class="pet-photo-wrap">
+            <img
+                    th:if="${mascota.fotoUrl}"
+                    th:src="${mascota.fotoUrl}"
+                    th:alt="${'Foto de '+mascota.nombre}"
+            />
+            <div
+                    th:unless="${mascota.fotoUrl}"
+                    class="pet-photo-empty"
+                    th:text="${#strings.substring(mascota.nombre,0,1)}"
+            >
+                M
             </div>
         </div>
-        <div><p class="eyebrow">Perfil de mascota</p>
+        <div>
+            <p class="eyebrow">Perfil de mascota</p>
             <h1 th:text="${mascota.nombre}"></h1>
-            <p class="pet-subtitle" th:text="${mascota.especie+' · '+(mascota.raza ?: 'Raza sin registrar')}"></p>
-            <p th:text="${mascota.descripcion ?: 'Sin descripción registrada.'}"></p>
-            <div class="hero-actions"><a class="zoi-btn-primary"
-                                         th:href="@{/dueno/recordatorios/nuevo(mascotaId=${mascota.id})}">+
-                Recordatorio</a><a class="zoi-btn-secondary" th:href="@{/dueno/veterinarios}">Consultar veterinario</a>
+            <p
+                    class="pet-subtitle"
+                    th:text="${mascota.especie+' · '+(mascota.raza ?: 'Raza sin registrar')}"
+            ></p>
+            <p
+                    th:text="${mascota.descripcion ?: 'Sin descripción registrada.'}"
+            ></p>
+            <div class="hero-actions">
+                <a
+                        class="zoi-btn-primary"
+                        th:href="@{/dueno/recordatorios/nuevo(mascotaId=${mascota.id})}"
+                >+ Recordatorio</a
+                ><a class="zoi-btn-secondary" th:href="@{/dueno/veterinarios}"
+            >Consultar veterinario</a
+            >
             </div>
         </div>
     </section>
-    <nav class="profile-tabs"><a href="#informacion">Información</a><a href="#historia">Historia clínica</a><a
-            href="#veterinarios">Veterinarios consultados</a><a href="#recordatorios">Recordatorios</a></nav>
+    <nav class="profile-tabs">
+        <a href="#informacion">Información</a
+        ><a href="#historia">Historia clínica</a
+    ><a href="#veterinarios">Veterinarios consultados</a
+    ><a href="#recordatorios">Recordatorios</a>
+    </nav>
     <section id="informacion" class="profile-section">
         <div class="section-heading"><h2>Información general</h2></div>
         <div class="facts-grid">
-            <div><small>Especie</small><strong th:text="${mascota.especie ?: 'Sin registrar'}"></strong></div>
-            <div><small>Tipo</small><strong th:text="${mascota.tipoMascota ?: 'Sin registrar'}"></strong></div>
-            <div><small>Raza</small><strong th:text="${mascota.raza ?: 'Sin registrar'}"></strong></div>
-            <div><small>Sexo</small><strong th:text="${mascota.sexo ?: 'Sin registrar'}"></strong></div>
-            <div><small>Fecha de nacimiento</small><strong
-                    th:text="${mascota.fechaNacimiento ?: 'Sin registrar'}"></strong></div>
-            <div><small>Edad</small><strong
-                    th:text="${mascota.edad != null ? mascota.edad+' años' : 'Sin registrar'}"></strong></div>
-            <div><small>Tipo de sangre</small><strong th:text="${mascota.tipoSangre ?: 'Sin registrar'}"></strong></div>
-            <div><small>Esterilización</small><strong th:text="${mascota.esterilizado ?: 'Sin registrar'}"></strong>
+            <div>
+                <small>Especie</small
+                ><strong th:text="${mascota.especie ?: 'Sin registrar'}"></strong>
+            </div>
+            <div>
+                <small>Tipo</small
+                ><strong
+                    th:text="${mascota.tipoMascota ?: 'Sin registrar'}"
+            ></strong>
+            </div>
+            <div>
+                <small>Raza</small
+                ><strong th:text="${mascota.raza ?: 'Sin registrar'}"></strong>
+            </div>
+            <div>
+                <small>Sexo</small
+                ><strong th:text="${mascota.sexo ?: 'Sin registrar'}"></strong>
+            </div>
+            <div>
+                <small>Fecha de nacimiento</small
+                ><strong
+                    th:text="${mascota.fechaNacimiento ?: 'Sin registrar'}"
+            ></strong>
+            </div>
+            <div>
+                <small>Edad</small
+                ><strong
+                    th:text="${mascota.edad != null ? mascota.edad+' años' : 'Sin registrar'}"
+            ></strong>
+            </div>
+            <div>
+                <small>Tipo de sangre</small
+                ><strong
+                    th:text="${mascota.tipoSangre ?: 'Sin registrar'}"
+            ></strong>
+            </div>
+            <div>
+                <small>Esterilización</small
+                ><strong
+                    th:text="${mascota.esterilizado ?: 'Sin registrar'}"
+            ></strong>
             </div>
         </div>
     </section>
     <section id="historia" class="profile-section">
         <div class="section-heading">
-            <div><p class="eyebrow">Seguimiento de salud</p>
-                <h2>Historia clínica</h2></div>
-            <a th:href="@{/mascotas/{id}/editar(id=${mascota.id})}">Actualizar datos</a></div>
+            <div>
+                <p class="eyebrow">Seguimiento de salud</p>
+                <h2>Historia clínica</h2>
+            </div>
+            <a th:href="@{/mascotas/{id}/editar(id=${mascota.id})}"
+            >Actualizar datos</a
+            >
+        </div>
         <div class="clinical-grid">
-            <article><span>💉</span>
-                <div><h3>Vacunas</h3>
-                    <p th:text="${mascota.vacunas ?: 'No hay vacunas registradas.'}"></p>
-                    <strong class="vaccination-current" th:if="${mascota.vacunasVigentes}">Vacunas vigentes</strong>
-                    <strong class="vaccination-expired" th:unless="${mascota.vacunasVigentes}">Vacunas no vigentes</strong>
-                    <a th:if="${mascota.carnetVacunacionUrl}" th:href="${mascota.carnetVacunacionUrl}"
-                       target="_blank" rel="noopener">Ver foto del carné de vacunación</a>
+            <article>
+                <span>💉</span>
+                <div>
+                    <h3>Vacunas</h3>
+                    <p
+                            th:text="${mascota.vacunas ?: 'No hay vacunas registradas.'}"
+                    ></p>
+                    <strong
+                            class="vaccination-current"
+                            th:if="${mascota.vacunasVigentes}"
+                    >Vacunas vigentes</strong
+                    >
+                    <strong
+                            class="vaccination-expired"
+                            th:unless="${mascota.vacunasVigentes}"
+                    >Vacunas no vigentes</strong
+                    >
+                    <a
+                            th:if="${mascota.carnetVacunacionUrl}"
+                            th:href="${mascota.carnetVacunacionUrl}"
+                            target="_blank"
+                            rel="noopener"
+                    >Ver foto del carné de vacunación</a
+                    >
                 </div>
             </article>
-            <article><span>🩺</span>
-                <div><h3>Enfermedades</h3>
-                    <p th:text="${mascota.enfermedades ?: 'No hay enfermedades registradas.'}"></p></div>
+            <article>
+                <span>🩺</span>
+                <div>
+                    <h3>Enfermedades</h3>
+                    <p
+                            th:text="${mascota.enfermedades ?: 'No hay enfermedades registradas.'}"
+                    ></p>
+                </div>
             </article>
-            <article><span>📋</span>
-                <div><h3>Antecedentes</h3>
-                    <p th:text="${mascota.antecedentes ?: 'No hay antecedentes registrados.'}"></p></div>
+            <article>
+                <span>📋</span>
+                <div>
+                    <h3>Antecedentes</h3>
+                    <p
+                            th:text="${mascota.antecedentes ?: 'No hay antecedentes registrados.'}"
+                    ></p>
+                </div>
             </article>
-            <article><span>🔬</span>
-                <div><h3>Diagnóstico</h3>
-                    <p th:text="${mascota.diagnostico ?: 'No hay diagnósticos registrados.'}"></p></div>
+            <article>
+                <span>🔬</span>
+                <div>
+                    <h3>Diagnóstico</h3>
+                    <p
+                            th:text="${mascota.diagnostico ?: 'No hay diagnósticos registrados.'}"
+                    ></p>
+                </div>
             </article>
         </div>
     </section>
     <section id="veterinarios" class="profile-section">
         <div class="section-heading">
-            <div><p class="eyebrow">Consultas realizadas</p>
-                <h2>Veterinarios consultados</h2></div>
-            <a th:href="@{/dueno/veterinarios}">Ver todos los veterinarios</a></div>
-        <div class="consult-list" th:if="${!#lists.isEmpty(conversaciones)}"><a th:each="c:${conversaciones}"
-                                                                                th:href="@{/chat/{id}(id=${c.id})}"
-                                                                                class="consult-card"><img
-                th:if="${c.veterinario.fotoUrl}" th:src="${c.veterinario.fotoUrl}" alt="Veterinario">
-            <div th:unless="${c.veterinario.fotoUrl}" class="vet-initial"
-                 th:text="${#strings.substring(c.veterinario.usuario.nombre,0,1)}"></div>
-            <div><h3 th:text="${'Dr(a). '+c.veterinario.usuario.nombre+' '+c.veterinario.usuario.apellido}"></h3>
-                <p th:text="${c.veterinario.especialidad}"></p><small
-                        th:text="${c.pendienteVeterinario ? 'Esperando respuesta' : 'Conversación respondida'}"></small>
+            <div>
+                <p class="eyebrow">Consultas realizadas</p>
+                <h2>Veterinarios consultados</h2>
             </div>
-            <span>Ver chat →</span></a></div>
-        <div class="section-empty" th:if="${#lists.isEmpty(conversaciones)}"><p>Aún no has consultado un veterinario
-            sobre esta mascota.</p><a class="zoi-btn-primary" th:href="@{/dueno/veterinarios}">Buscar veterinario</a>
+            <a th:href="@{/dueno/veterinarios}">Ver todos los veterinarios</a>
+        </div>
+        <div class="consult-list" th:if="${!#lists.isEmpty(conversaciones)}">
+            <a
+                    th:each="c:${conversaciones}"
+                    th:href="@{/chat/{id}(id=${c.id})}"
+                    class="consult-card"
+            ><img
+                    th:if="${c.veterinario.fotoUrl}"
+                    th:src="${c.veterinario.fotoUrl}"
+                    alt="Veterinario"
+            />
+                <div
+                        th:unless="${c.veterinario.fotoUrl}"
+                        class="vet-initial"
+                        th:text="${#strings.substring(c.veterinario.usuario.nombre,0,1)}"
+                ></div>
+                <div>
+                    <h3
+                            th:text="${'Dr(a). '+c.veterinario.usuario.nombre+' '+c.veterinario.usuario.apellido}"
+                    ></h3>
+                    <p th:text="${c.veterinario.especialidad}"></p>
+                    <small
+                            th:text="${c.pendienteVeterinario ? 'Esperando respuesta' : 'Conversación respondida'}"
+                    ></small>
+                </div>
+                <span>Ver chat →</span></a
+            >
+        </div>
+        <div class="section-empty" th:if="${#lists.isEmpty(conversaciones)}">
+            <p>Aún no has consultado un veterinario sobre esta mascota.</p>
+            <a class="zoi-btn-primary" th:href="@{/dueno/veterinarios}"
+            >Buscar veterinario</a
+            >
         </div>
     </section>
     <section id="recordatorios" class="profile-section">
         <div class="section-heading">
-            <div><p class="eyebrow">Agenda de cuidados</p>
-                <h2>Recordatorios</h2></div>
-            <a th:href="@{/dueno/recordatorios}">Abrir calendario</a></div>
-        <div class="pet-reminders" th:if="${!#lists.isEmpty(recordatorios)}">
-            <article th:each="r:${recordatorios}"
-                     th:class="${'pet-reminder '+(r.completado?'completed':(r.fechaHora.isBefore(ahora)?'overdue':''))}">
-                <span class="mini-check" th:text="${r.completado?'✓':''}"></span>
-                <div><h3 th:text="${r.titulo}"></h3>
-                    <p th:text="${#temporals.format(r.fechaHora,'dd MMM yyyy · HH:mm')}"></p></div>
-                <span th:text="${r.tipo.toLowerCase()}"></span></article>
+            <div>
+                <p class="eyebrow">Agenda de cuidados</p>
+                <h2>Recordatorios</h2>
+            </div>
+            <a th:href="@{/dueno/recordatorios}">Abrir calendario</a>
         </div>
-        <div class="section-empty" th:if="${#lists.isEmpty(recordatorios)}"><p>No hay recordatorios para esta
-            mascota.</p><a class="zoi-btn-primary" th:href="@{/dueno/recordatorios/nuevo(mascotaId=${mascota.id})}">Crear
-            recordatorio</a></div>
+        <div class="pet-reminders" th:if="${!#lists.isEmpty(recordatorios)}">
+            <article
+                    th:each="r:${recordatorios}"
+                    th:class="${'pet-reminder '+(r.completado?'completed':(r.fechaHora.isBefore(ahora)?'overdue':''))}"
+            >
+                <span class="mini-check" th:text="${r.completado?'✓':''}"></span>
+                <div>
+                    <h3 th:text="${r.titulo}"></h3>
+                    <p
+                            th:text="${#temporals.format(r.fechaHora,'dd MMM yyyy · HH:mm')}"
+                    ></p>
+                </div>
+                <span th:text="${r.tipo.toLowerCase()}"></span>
+            </article>
+        </div>
+        <div class="section-empty" th:if="${#lists.isEmpty(recordatorios)}">
+            <p>No hay recordatorios para esta mascota.</p>
+            <a
+                    class="zoi-btn-primary"
+                    th:href="@{/dueno/recordatorios/nuevo(mascotaId=${mascota.id})}"
+            >Crear recordatorio</a
+            >
+        </div>
     </section>
-    <section class="profile-section pet-danger-zone" aria-labelledby="eliminar-mascota-titulo">
+    <section
+            class="profile-section pet-danger-zone"
+            aria-labelledby="eliminar-mascota-titulo"
+    >
         <div class="danger-zone-copy">
             <p class="eyebrow">Administrar mascota</p>
             <h2 id="eliminar-mascota-titulo">Eliminar perfil de la mascota</h2>
-            <p>Esta acción eliminará definitivamente el perfil de
-                <strong th:text="${mascota.nombre}">la mascota</strong> y no se puede deshacer.</p>
+            <p>
+                Esta acción eliminará definitivamente el perfil de
+                <strong th:text="${mascota.nombre}">la mascota</strong> y no se
+                puede deshacer.
+            </p>
         </div>
-        <form th:action="@{/mascotas/{id}/eliminar(id=${mascota.id})}" method="post"
-              th:attr="onsubmit=|return confirm('¿Estás seguro de que deseas eliminar el perfil de ${mascota.nombre}? Esta acción no se puede deshacer.')|">
-            <button type="submit" class="pet-delete-button">Eliminar mascota</button>
+        <form
+                th:action="@{/mascotas/{id}/eliminar(id=${mascota.id})}"
+                method="post"
+                th:attr="onsubmit=|return confirm('¿Estás seguro de que deseas eliminar el perfil de ${mascota.nombre}? Esta acción no se puede deshacer.')|"
+        >
+            <input
+                    type="hidden"
+                    th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}"
+            />
+            <button type="submit" class="pet-delete-button">
+                Eliminar mascota
+            </button>
         </form>
     </section>
-    <div class="bottom-back"><a class="zoi-btn-secondary" th:href="@{/dueno/home}">← Volver a mis mascotas</a></div>
+    <div class="bottom-back">
+        <a class="zoi-btn-secondary" th:href="@{/dueno/home}"
+        >← Volver a mis mascotas</a
+        >
+    </div>
 </main>
 </body>
 </html>

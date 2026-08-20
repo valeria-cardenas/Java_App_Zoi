@@ -2,9 +2,9 @@
    VARIABLES (Asegúrate de que estas coincidan con styles.css)
    ====================================================================== */
 :root {
-    --primary-purple: #552579;      /* Morado oscuro de títulos y texto */
-    --accent-yellow: #FFB300;       /* Amarillo/Dorado de íconos y acentos */
-    --btn-purple: #8B4DCC;          /* Morado más vibrante/claro para botones primarios */
+  --primary-purple: #552579; /* Morado oscuro de títulos y texto */
+  --accent-yellow: #ffb300; /* Amarillo/Dorado de íconos y acentos */
+  --btn-purple: #8b4dcc; /* Morado más vibrante/claro para botones primarios */
 }
 
 /* ======================================================================
@@ -13,172 +13,176 @@
 /* Si solo incluyes bienvenida.css, necesitas estas reglas base: */
 /* Asegura que el cuerpo se estire para colocar el footer abajo */
 body {
-    background-color: var(--light-grey-bg);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
+  background-color: var(--light-grey-bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 /* Contenedor que centra el formulario */
 .login-container {
-    flex-grow: 1; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 /* Tarjeta base del formulario */
 .login-card {
-    background-color: #FFFFFF;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 420px;
-    width: 100%;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
 }
 
 /* Ocultar elementos de navegación en la tarjeta de login/bienvenida */
 .hidden-on-login {
-    justify-content: center;
-    border-bottom: 1px solid #EEEEEE; 
+  justify-content: center;
+  border-bottom: 1px solid #eeeeee;
 }
 .hidden-on-login .main-nav,
 .hidden-on-login .auth-buttons {
-    display: none;
+  display: none;
 }
-
 
 /* ======================================================================
    ESTILOS ESPECÍFICOS DE LA TARJETA DE BIENVENIDA
    ====================================================================== */
 
 .welcome-card {
-    padding: 50px 30px; /* Un poco más de espacio */
+  padding: 50px 30px; /* Un poco más de espacio */
 }
 
 .welcome-icon {
-    font-size: 60px;
-    color: var(--accent-yellow); /* Color llamativo */
-    margin-bottom: 25px;
-    /* Animación sutil de rebote para motivar al usuario */
-    animation: bounce 0.8s ease-in-out infinite alternate; 
+  font-size: 60px;
+  color: var(--accent-yellow); /* Color llamativo */
+  margin-bottom: 25px;
+  /* Animación sutil de rebote para motivar al usuario */
+  animation: bounce 0.8s ease-in-out infinite alternate;
 }
 
 .welcome-title {
-    color: var(--primary-purple);
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 10px;
+  color: var(--primary-purple);
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .welcome-message {
-    color: #555555;
-    font-size: 17px;
-    line-height: 1.5;
-    margin-bottom: 30px;
+  color: #555555;
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 30px;
 }
 
 .welcome-separator {
-    border: 0;
-    height: 1px;
-    background-color: #EEEEEE;
-    margin: 30px 0;
+  border: 0;
+  height: 1px;
+  background-color: #eeeeee;
+  margin: 30px 0;
 }
 
 .welcome-btn {
-    font-size: 18px;
-    padding: 15px 25px;
-    width: 100%;
-    margin-bottom: 20px;
+  font-size: 18px;
+  padding: 15px 25px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .skip-link {
-    display: block;
-    font-size: 14px;
-    color: #999;
-    text-decoration: none;
-    margin-top: 30px;
+  display: block;
+  font-size: 14px;
+  color: #999;
+  text-decoration: none;
+  margin-top: 30px;
 }
 
 .skip-link:hover {
-    color: var(--primary-purple);
+  color: var(--primary-purple);
 }
 
 @keyframes bounce {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-5px);
-    }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
 }
 
 /* ======================================================================
    PIE DE PÁGINA (Footer style, si no se carga styles.css)
    ====================================================================== */
 .pie-pagina {
-    background-color: #FFFFFF;
-    border-top: 1px solid #EEEEEE;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
 }
 
 .pie-pagina p {
-    font-size: 14px;
-    color: #888888;
-    margin: 0;
+  font-size: 14px;
+  color: #888888;
+  margin: 0;
 }
-.welcome-btn{
-    padding: 12px 30px !important;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    color: var(--primary-purple);
-    background-color: var(--btn-purple);
-    color: #FFFFFF;
+.welcome-btn {
+  padding: 12px 30px !important;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: var(--primary-purple);
+  background-color: var(--btn-purple);
+  color: #ffffff;
 }
 
 /* Botones Zoi para bienvenida y encuestas */
 .welcome-btn,
 .btn-primary,
 .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 0 20px !important;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px !important;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .welcome-btn,
 .btn-primary {
-    background: linear-gradient(135deg, var(--btn-purple), var(--primary-purple));
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(85, 37, 121, 0.18);
+  background: linear-gradient(135deg, var(--btn-purple), var(--primary-purple));
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(85, 37, 121, 0.18);
 }
 
 .btn-secondary {
-    background: #ffffff;
-    color: var(--primary-purple);
-    border-color: rgba(85, 37, 121, 0.28);
+  background: #ffffff;
+  color: var(--primary-purple);
+  border-color: rgba(85, 37, 121, 0.28);
 }
 
 .welcome-btn:hover,
 .btn-primary:hover,
 .btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 24px rgba(85, 37, 121, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(85, 37, 121, 0.22);
 }

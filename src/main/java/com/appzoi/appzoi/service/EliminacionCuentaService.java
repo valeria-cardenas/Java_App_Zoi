@@ -2,7 +2,9 @@ package com.appzoi.appzoi.service;
 
 import com.appzoi.appzoi.model.*;
 import com.appzoi.appzoi.repository.*;
+
 import java.util.*;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,12 +19,13 @@ public class EliminacionCuentaService {
     private final AdministradorRepositorio administradores;
     private final CalificacionVeterinarioRepositorio calificaciones;
 
-    public EliminacionCuentaService(UsuarioRepositorio usuarios, MascotaRepositorio mascotas,
-            VeterinarioPerfilRepositorio veterinarios, ConversacionRepositorio conversaciones,
-            MensajeRepositorio mensajes, RecordatorioRepositorio recordatorios,
-            AdministradorRepositorio administradores, CalificacionVeterinarioRepositorio calificaciones) {
-        this.usuarios = usuarios; this.mascotas = mascotas; this.veterinarios = veterinarios;
-        this.conversaciones = conversaciones; this.mensajes = mensajes; this.recordatorios = recordatorios;
+    public EliminacionCuentaService(UsuarioRepositorio usuarios, MascotaRepositorio mascotas, VeterinarioPerfilRepositorio veterinarios, ConversacionRepositorio conversaciones, MensajeRepositorio mensajes, RecordatorioRepositorio recordatorios, AdministradorRepositorio administradores, CalificacionVeterinarioRepositorio calificaciones) {
+        this.usuarios = usuarios;
+        this.mascotas = mascotas;
+        this.veterinarios = veterinarios;
+        this.conversaciones = conversaciones;
+        this.mensajes = mensajes;
+        this.recordatorios = recordatorios;
         this.administradores = administradores;
         this.calificaciones = calificaciones;
     }

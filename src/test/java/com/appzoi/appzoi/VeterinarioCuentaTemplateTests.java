@@ -11,28 +11,36 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 class VeterinarioCuentaTemplateTests {
-    @Autowired MockMvc mvc;
-    @Autowired UsuarioRepositorio usuarios;
-    @Autowired VeterinarioPerfilRepositorio perfiles;
+    @Autowired
+    MockMvc mvc;
+    @Autowired
+    UsuarioRepositorio usuarios;
+    @Autowired
+    VeterinarioPerfilRepositorio perfiles;
 
     @BeforeEach
     void crearVeterinario() {
         UsuarioEntity usuario = usuarios.findByEmail("vet@prueba.com").orElse(null);
         if (usuario == null) {
             usuario = new UsuarioEntity();
-            usuario.setNombre("Veterinario"); usuario.setApellido("Prueba");
-            usuario.setEmail("vet@prueba.com"); usuario.setPassword("codificada");
-            usuario.setTipoPerfil("VETERINARIO"); usuarios.save(usuario);
+            usuario.setNombre("Veterinario");
+            usuario.setApellido("Prueba");
+            usuario.setEmail("vet@prueba.com");
+            usuario.setPassword("codificada");
+            usuario.setTipoPerfil("VETERINARIO");
+            usuarios.save(usuario);
         }
         if (perfiles.findByUsuario(usuario).isEmpty()) {
             VeterinarioPerfilEntity perfil = new VeterinarioPerfilEntity();
-            perfil.setUsuario(usuario); perfil.setEspecialidad("Medicina general");
+            perfil.setUsuario(usuario);
+            perfil.setEspecialidad("Medicina general");
             perfiles.save(perfil);
         }
     }

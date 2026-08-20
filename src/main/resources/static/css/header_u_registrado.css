@@ -3,96 +3,100 @@
    ====================================================================== */
 
 .logged-in-header {
-    /* Manteniendo el diseño general */
-    background-color: #FFFFFF;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #EEEEEE;
-    z-index: 100;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Mismo tipo de letra base */
+  /* Manteniendo el diseño general */
+  background-color: #ffffff;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  z-index: 100;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif; /* Mismo tipo de letra base */
 }
 
 /* Estilo del Logo (usando la imagen img/logo.png) */
 .logo-zoi a {
-    display: block;
+  display: block;
 }
 
 .logo-zoi .logo-img {
-    max-width: 140px; 
-    max-height: 40px; /* Tamaño consistente con la altura del header */
-    width: auto;
-    height: auto;
+  max-width: 140px;
+  max-height: 40px; /* Tamaño consistente con la altura del header */
+  width: auto;
+  height: auto;
 }
 
 /* Navegación de la Aplicación */
 .app-nav {
-    flex-grow: 1; 
-    text-align: center;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .app-nav .nav-item {
-    text-decoration: none;
-    color: var(--primary-purple); /* Color morado para el texto normal */
-    font-weight: 500;
-    margin: 0 15px;
-    padding: 5px 0;
-    transition: color 0.2s, border-bottom 0.2s;
+  text-decoration: none;
+  color: var(--primary-purple); /* Color morado para el texto normal */
+  font-weight: 500;
+  margin: 0 15px;
+  padding: 5px 0;
+  transition:
+    color 0.2s,
+    border-bottom 0.2s;
 }
 
 .app-nav .nav-item:hover,
 .app-nav .active-app-link {
-    color: var(--accent-yellow); /* Color amarillo para el estado activo/hover */
-    border-bottom: 2px solid var(--accent-yellow);
+  color: var(--accent-yellow); /* Color amarillo para el estado activo/hover */
+  border-bottom: 2px solid var(--accent-yellow);
 }
 
 /* --- Controles de Usuario --- */
 .user-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 /* Botón de Ícono (Notificaciones) */
 .btn-icon {
-    background: none;
-    border: none;
-    color: var(--primary-purple);
-    font-size: 18px;
-    cursor: pointer;
-    padding: 5px;
-    transition: color 0.2s;
+  background: none;
+  border: none;
+  color: var(--primary-purple);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s;
 }
 
 .btn-icon:hover {
-    color: var(--accent-yellow);
+  color: var(--accent-yellow);
 }
 
 /* Perfil de Usuario (Círculo) */
 .user-profile-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: var(--btn-purple); /* Morado vibrante para el perfil */
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--btn-purple); /* Morado vibrante para el perfil */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Botón de Salir (Cerrar Sesión) */
 .logout-btn {
-    /* Utiliza estilos de .btn-secondary (borde morado, fondo blanco) */
-    padding: 8px 12px;
-    font-size: 14px;
+  /* Utiliza estilos de .btn-secondary (borde morado, fondo blanco) */
+  padding: 8px 12px;
+  font-size: 14px;
 }
 
 .logout-btn i {
-    margin-right: 5px;
+  margin-right: 5px;
 }

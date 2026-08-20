@@ -2,12 +2,19 @@ package com.appzoi.appzoi.repository;
 
 import com.appzoi.appzoi.model.UsuarioEntity;
 import com.appzoi.appzoi.model.VeterinarioPerfilEntity;
+
 import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.EntityGraph;
+
 import java.util.List;
 
 public interface VeterinarioPerfilRepositorio extends JpaRepository<VeterinarioPerfilEntity, Integer> {
+
+    Optional<VeterinarioPerfilEntity> findByFotoUrl(String fotoUrl);
+
+    Optional<VeterinarioPerfilEntity> findByTituloUrl(String tituloUrl);
 
     @Override
     @EntityGraph(attributePaths = "usuario")

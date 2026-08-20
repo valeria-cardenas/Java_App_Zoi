@@ -1,8 +1,225 @@
-<!DOCTYPE html><html lang="es" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perfil veterinario | Zoi</title><link rel="stylesheet" th:href="@{/css/perfiles.css}"><link rel="stylesheet" th:href="@{/css/zoi-ui.css}"><link rel="stylesheet" th:href="@{/css/chat.css}"><link rel="stylesheet" th:href="@{/css/calificaciones.css}"><link rel="stylesheet" th:href="@{/css/veterinario-profile.css}"></head><body class="zoi-ui"><header class="profile-header"><a th:href="@{/dueno/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a><nav><a th:href="@{/dueno/veterinarios}">← Todos los veterinarios</a></nav></header>
-<main class="vet-profile-page"><div class="flash success-flash" th:if="${successCalificacion}" th:text="${successCalificacion}"></div><div class="flash error-flash" th:if="${errorCalificacion}" th:text="${errorCalificacion}"></div>
-<section class="vet-profile-hero"><img class="vet-profile-photo" th:if="${perfil.fotoUrl}" th:src="${perfil.fotoUrl}" alt="Foto profesional"><div class="vet-profile-initial" th:unless="${perfil.fotoUrl}" th:text="${#strings.substring(perfil.usuario.nombre,0,1)}">V</div><div><div class="vet-profile-heading"><div><p class="eyebrow">Profesional veterinario</p><h1 th:text="${'Dr(a). '+perfil.usuario.nombre+' '+perfil.usuario.apellido}"></h1><p class="vet-specialty" th:text="${perfil.especialidad}"></p></div><div class="vet-rating-box"><span class="stars" th:text="${promedio != null ? '★★★★★' : '☆☆☆☆☆'}"></span><strong th:text="${promedio != null ? #numbers.formatDecimal(promedio,1,1) : 'Sin calificar'}"></strong><small th:text="${totalCalificaciones+' opiniones'}"></small></div></div><p class="vet-description" th:text="${perfil.descripcion ?: 'Sin descripción profesional.'}"></p></div></section>
-<div class="vet-location" th:if="${perfil.localidad}">📍 <strong th:text="${'Bogotá · '+perfil.localidad}"></strong></div><nav class="vet-profile-nav"><a href="#experiencia">Perfil profesional</a><a href="#consultar">Realizar consulta</a><a href="#opiniones">Calificaciones</a></nav>
-<section id="experiencia" class="vet-profile-section"><p class="eyebrow">Conoce al profesional</p><h2>Información profesional</h2><div class="vet-facts"><div class="vet-fact"><small>Especialidad</small><strong th:text="${perfil.especialidad}"></strong></div><div class="vet-fact"><small>Experiencia</small><strong th:text="${perfil.experiencia ?: 'Sin registrar'}"></strong></div><div class="vet-fact"><small>Clínica veterinaria</small><strong th:text="${perfil.clinica ?: 'Sin registrar'}"></strong></div><div class="vet-fact"><small>Tarjeta profesional</small><strong th:text="${perfil.tarjetaProfesional ?: 'Sin registrar'}"></strong></div><div class="vet-fact"><small>Teléfono profesional</small><strong th:text="${perfil.telefono ?: 'Sin registrar'}"></strong></div></div></section>
-<section id="consultar" class="vet-profile-section consult-box"><p class="eyebrow">Orientación para tu mascota</p><h2>Iniciar una consulta</h2><p>Selecciona la mascota relacionada con tu pregunta. El veterinario podrá consultar su perfil para darte una respuesta contextualizada.</p><form th:action="@{/dueno/veterinarios/{id}/chat(id=${perfil.id})}" method="post"><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><select name="mascotaId" required><option value="">Selecciona una mascota</option><option th:each="m:${mascotas}" th:value="${m.id}" th:text="${m.nombre+' · '+m.especie}"></option></select><button class="zoi-btn-primary" th:disabled="${#lists.isEmpty(mascotas)}">Abrir conversación</button></form><p th:if="${#lists.isEmpty(mascotas)}">Primero debes registrar una mascota para iniciar una consulta.</p></section>
-<section id="opiniones" class="vet-profile-section rating-section"><div th:if="${puedeCalificar}"><h2 th:text="${miCalificacion == null ? 'Califica a este veterinario' : 'Actualiza tu calificación'}"></h2><form class="rating-form" th:action="@{/dueno/veterinarios/{id}/calificar(id=${perfil.id})}" method="post" data-zoi-validate><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><fieldset class="star-picker"><legend>Selecciona una puntuación</legend><input th:each="n:${#numbers.sequence(5,1)}" type="radio" name="estrellas" th:id="${'star'+n}" th:value="${n}" th:checked="${miCalificacion != null and miCalificacion.estrellas == n}" required><label th:each="n:${#numbers.sequence(5,1)}" th:for="${'star'+n}" th:title="${n+' estrellas'}">★</label></fieldset><label>Comentario<textarea name="comentario" minlength="3" maxlength="800" required th:text="${miCalificacion != null ? miCalificacion.comentario : ''}" placeholder="Cuenta tu experiencia con este profesional"></textarea></label><button class="zoi-btn-primary">Guardar calificación</button></form></div><div class="rating-locked" th:unless="${puedeCalificar}"><span aria-hidden="true">💬</span><div><h2>Calificación disponible después de una respuesta</h2><p>Podrás calificar cuando este veterinario haya respondido una consulta sobre una de tus mascotas.</p></div></div><h2>Opiniones de usuarios</h2><div class="reviews" th:if="${!#lists.isEmpty(calificaciones)}"><article th:each="c:${calificaciones}"><div><strong th:text="${c.dueno.nombre+' '+c.dueno.apellido}"></strong><span class="stars" th:text="${#strings.repeat('★',c.estrellas)+#strings.repeat('☆',5-c.estrellas)}"></span></div><p th:text="${c.comentario}"></p><small th:text="${#temporals.format(c.actualizadaEn,'dd/MM/yyyy')}"></small></article></div><p th:if="${#lists.isEmpty(calificaciones)}">Todavía no hay opiniones.</p></section>
-</main><script th:src="@{/js/zoi-validation.js}"></script></body></html>
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Perfil veterinario | Zoi</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/chat.css}"/>
+    <link rel="stylesheet" th:href="@{/css/calificaciones.css}"/>
+    <link rel="stylesheet" th:href="@{/css/veterinario-profile.css}"/>
+</head>
+<body class="zoi-ui">
+<header class="profile-header">
+    <a th:href="@{/dueno/home}" class="header-logo-link"
+    ><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"
+    /></a>
+    <nav>
+        <a th:href="@{/dueno/veterinarios}">← Todos los veterinarios</a>
+    </nav>
+</header>
+<main class="vet-profile-page">
+    <div
+            class="flash success-flash"
+            th:if="${successCalificacion}"
+            th:text="${successCalificacion}"
+    ></div>
+    <div
+            class="flash error-flash"
+            th:if="${errorCalificacion}"
+            th:text="${errorCalificacion}"
+    ></div>
+    <section class="vet-profile-hero">
+        <img
+                class="vet-profile-photo"
+                th:if="${perfil.fotoUrl}"
+                th:src="${perfil.fotoUrl}"
+                alt="Foto profesional"
+        />
+        <div
+                class="vet-profile-initial"
+                th:unless="${perfil.fotoUrl}"
+                th:text="${#strings.substring(perfil.usuario.nombre,0,1)}"
+        >
+            V
+        </div>
+        <div>
+            <div class="vet-profile-heading">
+                <div>
+                    <p class="eyebrow">Profesional veterinario</p>
+                    <h1
+                            th:text="${'Dr(a). '+perfil.usuario.nombre+' '+perfil.usuario.apellido}"
+                    ></h1>
+                    <p class="vet-specialty" th:text="${perfil.especialidad}"></p>
+                </div>
+                <div class="vet-rating-box">
+              <span
+                      class="stars"
+                      th:text="${promedio != null ? '★★★★★' : '☆☆☆☆☆'}"
+              ></span
+              ><strong
+                        th:text="${promedio != null ? #numbers.formatDecimal(promedio,1,1) : 'Sin calificar'}"
+                ></strong
+                ><small th:text="${totalCalificaciones+' opiniones'}"></small>
+                </div>
+            </div>
+            <p
+                    class="vet-description"
+                    th:text="${perfil.descripcion ?: 'Sin descripción profesional.'}"
+            ></p>
+        </div>
+    </section>
+    <div class="vet-location" th:if="${perfil.localidad}">
+        📍 <strong th:text="${'Bogotá · '+perfil.localidad}"></strong>
+    </div>
+    <nav class="vet-profile-nav">
+        <a href="#experiencia">Perfil profesional</a
+        ><a href="#consultar">Realizar consulta</a
+    ><a href="#opiniones">Calificaciones</a>
+    </nav>
+    <section id="experiencia" class="vet-profile-section">
+        <p class="eyebrow">Conoce al profesional</p>
+        <h2>Información profesional</h2>
+        <div class="vet-facts">
+            <div class="vet-fact">
+                <small>Especialidad</small
+                ><strong th:text="${perfil.especialidad}"></strong>
+            </div>
+            <div class="vet-fact">
+                <small>Experiencia</small
+                ><strong
+                    th:text="${perfil.experiencia ?: 'Sin registrar'}"
+            ></strong>
+            </div>
+            <div class="vet-fact">
+                <small>Clínica veterinaria</small
+                ><strong th:text="${perfil.clinica ?: 'Sin registrar'}"></strong>
+            </div>
+            <div class="vet-fact">
+                <small>Tarjeta profesional</small
+                ><strong
+                    th:text="${perfil.tarjetaProfesional ?: 'Sin registrar'}"
+            ></strong>
+            </div>
+            <div class="vet-fact">
+                <small>Teléfono profesional</small
+                ><strong th:text="${perfil.telefono ?: 'Sin registrar'}"></strong>
+            </div>
+        </div>
+    </section>
+    <section id="consultar" class="vet-profile-section consult-box">
+        <p class="eyebrow">Orientación para tu mascota</p>
+        <h2>Iniciar una consulta</h2>
+        <p>
+            Selecciona la mascota relacionada con tu pregunta. El veterinario
+            podrá consultar su perfil para darte una respuesta contextualizada.
+        </p>
+        <form
+                th:action="@{/dueno/veterinarios/{id}/chat(id=${perfil.id})}"
+                method="post"
+        >
+            <input
+                    type="hidden"
+                    th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}"
+            /><select name="mascotaId" required>
+            <option value="">Selecciona una mascota</option>
+            <option
+                    th:each="m:${mascotas}"
+                    th:value="${m.id}"
+                    th:text="${m.nombre+' · '+m.especie}"
+            ></option>
+        </select
+        >
+            <button
+                    class="zoi-btn-primary"
+                    th:disabled="${#lists.isEmpty(mascotas)}"
+            >
+                Abrir conversación
+            </button>
+        </form>
+        <p th:if="${#lists.isEmpty(mascotas)}">
+            Primero debes registrar una mascota para iniciar una consulta.
+        </p>
+    </section>
+    <section id="opiniones" class="vet-profile-section rating-section">
+        <div th:if="${puedeCalificar}">
+            <h2
+                    th:text="${miCalificacion == null ? 'Califica a este veterinario' : 'Actualiza tu calificación'}"
+            ></h2>
+            <form
+                    class="rating-form"
+                    th:action="@{/dueno/veterinarios/{id}/calificar(id=${perfil.id})}"
+                    method="post"
+                    data-zoi-validate
+            >
+                <input
+                        type="hidden"
+                        th:name="${_csrf.parameterName}"
+                        th:value="${_csrf.token}"
+                />
+                <fieldset class="star-picker">
+                    <legend>Selecciona una puntuación</legend>
+                    <input
+                            th:each="n:${#numbers.sequence(5,1)}"
+                            type="radio"
+                            name="estrellas"
+                            th:id="${'star'+n}"
+                            th:value="${n}"
+                            th:checked="${miCalificacion != null and miCalificacion.estrellas == n}"
+                            required
+                    /><label
+                        th:each="n:${#numbers.sequence(5,1)}"
+                        th:for="${'star'+n}"
+                        th:title="${n+' estrellas'}"
+                >★</label
+                >
+                </fieldset>
+                <label
+                >Comentario<textarea
+                        name="comentario"
+                        minlength="3"
+                        maxlength="800"
+                        required
+                        th:text="${miCalificacion != null ? miCalificacion.comentario : ''}"
+                        placeholder="Cuenta tu experiencia con este profesional"
+                ></textarea></label
+                >
+                <button class="zoi-btn-primary">Guardar calificación</button>
+            </form>
+        </div>
+        <div class="rating-locked" th:unless="${puedeCalificar}">
+            <span aria-hidden="true">💬</span>
+            <div>
+                <h2>Calificación disponible después de una respuesta</h2>
+                <p>
+                    Podrás calificar cuando este veterinario haya respondido una
+                    consulta sobre una de tus mascotas.
+                </p>
+            </div>
+        </div>
+        <h2>Opiniones de usuarios</h2>
+        <div class="reviews" th:if="${!#lists.isEmpty(calificaciones)}">
+            <article th:each="c:${calificaciones}">
+                <div>
+                    <strong th:text="${c.dueno.nombre+' '+c.dueno.apellido}"></strong
+                    ><span
+                        class="stars"
+                        th:text="${#strings.repeat('★',c.estrellas)+#strings.repeat('☆',5-c.estrellas)}"
+                ></span>
+                </div>
+                <p th:text="${c.comentario}"></p>
+                <small
+                        th:text="${#temporals.format(c.actualizadaEn,'dd/MM/yyyy')}"
+                ></small>
+            </article>
+        </div>
+        <p th:if="${#lists.isEmpty(calificaciones)}">
+            Todavía no hay opiniones.
+        </p>
+    </section>
+</main>
+<script th:src="@{/js/zoi-validation.js}"></script>
+</body>
+</html>

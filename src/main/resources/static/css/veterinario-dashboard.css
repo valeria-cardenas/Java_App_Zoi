@@ -1,2 +1,358 @@
-.vet-dashboard{width:min(1140px,calc(100% - 32px));margin:28px auto 60px}.vet-welcome{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px;background:linear-gradient(120deg,#fff 55%,#f2ebf8);border:1px solid #e7dfed;border-radius:18px}.vet-welcome h1{margin:3px 0;color:#49206f}.vet-welcome p{margin:5px 0;color:#6d6877}.profile-needed{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;margin-top:18px;padding:21px;background:#fff8e7;border:1px solid #ecd494;border-radius:14px}.profile-needed>span{font-size:32px}.profile-needed h2,.profile-needed p{margin:3px 0}.vet-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:18px 0}.vet-stats div{display:flex;align-items:center;gap:13px;padding:18px;background:#fff;border:1px solid #e7dfed;border-radius:12px}.vet-stats strong{font-size:27px;color:#7040a5}.vet-stats span{color:#6d6877}.vet-stats .urgent{border-color:#e4b1b1;background:#fff9f9}.vet-stats .urgent strong{color:#b42318}.vet-stats .rating-stat strong{color:#d6960c}.dashboard-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);gap:18px;margin-top:18px}.dashboard-card,.quick-actions-section{padding:24px;background:#fff;border:1px solid #e7dfed;border-radius:17px}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}.section-heading h2,.dashboard-card h2{margin:2px 0}.section-heading>a,.profile-card-link{color:#7040a5;font-weight:800;text-decoration:none}.pending-badge{padding:7px 11px;border-radius:14px;background:#fdecec;color:#b42318;font-size:13px;font-weight:700}.priority-patient{display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;gap:15px;padding:16px;border-left:5px solid #d63c3c;background:#fffafa;border-radius:12px}.priority-patient h3,.priority-patient p,.priority-patient small{display:block;margin:4px 0}.priority-patient p,.priority-patient small{color:#6d6877}.pet-picture img,.pet-picture span{width:72px;height:72px;border-radius:13px;object-fit:cover}.pet-picture span{display:grid;place-items:center;background:#f2ebf8;color:#7040a5;font-size:28px}.all-clear{display:flex;align-items:center;gap:15px;padding:22px;background:#f2f9f4;border-radius:12px}.all-clear>span{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#43835a;color:#fff;font-size:24px}.all-clear h3,.all-clear p{margin:3px 0}.all-clear p{color:#55705e}.progress-value{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:22px 0 9px}.progress-value strong{font-size:34px;color:#7040a5}.progress-value span,.profile-progress-card>p{color:#6d6877}.profile-progress{height:10px;margin-bottom:17px;overflow:hidden;background:#eee8f1;border-radius:6px}.profile-progress span{display:block;height:100%;background:linear-gradient(90deg,#7040a5,#a777c7);border-radius:6px}.quick-actions-section{margin-top:18px}.quick-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.quick-actions>a{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid #e7dfed;border-radius:12px;color:#352d3b;text-decoration:none}.quick-actions>a:hover{border-color:#7040a5;background:#fcfaff}.quick-actions>a>span{font-size:25px}.quick-actions strong,.quick-actions small{display:block}.quick-actions small{margin-top:4px;color:#6d6877}.lower-grid{grid-template-columns:1fr 1fr}.activity-list{display:grid}.activity-list>a{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #eee8f1;color:#352d3b;text-decoration:none}.activity-list>a:last-child{border-bottom:0}.activity-initial{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f2ebf8;color:#7040a5;font-weight:800}.activity-list strong,.activity-list small{display:block}.activity-list small,.activity-list time{margin-top:3px;color:#6d6877;font-size:12px}.rating-total{display:flex;align-items:center;gap:16px;margin:10px 0 18px}.rating-total>strong{font-size:42px;color:#49206f}.rating-total span,.rating-total small{display:block}.rating-total .stars{color:#e9a914;letter-spacing:2px}.rating-total small{margin-top:4px;color:#6d6877}.rating-overview blockquote{margin:0;padding:15px;background:#faf8fb;border-left:4px solid #e9a914;border-radius:9px}.rating-overview blockquote p{margin:0 0 9px;line-height:1.5}.rating-overview blockquote footer{color:#6d6877;font-size:13px}.compact-empty{padding:22px;background:#faf8fb;border-radius:10px;color:#6d6877;text-align:center}@media(max-width:900px){.vet-stats,.quick-actions{grid-template-columns:repeat(2,1fr)}.dashboard-grid,.lower-grid{grid-template-columns:1fr}}@media(max-width:620px){.vet-welcome{align-items:flex-start;flex-direction:column}.vet-stats,.quick-actions{grid-template-columns:1fr}.profile-needed{grid-template-columns:1fr}.priority-patient{grid-template-columns:58px 1fr}.priority-patient>a{grid-column:1/-1;width:100%;justify-content:center}.pet-picture img,.pet-picture span{width:58px;height:58px}.activity-list>a{grid-template-columns:42px 1fr}.activity-list time{grid-column:2}}
-.vet-dashboard{display:block}
+.vet-dashboard {
+  width: min(1140px, calc(100% - 32px));
+  margin: 28px auto 60px;
+}
+.vet-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px;
+  background: linear-gradient(120deg, #fff 55%, #f2ebf8);
+  border: 1px solid #e7dfed;
+  border-radius: 18px;
+}
+.vet-welcome h1 {
+  margin: 3px 0;
+  color: #49206f;
+}
+.vet-welcome p {
+  margin: 5px 0;
+  color: #6d6877;
+}
+.profile-needed {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+  padding: 21px;
+  background: #fff8e7;
+  border: 1px solid #ecd494;
+  border-radius: 14px;
+}
+.profile-needed > span {
+  font-size: 32px;
+}
+.profile-needed h2,
+.profile-needed p {
+  margin: 3px 0;
+}
+.vet-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+  margin: 18px 0;
+}
+.vet-stats div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e7dfed;
+  border-radius: 12px;
+}
+.vet-stats strong {
+  font-size: 27px;
+  color: #7040a5;
+}
+.vet-stats span {
+  color: #6d6877;
+}
+.vet-stats .urgent {
+  border-color: #e4b1b1;
+  background: #fff9f9;
+}
+.vet-stats .urgent strong {
+  color: #b42318;
+}
+.vet-stats .rating-stat strong {
+  color: #d6960c;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+.dashboard-card,
+.quick-actions-section {
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e7dfed;
+  border-radius: 17px;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+.section-heading h2,
+.dashboard-card h2 {
+  margin: 2px 0;
+}
+.section-heading > a,
+.profile-card-link {
+  color: #7040a5;
+  font-weight: 800;
+  text-decoration: none;
+}
+.pending-badge {
+  padding: 7px 11px;
+  border-radius: 14px;
+  background: #fdecec;
+  color: #b42318;
+  font-size: 13px;
+  font-weight: 700;
+}
+.priority-patient {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  border-left: 5px solid #d63c3c;
+  background: #fffafa;
+  border-radius: 12px;
+}
+.priority-patient h3,
+.priority-patient p,
+.priority-patient small {
+  display: block;
+  margin: 4px 0;
+}
+.priority-patient p,
+.priority-patient small {
+  color: #6d6877;
+}
+.pet-picture img,
+.pet-picture span {
+  width: 72px;
+  height: 72px;
+  border-radius: 13px;
+  object-fit: cover;
+}
+.pet-picture span {
+  display: grid;
+  place-items: center;
+  background: #f2ebf8;
+  color: #7040a5;
+  font-size: 28px;
+}
+.all-clear {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px;
+  background: #f2f9f4;
+  border-radius: 12px;
+}
+.all-clear > span {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #43835a;
+  color: #fff;
+  font-size: 24px;
+}
+.all-clear h3,
+.all-clear p {
+  margin: 3px 0;
+}
+.all-clear p {
+  color: #55705e;
+}
+.progress-value {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 22px 0 9px;
+}
+.progress-value strong {
+  font-size: 34px;
+  color: #7040a5;
+}
+.progress-value span,
+.profile-progress-card > p {
+  color: #6d6877;
+}
+.profile-progress {
+  height: 10px;
+  margin-bottom: 17px;
+  overflow: hidden;
+  background: #eee8f1;
+  border-radius: 6px;
+}
+.profile-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #7040a5, #a777c7);
+  border-radius: 6px;
+}
+.quick-actions-section {
+  margin-top: 18px;
+}
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+}
+.quick-actions > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #e7dfed;
+  border-radius: 12px;
+  color: #352d3b;
+  text-decoration: none;
+}
+.quick-actions > a:hover {
+  border-color: #7040a5;
+  background: #fcfaff;
+}
+.quick-actions > a > span {
+  font-size: 25px;
+}
+.quick-actions strong,
+.quick-actions small {
+  display: block;
+}
+.quick-actions small {
+  margin-top: 4px;
+  color: #6d6877;
+}
+.lower-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.activity-list {
+  display: grid;
+}
+.activity-list > a {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 0;
+  border-bottom: 1px solid #eee8f1;
+  color: #352d3b;
+  text-decoration: none;
+}
+.activity-list > a:last-child {
+  border-bottom: 0;
+}
+.activity-initial {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f2ebf8;
+  color: #7040a5;
+  font-weight: 800;
+}
+.activity-list strong,
+.activity-list small {
+  display: block;
+}
+.activity-list small,
+.activity-list time {
+  margin-top: 3px;
+  color: #6d6877;
+  font-size: 12px;
+}
+.rating-total {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 10px 0 18px;
+}
+.rating-total > strong {
+  font-size: 42px;
+  color: #49206f;
+}
+.rating-total span,
+.rating-total small {
+  display: block;
+}
+.rating-total .stars {
+  color: #e9a914;
+  letter-spacing: 2px;
+}
+.rating-total small {
+  margin-top: 4px;
+  color: #6d6877;
+}
+.rating-overview blockquote {
+  margin: 0;
+  padding: 15px;
+  background: #faf8fb;
+  border-left: 4px solid #e9a914;
+  border-radius: 9px;
+}
+.rating-overview blockquote p {
+  margin: 0 0 9px;
+  line-height: 1.5;
+}
+.rating-overview blockquote footer {
+  color: #6d6877;
+  font-size: 13px;
+}
+.compact-empty {
+  padding: 22px;
+  background: #faf8fb;
+  border-radius: 10px;
+  color: #6d6877;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .vet-stats,
+  .quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dashboard-grid,
+  .lower-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 620px) {
+  .vet-welcome {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .vet-stats,
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+  .profile-needed {
+    grid-template-columns: 1fr;
+  }
+  .priority-patient {
+    grid-template-columns: 58px 1fr;
+  }
+  .priority-patient > a {
+    grid-column: 1/-1;
+    width: 100%;
+    justify-content: center;
+  }
+  .pet-picture img,
+  .pet-picture span {
+    width: 58px;
+    height: 58px;
+  }
+  .activity-list > a {
+    grid-template-columns: 42px 1fr;
+  }
+  .activity-list time {
+    grid-column: 2;
+  }
+}
+.vet-dashboard {
+  display: block;
+}

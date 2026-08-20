@@ -1,47 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Veterinarios | Zoi</title>
-    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
-    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
-    <link rel="stylesheet" th:href="@{/css/chat.css}">
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/chat.css}"/>
 </head>
 <body class="zoi-ui">
-<header class="profile-header"><a th:href="@{/dueno/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
-    <nav><a th:href="@{/dueno/home}">Volver</a>
-        <form th:action="@{/logout}" method="post"><input type="hidden" th:name="${_csrf.parameterName}"
-                                                          th:value="${_csrf.token}">
+<header class="profile-header">
+    <a th:href="@{/dueno/home}" class="header-logo-link"
+    ><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"
+    /></a>
+    <nav>
+        <a th:href="@{/dueno/home}">Volver</a>
+        <form th:action="@{/logout}" method="post">
+            <input
+                    type="hidden"
+                    th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}"
+            />
             <button class="zoi-btn-secondary">Salir</button>
         </form>
     </nav>
 </header>
 <main class="profile-content">
-    <div class="flash error-flash" th:if="${errorPerfil}" th:text="${errorPerfil}"></div>
-    <section class="directory-head"><p class="eyebrow">Orientación profesional</p>
+    <div
+            class="flash error-flash"
+            th:if="${errorPerfil}"
+            th:text="${errorPerfil}"
+    ></div>
+    <section class="directory-head">
+        <p class="eyebrow">Orientación profesional</p>
         <h1>Veterinarios registrados</h1>
-        <p>Conoce su experiencia y consulta sobre una de tus mascotas.</p></section>
+        <p>Conoce su experiencia y consulta sobre una de tus mascotas.</p>
+    </section>
     <section class="vet-directory">
-        <article class="directory-card" th:each="vet:${veterinarios}"><img th:if="${vet.fotoUrl}"
-                                                                           th:src="${vet.fotoUrl}"
-                                                                           alt="Foto profesional">
-            <div th:unless="${vet.fotoUrl}" class="directory-avatar"
-                 th:text="${#strings.substring(vet.usuario.nombre,0,1)}">V
+        <article class="directory-card" th:each="vet:${veterinarios}">
+            <img
+                    th:if="${vet.fotoUrl}"
+                    th:src="${vet.fotoUrl}"
+                    onerror="
+              this.hidden = true;
+              this.nextElementSibling.hidden = false;
+            "
+                    alt="Foto profesional"
+            />
+            <div
+                    class="directory-avatar"
+                    th:hidden="${vet.fotoUrl}"
+                    th:text="${#strings.substring(vet.usuario.nombre,0,1)}"
+            >
+                V
             </div>
-            <div><h2 th:text="${'Dr(a). '+vet.usuario.nombre+' '+vet.usuario.apellido}"></h2><strong
-                    th:text="${vet.especialidad}"></strong>
-                <p th:text="${vet.descripcion ?: 'Perfil profesional de Zoi.'}"></p><a class="zoi-btn-primary"
-                                                                                       th:href="@{/dueno/veterinarios/{id}(id=${vet.id})}">Ver
-                    perfil y consultar</a></div>
+            <div>
+                <h2
+                        th:text="${'Dr(a). '+vet.usuario.nombre+' '+vet.usuario.apellido}"
+                ></h2>
+                <strong th:text="${vet.especialidad}"></strong>
+                <p th:text="${vet.descripcion ?: 'Perfil profesional de Zoi.'}"></p>
+                <a
+                        class="zoi-btn-primary"
+                        th:href="@{/dueno/veterinarios/{id}(id=${vet.id})}"
+                >Ver perfil y consultar</a
+                >
+            </div>
         </article>
     </section>
-    <section class="empty-panel" th:if="${#lists.isEmpty(veterinarios)}"><p>Aún no hay veterinarios registrados.</p>
+    <section class="empty-panel" th:if="${#lists.isEmpty(veterinarios)}">
+        <p>Aún no hay veterinarios registrados.</p>
     </section>
-    <section th:if="${!#lists.isEmpty(conversaciones)}"><h2>Mis conversaciones</h2>
-        <div class="thread-list"><a th:each="c:${conversaciones}" th:href="@{/chat/{id}(id=${c.id})}"><strong
-                th:text="${c.veterinario.usuario.nombre+' · '+c.mascota.nombre}"></strong><span
-                th:text="${c.pendienteVeterinario ? 'Esperando respuesta' : 'Respondida'}"></span></a></div>
+    <section th:if="${!#lists.isEmpty(conversaciones)}">
+        <h2>Mis conversaciones</h2>
+        <div class="thread-list">
+            <a th:each="c:${conversaciones}" th:href="@{/chat/{id}(id=${c.id})}"
+            ><strong
+                    th:text="${c.veterinario.usuario.nombre+' · '+c.mascota.nombre}"
+            ></strong
+            ><span
+                    th:text="${c.pendienteVeterinario ? 'Esperando respuesta' : 'Respondida'}"
+            ></span
+            ></a>
+        </div>
     </section>
 </main>
 </body>

@@ -6,12 +6,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class AlmacenamientoDocumentoService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AlmacenamientoDocumentoService.class);
 
     private static final long TAMANO_MAXIMO = 10 * 1024 * 1024;
     private final Path directorioRaiz;
@@ -57,8 +62,8 @@ public class AlmacenamientoDocumentoService {
         }
         try {
             Files.deleteIfExists(archivo);
-        } catch (IOException ignored) {
-            // La limpieza no debe impedir que el perfil se actualice.
+        } catch (IOException exception) {
+            LOGGER.warn("No fue posible eliminar el documento {}", archivo, exception);
         }
     }
 

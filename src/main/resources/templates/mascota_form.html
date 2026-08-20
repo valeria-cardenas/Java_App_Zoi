@@ -1,125 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${modoEdicion ? 'Zoi - Editar mascota' : 'Zoi - Nueva mascota'}">Zoi - Mascota</title>
-    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
-    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title
+            th:text="${modoEdicion ? 'Zoi - Editar mascota' : 'Zoi - Nueva mascota'}"
+    >
+        Zoi - Mascota
+    </title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
 </head>
 <body class="zoi-ui">
 <header class="profile-header">
     <a th:href="@{/dueno/home}" class="header-logo-link">
-        <img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img">
+        <img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"/>
     </a>
     <nav><a th:href="@{/dueno/home}">← Volver</a></nav>
 </header>
 <main class="profile-main">
     <section class="form-panel wide-panel">
-        <a class="form-back-link" th:href="${modoEdicion} ? @{/dueno/mascotas/{id}(id=${mascota.id})} : @{/dueno/home}">←
-            Volver</a>
-        <h1 th:text="${modoEdicion ? 'Editar mascota' : 'Perfil de tu mascota'}">Perfil de tu mascota</h1>
-        <div th:if="${errorPerfil}" class="form-error" th:text="${errorPerfil}">Error</div>
+        <a
+                class="form-back-link"
+                th:href="${modoEdicion} ? @{/dueno/mascotas/{id}(id=${mascota.id})} : @{/dueno/home}"
+        >← Volver</a
+        >
+        <h1
+                th:text="${modoEdicion ? 'Editar mascota' : 'Perfil de tu mascota'}"
+        >
+            Perfil de tu mascota
+        </h1>
+        <div th:if="${errorPerfil}" class="form-error" th:text="${errorPerfil}">
+            Error
+        </div>
 
-        <form th:action="${modoEdicion} ? @{/mascotas/{id}(id=${mascota.id})} : @{/mascotas}"
-              method="post" enctype="multipart/form-data" class="stack-form detail-form" data-zoi-validate
-              data-confirm-empty>
-            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <form
+                th:action="${modoEdicion} ? @{/mascotas/{id}(id=${mascota.id})} : @{/mascotas}"
+                method="post"
+                enctype="multipart/form-data"
+                class="stack-form detail-form"
+                data-zoi-validate
+                data-confirm-empty
+        >
+            <input
+                    type="hidden"
+                    th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}"
+            />
 
             <fieldset>
                 <legend>Perfil social</legend>
                 <div class="image-upload full-field">
                     <div class="image-preview-frame">
-                        <img id="fotoPreview" th:if="${mascota.fotoUrl}" th:src="${mascota.fotoUrl}"
-                             alt="Foto actual de la mascota">
-                        <div id="fotoPlaceholder" th:classappend="${mascota.fotoUrl} ? ' is-hidden' : ''">Foto</div>
+                        <img
+                                id="fotoPreview"
+                                th:if="${mascota.fotoUrl}"
+                                th:src="${mascota.fotoUrl}"
+                                alt="Foto actual de la mascota"
+                        />
+                        <div
+                                id="fotoPlaceholder"
+                                th:classappend="${mascota.fotoUrl} ? ' is-hidden' : ''"
+                        >
+                            Foto
+                        </div>
                     </div>
-                    <label>Foto de la mascota
-                        <input id="fotoInput" type="file" name="foto" accept="image/png,image/jpeg,image/webp,image/gif"
-                               data-max-bytes="5242880" data-file-types="image/png,image/jpeg,image/webp,image/gif"
-                               data-size-error="La imagen no puede superar 5 MB."
-                               data-error="Usa una imagen PNG, JPG, WebP o GIF.">
+                    <label
+                    >Foto de la mascota
+                        <input
+                                id="fotoInput"
+                                type="file"
+                                name="foto"
+                                accept="image/png,image/jpeg,image/webp,image/gif"
+                                data-max-bytes="5242880"
+                                data-file-types="image/png,image/jpeg,image/webp,image/gif"
+                                data-size-error="La imagen no puede superar 5 MB."
+                                data-error="Usa una imagen PNG, JPG, WebP o GIF."
+                        />
                         <small>PNG, JPG, WebP o GIF. Maximo 5 MB.</small>
                     </label>
                 </div>
-                <label>Nombre
-                    <input type="text" name="nombre" th:value="${mascota.nombre}"
-                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,80}" maxlength="80"
-                           data-error="Usa solo letras y espacios." required>
+                <label
+                >Nombre
+                    <input
+                            type="text"
+                            name="nombre"
+                            th:value="${mascota.nombre}"
+                            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,80}"
+                            maxlength="80"
+                            data-error="Usa solo letras y espacios."
+                            required
+                    />
                 </label>
 
-                <label class="full-field">Descripcion
-                    <textarea name="descripcion" maxlength="600" placeholder="Personalidad, gustos, rutinas..."
-                              th:text="${mascota.descripcion}"></textarea>
+                <label class="full-field"
+                >Descripcion
+                    <textarea
+                            name="descripcion"
+                            maxlength="600"
+                            placeholder="Personalidad, gustos, rutinas..."
+                            th:text="${mascota.descripcion}"
+                    ></textarea>
                 </label>
-
             </fieldset>
 
             <fieldset>
                 <legend>Datos basicos</legend>
-                <label>Tipo de mascota
-                    <input type="text" name="tipoMascota" th:value="${mascota.tipoMascota}" pattern="[^0-9]{2,80}"
-                           placeholder="Domestica, apoyo, rescatada..." required
-                           data-error="El tipo de mascota es obligatorio.">
+                <label
+                >Tipo de mascota
+                    <input
+                            type="text"
+                            name="tipoMascota"
+                            th:value="${mascota.tipoMascota}"
+                            pattern="[^0-9]{2,80}"
+                            placeholder="Domestica, apoyo, rescatada..."
+                            required
+                            data-error="El tipo de mascota es obligatorio."
+                    />
                 </label>
 
-                <label>Especie
-                    <select name="especie" required data-error="Selecciona una especie de la lista.">
+                <label
+                >Especie
+                    <select
+                            name="especie"
+                            required
+                            data-error="Selecciona una especie de la lista."
+                    >
                         <option value="">Selecciona una especie</option>
-                        <option th:each="opcion : ${especies}" th:value="${opcion}" th:text="${opcion}"
-                                th:selected="${mascota.especie == opcion}"></option>
+                        <option
+                                th:each="opcion : ${especies}"
+                                th:value="${opcion}"
+                                th:text="${opcion}"
+                                th:selected="${mascota.especie == opcion}"
+                        ></option>
                     </select>
                 </label>
 
-                <label>Raza
-                    <input type="text" name="raza" th:value="${mascota.raza}" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,80}"
-                           maxlength="80" data-error="Usa solo letras y espacios.">
+                <label
+                >Raza
+                    <input
+                            type="text"
+                            name="raza"
+                            th:value="${mascota.raza}"
+                            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,80}"
+                            maxlength="80"
+                            data-error="Usa solo letras y espacios."
+                    />
                     <small>¿No la conoces? o ¿no aplica? escribe "X"</small>
                 </label>
 
-                <label>Tipo de sangre
-                    <input type="text" name="tipoSangre" th:value="${mascota.tipoSangre}" maxlength="30"
-                           placeholder="DEA 1.1, A, B...">
+                <label
+                >Tipo de sangre
+                    <input
+                            type="text"
+                            name="tipoSangre"
+                            th:value="${mascota.tipoSangre}"
+                            maxlength="30"
+                            placeholder="DEA 1.1, A, B..."
+                    />
                     <small>¿No lo conoces? escribe "X"</small>
                 </label>
 
-                <label>Sexo
-                    <select name="sexo" required data-error="Selecciona el sexo de la mascota.">
+                <label
+                >Sexo
+                    <select
+                            name="sexo"
+                            required
+                            data-error="Selecciona el sexo de la mascota."
+                    >
                         <option value="">Sin especificar</option>
-                        <option value="Hembra" th:selected="${mascota.sexo == 'Hembra'}">Hembra</option>
-                        <option value="Macho" th:selected="${mascota.sexo == 'Macho'}">Macho</option>
+                        <option
+                                value="Hembra"
+                                th:selected="${mascota.sexo == 'Hembra'}"
+                        >
+                            Hembra
+                        </option>
+                        <option value="Macho" th:selected="${mascota.sexo == 'Macho'}">
+                            Macho
+                        </option>
                     </select>
                 </label>
 
-                <label>Fecha de nacimiento
+                <label
+                >Fecha de nacimiento
                     <span class="pet-date-fields">
-                        <input id="fechaDia" type="number" min="1" max="31" inputmode="numeric" placeholder="Día"
-                               aria-label="Día de nacimiento" th:value="${mascota.fechaNacimiento != null ? mascota.fechaNacimiento.dayOfMonth : ''}">
-                        <select id="fechaMes" aria-label="Mes de nacimiento">
-                            <option value="">Mes</option>
-                            <option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option>
-                            <option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option>
-                            <option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option>
-                            <option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
-                        </select>
-                        <input id="fechaAnio" type="number" min="1946" th:max="${#dates.year(#dates.createNow())}"
-                               inputmode="numeric" placeholder="Año" aria-label="Año de nacimiento"
-                               th:value="${mascota.fechaNacimiento != null ? mascota.fechaNacimiento.year : ''}">
-                    </span>
-                    <input id="fechaNacimientoInput" type="hidden" name="fechaNacimiento" th:value="${mascota.fechaNacimiento}">
-                    <small>¿no conoces la fecha exacta?, puedes usar una aproximada.</small>
+                <input
+                        id="fechaDia"
+                        type="number"
+                        min="1"
+                        max="31"
+                        inputmode="numeric"
+                        placeholder="Día"
+                        aria-label="Día de nacimiento"
+                        th:value="${mascota.fechaNacimiento != null ? mascota.fechaNacimiento.dayOfMonth : ''}"
+                />
+                <select id="fechaMes" aria-label="Mes de nacimiento">
+                  <option value="">Mes</option>
+                  <option value="1">Enero</option>
+                  <option value="2">Febrero</option>
+                  <option value="3">Marzo</option>
+                  <option value="4">Abril</option>
+                  <option value="5">Mayo</option>
+                  <option value="6">Junio</option>
+                  <option value="7">Julio</option>
+                  <option value="8">Agosto</option>
+                  <option value="9">Septiembre</option>
+                  <option value="10">Octubre</option>
+                  <option value="11">Noviembre</option>
+                  <option value="12">Diciembre</option>
+                </select>
+                <input
+                        id="fechaAnio"
+                        type="number"
+                        min="1946"
+                        th:max="${#dates.year(#dates.createNow())}"
+                        inputmode="numeric"
+                        placeholder="Año"
+                        aria-label="Año de nacimiento"
+                        th:value="${mascota.fechaNacimiento != null ? mascota.fechaNacimiento.year : ''}"
+                />
+              </span>
+                    <input
+                            id="fechaNacimientoInput"
+                            type="hidden"
+                            name="fechaNacimiento"
+                            th:value="${mascota.fechaNacimiento}"
+                    />
+                    <small
+                    >¿no conoces la fecha exacta?, puedes usar una
+                        aproximada.</small
+                    >
                 </label>
 
-                <label>Edad
-                    <input id="edadInput" type="number" name="edad" th:value="${mascota.edad}" min="0" max="80"
-                           data-error="La edad debe estar entre 0 y 80 años.">
+                <label
+                >Edad
+                    <input
+                            id="edadInput"
+                            type="number"
+                            name="edad"
+                            th:value="${mascota.edad}"
+                            min="0"
+                            max="80"
+                            data-error="La edad debe estar entre 0 y 80 años."
+                    />
                 </label>
 
-                <label>Esterilizado
-                    <select name="esterilizado" required data-error="Indica si la mascota está esterilizada.">
+                <label
+                >Esterilizado
+                    <select
+                            name="esterilizado"
+                            required
+                            data-error="Indica si la mascota está esterilizada."
+                    >
                         <option value="">Sin especificar</option>
-                        <option value="Si" th:selected="${mascota.esterilizado == 'Si'}">Si</option>
-                        <option value="No" th:selected="${mascota.esterilizado == 'No'}">No</option>
+                        <option
+                                value="Si"
+                                th:selected="${mascota.esterilizado == 'Si'}"
+                        >
+                            Si
+                        </option>
+                        <option
+                                value="No"
+                                th:selected="${mascota.esterilizado == 'No'}"
+                        >
+                            No
+                        </option>
                     </select>
                 </label>
             </fieldset>
@@ -129,49 +274,94 @@
 
                 <div class="full-field vaccination-card-field">
                     <label for="carnetVacunacion">Foto del carné de vacunación</label>
-                    <input id="carnetVacunacion" class="visually-hidden-file" type="file" name="carnetVacunacion"
-                           accept="image/png,image/jpeg,image/webp,image/gif" data-max-bytes="5242880"
-                           data-file-types="image/png,image/jpeg,image/webp,image/gif"
-                           data-size-error="La imagen del carné no puede superar 5 MB."
-                           data-error="Usa una imagen PNG, JPG, WebP o GIF.">
+                    <input
+                            id="carnetVacunacion"
+                            class="visually-hidden-file"
+                            type="file"
+                            name="carnetVacunacion"
+                            accept="image/png,image/jpeg,image/webp,image/gif"
+                            data-max-bytes="5242880"
+                            data-file-types="image/png,image/jpeg,image/webp,image/gif"
+                            data-size-error="La imagen del carné no puede superar 5 MB."
+                            data-error="Usa una imagen PNG, JPG, WebP o GIF."
+                    />
                     <div class="pretty-file-picker">
                         <label for="carnetVacunacion" class="pretty-file-button">
                             <span class="pretty-file-icon" aria-hidden="true">📎</span>
                             <span>Elegir foto del carné</span>
                         </label>
-                        <span id="carnetFileName" class="pretty-file-name">Ningún archivo seleccionado</span>
+                        <span id="carnetFileName" class="pretty-file-name"
+                        >Ningún archivo seleccionado</span
+                        >
                     </div>
-                    <a th:if="${mascota.carnetVacunacionUrl}" th:href="${mascota.carnetVacunacionUrl}"
-                       target="_blank" rel="noopener">Ver carné registrado</a>
+                    <a
+                            th:if="${mascota.carnetVacunacionUrl}"
+                            th:href="${mascota.carnetVacunacionUrl}"
+                            target="_blank"
+                            rel="noopener"
+                    >Ver carné registrado</a
+                    >
                     <label class="vaccination-status-check">
-                        <input id="vacunasNoVigentes" type="checkbox" name="vacunasNoVigentes" value="true"
-                               th:checked="${!mascota.vacunasVigentes and mascota.id != null}">
-                        <span>No tengo carné vigente / las vacunas no están vigentes</span>
+                        <input
+                                id="vacunasNoVigentes"
+                                type="checkbox"
+                                name="vacunasNoVigentes"
+                                value="true"
+                                th:checked="${!mascota.vacunasVigentes and mascota.id != null}"
+                        />
+                        <span
+                        >No tengo carné vigente / las vacunas no están vigentes</span
+                        >
                     </label>
-                    <small>Sube una foto legible del carné. Si no tienes uno vigente, marca la casilla.</small>
+                    <small
+                    >Sube una foto legible del carné. Si no tienes uno vigente,
+                        marca la casilla.</small
+                    >
                 </div>
 
-                <label class="full-field">Enfermedades
-                    <textarea name="enfermedades" maxlength="600" placeholder="Alergias, condiciones cronicas..."
-                              th:text="${mascota.enfermedades}"></textarea>
+                <label class="full-field"
+                >Enfermedades
+                    <textarea
+                            name="enfermedades"
+                            maxlength="600"
+                            placeholder="Alergias, condiciones cronicas..."
+                            th:text="${mascota.enfermedades}"
+                    ></textarea>
                 </label>
 
-                <label class="full-field">Antecedentes
-                    <textarea name="antecedentes" maxlength="800" placeholder="Cirugias, tratamientos, observaciones..."
-                              th:text="${mascota.antecedentes}"></textarea>
+                <label class="full-field"
+                >Antecedentes
+                    <textarea
+                            name="antecedentes"
+                            maxlength="800"
+                            placeholder="Cirugias, tratamientos, observaciones..."
+                            th:text="${mascota.antecedentes}"
+                    ></textarea>
                 </label>
 
-                <label class="full-field">Diagnostico
-                    <textarea name="diagnostico" maxlength="800" placeholder="Ultimo diagnostico conocido..."
-                              th:text="${mascota.diagnostico}"></textarea>
+                <label class="full-field"
+                >Diagnostico
+                    <textarea
+                            name="diagnostico"
+                            maxlength="800"
+                            placeholder="Ultimo diagnostico conocido..."
+                            th:text="${mascota.diagnostico}"
+                    ></textarea>
                 </label>
             </fieldset>
 
             <div class="pet-form-actions">
-                <a class="zoi-btn-secondary"
-                   th:href="${modoEdicion} ? @{/dueno/mascotas/{id}(id=${mascota.id})} : @{/dueno/home}">Cancelar</a>
-                <button type="submit" class="zoi-btn-primary"
-                        th:text="${modoEdicion ? 'Actualizar mascota' : 'Guardar mascota'}">Guardar mascota
+                <a
+                        class="zoi-btn-secondary"
+                        th:href="${modoEdicion} ? @{/dueno/mascotas/{id}(id=${mascota.id})} : @{/dueno/home}"
+                >Cancelar</a
+                >
+                <button
+                        type="submit"
+                        class="zoi-btn-primary"
+                        th:text="${modoEdicion ? 'Actualizar mascota' : 'Guardar mascota'}"
+                >
+                    Guardar mascota
                 </button>
             </div>
         </form>
@@ -179,94 +369,122 @@
 </main>
 <script th:src="@{/js/zoi-validation.js}"></script>
 <script>
-    const fotoInput = document.getElementById('fotoInput');
-    const fotoPreview = document.getElementById('fotoPreview');
-    const fotoPlaceholder = document.getElementById('fotoPlaceholder');
-    const fechaNacimientoInput = document.getElementById('fechaNacimientoInput');
-    const fechaDia = document.getElementById('fechaDia');
-    const fechaMes = document.getElementById('fechaMes');
-    const fechaAnio = document.getElementById('fechaAnio');
-    const edadInput = document.getElementById('edadInput');
-    const carnetVacunacion = document.getElementById('carnetVacunacion');
-    const vacunasNoVigentes = document.getElementById('vacunasNoVigentes');
-    fotoInput.addEventListener('change', () => {
-        const archivo = fotoInput.files[0];
-        if (!archivo) return;
-        const url = URL.createObjectURL(archivo);
-        if (fotoPreview) {
-            fotoPreview.src = url;
-            fotoPreview.hidden = false;
-        } else {
-            const imagen = document.createElement('img');
-            imagen.id = 'fotoPreview';
-            imagen.src = url;
-            imagen.alt = 'Vista previa de la mascota';
-            fotoPlaceholder.parentElement.prepend(imagen);
-        }
-        fotoPlaceholder.classList.add('is-hidden');
+    const fotoInput = document.getElementById("fotoInput");
+    const fotoPreview = document.getElementById("fotoPreview");
+    const fotoPlaceholder = document.getElementById("fotoPlaceholder");
+    const fechaNacimientoInput = document.getElementById(
+      "fechaNacimientoInput",
+    );
+    const fechaDia = document.getElementById("fechaDia");
+    const fechaMes = document.getElementById("fechaMes");
+    const fechaAnio = document.getElementById("fechaAnio");
+    const edadInput = document.getElementById("edadInput");
+    const carnetVacunacion = document.getElementById("carnetVacunacion");
+    const vacunasNoVigentes = document.getElementById("vacunasNoVigentes");
+    fotoInput.addEventListener("change", () => {
+      const archivo = fotoInput.files[0];
+      if (!archivo) return;
+      const url = URL.createObjectURL(archivo);
+      if (fotoPreview) {
+        fotoPreview.src = url;
+        fotoPreview.hidden = false;
+      } else {
+        const imagen = document.createElement("img");
+        imagen.id = "fotoPreview";
+        imagen.src = url;
+        imagen.alt = "Vista previa de la mascota";
+        fotoPlaceholder.parentElement.prepend(imagen);
+      }
+      fotoPlaceholder.classList.add("is-hidden");
     });
 
     if (fechaNacimientoInput.value) {
-        fechaMes.value = String(Number(fechaNacimientoInput.value.split('-')[1]));
+      fechaMes.value = String(
+        Number(fechaNacimientoInput.value.split("-")[1]),
+      );
     }
 
     const calcularEdad = () => {
-        if (!fechaNacimientoInput.value) {
-            edadInput.readOnly = false;
-            return;
-        }
-        const [anio, mes, dia] = fechaNacimientoInput.value.split('-').map(Number);
-        const hoy = new Date();
-        let edad = hoy.getFullYear() - anio;
-        if (hoy.getMonth() + 1 < mes || (hoy.getMonth() + 1 === mes && hoy.getDate() < dia)) edad--;
-        if (edad >= 0 && edad <= 80) {
-            edadInput.value = edad;
-            edadInput.readOnly = true;
-            edadInput.setCustomValidity('');
-        } else {
-            edadInput.value = '';
-            edadInput.readOnly = false;
-            fechaAnio.setCustomValidity(edad < 0 ? 'La fecha de nacimiento no puede ser futura.' : 'La edad calculada supera el límite permitido.');
-            fechaAnio.reportValidity();
-        }
+      if (!fechaNacimientoInput.value) {
+        edadInput.readOnly = false;
+        return;
+      }
+      const [anio, mes, dia] = fechaNacimientoInput.value
+        .split("-")
+        .map(Number);
+      const hoy = new Date();
+      let edad = hoy.getFullYear() - anio;
+      if (
+        hoy.getMonth() + 1 < mes ||
+        (hoy.getMonth() + 1 === mes && hoy.getDate() < dia)
+      )
+        edad--;
+      if (edad >= 0 && edad <= 80) {
+        edadInput.value = edad;
+        edadInput.readOnly = true;
+        edadInput.setCustomValidity("");
+      } else {
+        edadInput.value = "";
+        edadInput.readOnly = false;
+        fechaAnio.setCustomValidity(
+          edad < 0
+            ? "La fecha de nacimiento no puede ser futura."
+            : "La edad calculada supera el límite permitido.",
+        );
+        fechaAnio.reportValidity();
+      }
     };
 
     const actualizarFecha = () => {
-        fechaAnio.setCustomValidity('');
-        const dia = Number(fechaDia.value), mes = Number(fechaMes.value), anio = Number(fechaAnio.value);
-        if (!fechaDia.value && !fechaMes.value && !fechaAnio.value) {
-            fechaNacimientoInput.value = '';
-            edadInput.readOnly = false;
-            return;
-        }
-        if (!dia || !mes || !anio || fechaAnio.value.length !== 4) {
-            fechaNacimientoInput.value = '';
-            edadInput.readOnly = false;
-            return;
-        }
-        const fecha = new Date(anio, mes - 1, dia);
-        const hoy = new Date();
-        const fechaValida = fecha.getFullYear() === anio && fecha.getMonth() === mes - 1 && fecha.getDate() === dia;
-        if (!fechaValida || fecha > hoy) {
-            fechaAnio.setCustomValidity(fechaValida ? 'La fecha de nacimiento no puede ser futura.' : 'Ingresa una fecha de nacimiento válida.');
-            fechaAnio.reportValidity();
-            fechaNacimientoInput.value = '';
-            return;
-        }
-        fechaNacimientoInput.value = `${anio}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
-        calcularEdad();
+      fechaAnio.setCustomValidity("");
+      const dia = Number(fechaDia.value),
+        mes = Number(fechaMes.value),
+        anio = Number(fechaAnio.value);
+      if (!fechaDia.value && !fechaMes.value && !fechaAnio.value) {
+        fechaNacimientoInput.value = "";
+        edadInput.readOnly = false;
+        return;
+      }
+      if (!dia || !mes || !anio || fechaAnio.value.length !== 4) {
+        fechaNacimientoInput.value = "";
+        edadInput.readOnly = false;
+        return;
+      }
+      const fecha = new Date(anio, mes - 1, dia);
+      const hoy = new Date();
+      const fechaValida =
+        fecha.getFullYear() === anio &&
+        fecha.getMonth() === mes - 1 &&
+        fecha.getDate() === dia;
+      if (!fechaValida || fecha > hoy) {
+        fechaAnio.setCustomValidity(
+          fechaValida
+            ? "La fecha de nacimiento no puede ser futura."
+            : "Ingresa una fecha de nacimiento válida.",
+        );
+        fechaAnio.reportValidity();
+        fechaNacimientoInput.value = "";
+        return;
+      }
+      fechaNacimientoInput.value = `${anio}-${String(mes).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
+      calcularEdad();
     };
-    [fechaDia, fechaMes, fechaAnio].forEach(campo => campo.addEventListener('change', actualizarFecha));
-    carnetVacunacion.addEventListener('change', () => {
-        const archivo = carnetVacunacion.files[0];
-        document.getElementById('carnetFileName').textContent = archivo ? archivo.name : 'Ningún archivo seleccionado';
-        if (archivo) vacunasNoVigentes.checked = false;
+    [fechaDia, fechaMes, fechaAnio].forEach((campo) =>
+      campo.addEventListener("change", actualizarFecha),
+    );
+    carnetVacunacion.addEventListener("change", () => {
+      const archivo = carnetVacunacion.files[0];
+      document.getElementById("carnetFileName").textContent = archivo
+        ? archivo.name
+        : "Ningún archivo seleccionado";
+      if (archivo) vacunasNoVigentes.checked = false;
     });
-    vacunasNoVigentes.addEventListener('change', () => {
-        if (vacunasNoVigentes.checked) {
-            carnetVacunacion.value = '';
-            document.getElementById('carnetFileName').textContent = 'Ningún archivo seleccionado';
-        }
+    vacunasNoVigentes.addEventListener("change", () => {
+      if (vacunasNoVigentes.checked) {
+        carnetVacunacion.value = "";
+        document.getElementById("carnetFileName").textContent =
+          "Ningún archivo seleccionado";
+      }
     });
     calcularEdad();
 </script>

@@ -8,12 +8,17 @@ import java.nio.file.StandardCopyOption;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class AlmacenamientoImagenService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AlmacenamientoImagenService.class);
 
     private static final long TAMANO_MAXIMO = 5 * 1024 * 1024;
     private static final Set<String> TIPOS_PERMITIDOS = Set.of(
@@ -79,7 +84,8 @@ public class AlmacenamientoImagenService {
                         && cabecera[9] == 'E' && cabecera[10] == 'B' && cabecera[11] == 'P';
                 default -> false;
             };
-            if (!valida) throw new IllegalArgumentException("El contenido del archivo no corresponde a una imagen válida.");
+            if (!valida)
+                throw new IllegalArgumentException("El contenido del archivo no corresponde a una imagen válida.");
         } catch (IOException exception) {
             throw new IllegalStateException("No fue posible validar la imagen.", exception);
         }
@@ -95,8 +101,8 @@ public class AlmacenamientoImagenService {
         }
         try {
             Files.deleteIfExists(archivo);
-        } catch (IOException ignored) {
-            // La limpieza del archivo no debe impedir la operacion principal.
+        } catch (IOException exception) {
+            LOGGER.warn("No fue posible eliminar la imagen {}", archivo, exception);
         }
     }
 }

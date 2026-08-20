@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Acceso denegado | Zoi</title>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+</head>
+<body class="zoi-ui">
+<main class="error-page">
+    <img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"/>
+    <p class="eyebrow">Error 403</p>
+    <h1>No tienes permiso para entrar aquí</h1>
+    <p>Regresa a tu panel o inicia sesión con una cuenta autorizada.</p>
+    <a class="zoi-btn-primary" th:href="@{/dashboard}">Volver a mi panel</a>
+</main>
+</body>
+</html>

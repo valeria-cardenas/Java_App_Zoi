@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Error interno | Zoi</title>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+</head>
+<body class="zoi-ui">
+<main class="error-page">
+    <img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"/>
+    <p class="eyebrow">Error 500</p>
+    <h1>No pudimos completar la operación</h1>
+    <p>
+        Inténtalo nuevamente. Si el problema continúa, comunícate con el
+        administrador.
+    </p>
+    <a class="zoi-btn-primary" th:href="@{/dashboard}">Volver a mi panel</a>
+</main>
+</body>
+</html>

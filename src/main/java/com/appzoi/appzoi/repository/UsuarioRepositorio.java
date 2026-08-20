@@ -1,8 +1,10 @@
 package com.appzoi.appzoi.repository;
 
 import com.appzoi.appzoi.model.UsuarioEntity;
+
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,6 +18,7 @@ public interface UsuarioRepositorio extends JpaRepository<UsuarioEntity, Integer
     Optional<UsuarioEntity> findByEmail(String email);
 
     long countByTipoPerfil(String tipoPerfil);
+
     List<UsuarioEntity> findAllByTipoPerfil(String tipoPerfil);
 
     @Query("""

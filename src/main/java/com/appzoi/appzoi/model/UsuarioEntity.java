@@ -6,15 +6,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Dueno")
+@Table(name = "usuario")
 public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_dueno")
+    @Column(name = "id_usuario")
     private Integer id;
 
     private String nombre;

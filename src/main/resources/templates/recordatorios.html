@@ -1,12 +1,147 @@
-<!DOCTYPE html><html lang="es" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calendario de cuidados | Zoi</title><link rel="stylesheet" th:href="@{/css/perfiles.css}"><link rel="stylesheet" th:href="@{/css/zoi-ui.css}"><link rel="stylesheet" th:href="@{/css/recordatorios.css}"><link rel="stylesheet" th:href="@{/css/calendario-mejorado.css}"></head>
-<body class="zoi-ui"><header class="profile-header"><a th:href="@{/dueno/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a><nav><a th:href="@{/dueno/home}">Volver</a><a class="zoi-btn-primary" th:href="@{/dueno/recordatorios/nuevo}">+ Crear</a></nav></header>
-<main class="calendar-page"><div class="flash success-flash" th:if="${successPerfil}" th:text="${successPerfil}"></div><div class="flash error-flash" th:if="${errorPerfil}" th:text="${errorPerfil}"></div>
-<section class="calendar-toolbar"><div><p class="eyebrow">Agenda de cuidados</p><h1>Calendario de mascotas</h1><p class="calendar-intro">Consulta y completa los cuidados pendientes de tus mascotas.</p></div><div class="month-controls"><button type="button" id="prevMonth" aria-label="Mes anterior">‹</button><button type="button" id="todayButton">Hoy</button><button type="button" id="nextMonth" aria-label="Mes siguiente">›</button><h2 id="monthTitle"></h2></div></section>
-<div class="calendar-shell"><section class="month-calendar" aria-label="Calendario mensual"><div class="weekdays"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div><div id="calendarGrid" class="calendar-grid"></div></section>
-<aside class="agenda-panel"><div class="agenda-head"><div><small>Pendientes</small><h2>Próximos cuidados</h2></div><span th:text="${#lists.size(recordatorios)}">0</span></div>
-<div class="agenda-list" th:if="${!#lists.isEmpty(recordatorios)}"><article th:each="r:${recordatorios}" th:class="${'agenda-item type-'+r.tipo.toLowerCase()+(r.fechaHora.isBefore(ahora)?' overdue':'')}" th:attr="data-date=${#temporals.format(r.fechaHora,'yyyy-MM-dd')},data-title=${r.titulo},data-pet=${r.mascota.nombre},data-time=${#temporals.format(r.fechaHora,'HH:mm')},data-type=${r.tipo}">
-<form class="check-form" th:action="@{/dueno/recordatorios/{id}/completar(id=${r.id})}" method="post"><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><button class="care-checkbox" title="Marcar como realizado" aria-label="Marcar como realizado"><span>✓</span></button></form>
-<div class="agenda-content"><div class="agenda-time"><strong th:text="${#temporals.format(r.fechaHora,'EEE dd MMM · HH:mm')}"></strong><span th:if="${r.fechaHora.isBefore(ahora)}">Vencido</span></div><h3 th:text="${r.titulo}"></h3><p><span th:text="${r.mascota.nombre}"></span><span th:text="${' · '+r.tipo.toLowerCase()}"></span></p><small th:if="${r.repeticion!='NINGUNA'}" th:text="${'↻ '+r.repeticion.toLowerCase()}"></small></div>
-<div class="item-menu"><a th:href="@{/dueno/recordatorios/{id}/editar(id=${r.id})}" title="Editar">✎</a><form th:action="@{/dueno/recordatorios/{id}/eliminar(id=${r.id})}" method="post"><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><button title="Eliminar">×</button></form></div></article></div>
-<div class="agenda-empty" th:if="${#lists.isEmpty(recordatorios)}"><div>✓</div><h3>¡Todo al día!</h3><p>No tienes recordatorios pendientes.</p><a class="zoi-btn-primary" th:href="@{/dueno/recordatorios/nuevo}">Crear un recordatorio</a></div></aside></div></main>
-<script th:src="@{/js/recordatorios-calendar.js}"></script></body></html>
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Calendario de cuidados | Zoi</title>
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/recordatorios.css}"/>
+    <link rel="stylesheet" th:href="@{/css/calendario-mejorado.css}"/>
+</head>
+<body class="zoi-ui">
+<header class="profile-header">
+    <a th:href="@{/dueno/home}" class="header-logo-link"
+    ><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"
+    /></a>
+    <nav>
+        <a th:href="@{/dueno/home}">Volver</a
+        ><a class="zoi-btn-primary" th:href="@{/dueno/recordatorios/nuevo}"
+    >+ Crear</a
+    >
+    </nav>
+</header>
+<main class="calendar-page">
+    <div
+            class="flash success-flash"
+            th:if="${successPerfil}"
+            th:text="${successPerfil}"
+    ></div>
+    <div
+            class="flash error-flash"
+            th:if="${errorPerfil}"
+            th:text="${errorPerfil}"
+    ></div>
+    <section class="calendar-toolbar">
+        <div>
+            <p class="eyebrow">Agenda de cuidados</p>
+            <h1>Calendario de mascotas</h1>
+            <p class="calendar-intro">
+                Consulta y completa los cuidados pendientes de tus mascotas.
+            </p>
+        </div>
+        <div class="month-controls">
+            <button type="button" id="prevMonth" aria-label="Mes anterior">
+                ‹
+            </button
+            >
+            <button type="button" id="todayButton">Hoy
+            </button
+            >
+            <button type="button" id="nextMonth" aria-label="Mes siguiente">
+                ›
+            </button>
+            <h2 id="monthTitle"></h2>
+        </div>
+    </section>
+    <div class="calendar-shell">
+        <section class="month-calendar" aria-label="Calendario mensual">
+            <div class="weekdays">
+                <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span
+            ><span>Vie</span><span>Sáb</span><span>Dom</span>
+            </div>
+            <div id="calendarGrid" class="calendar-grid"></div>
+        </section>
+        <aside class="agenda-panel">
+            <div class="agenda-head">
+                <div>
+                    <small>Pendientes</small>
+                    <h2>Próximos cuidados</h2>
+                </div>
+                <span th:text="${#lists.size(recordatorios)}">0</span>
+            </div>
+            <div class="agenda-list" th:if="${!#lists.isEmpty(recordatorios)}">
+                <article
+                        th:each="r:${recordatorios}"
+                        th:class="${'agenda-item type-'+r.tipo.toLowerCase()+(r.fechaHora.isBefore(ahora)?' overdue':'')}"
+                        th:attr="data-date=${#temporals.format(r.fechaHora,'yyyy-MM-dd')},data-title=${r.titulo},data-pet=${r.mascota.nombre},data-time=${#temporals.format(r.fechaHora,'HH:mm')},data-type=${r.tipo}"
+                >
+                    <form
+                            class="check-form"
+                            th:action="@{/dueno/recordatorios/{id}/completar(id=${r.id})}"
+                            method="post"
+                    >
+                        <input
+                                type="hidden"
+                                th:name="${_csrf.parameterName}"
+                                th:value="${_csrf.token}"
+                        />
+                        <button
+                                class="care-checkbox"
+                                title="Marcar como realizado"
+                                aria-label="Marcar como realizado"
+                        >
+                            <span>✓</span>
+                        </button>
+                    </form>
+                    <div class="agenda-content">
+                        <div class="agenda-time">
+                            <strong
+                                    th:text="${#temporals.format(r.fechaHora,'EEE dd MMM · HH:mm')}"
+                            ></strong
+                            ><span th:if="${r.fechaHora.isBefore(ahora)}">Vencido</span>
+                        </div>
+                        <h3 th:text="${r.titulo}"></h3>
+                        <p>
+                  <span th:text="${r.mascota.nombre}"></span
+                  ><span th:text="${' · '+r.tipo.toLowerCase()}"></span>
+                        </p>
+                        <small
+                                th:if="${r.repeticion!='NINGUNA'}"
+                                th:text="${'↻ '+r.repeticion.toLowerCase()}"
+                        ></small>
+                    </div>
+                    <div class="item-menu">
+                        <a
+                                th:href="@{/dueno/recordatorios/{id}/editar(id=${r.id})}"
+                                title="Editar"
+                        >✎</a
+                        >
+                        <form
+                                th:action="@{/dueno/recordatorios/{id}/eliminar(id=${r.id})}"
+                                method="post"
+                        >
+                            <input
+                                    type="hidden"
+                                    th:name="${_csrf.parameterName}"
+                                    th:value="${_csrf.token}"
+                            />
+                            <button title="Eliminar">×</button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+            <div class="agenda-empty" th:if="${#lists.isEmpty(recordatorios)}">
+                <div>✓</div>
+                <h3>¡Todo al día!</h3>
+                <p>No tienes recordatorios pendientes.</p>
+                <a class="zoi-btn-primary" th:href="@{/dueno/recordatorios/nuevo}"
+                >Crear un recordatorio</a
+                >
+            </div>
+        </aside>
+    </div>
+</main>
+<script th:src="@{/js/recordatorios-calendar.js}"></script>
+</body>
+</html>

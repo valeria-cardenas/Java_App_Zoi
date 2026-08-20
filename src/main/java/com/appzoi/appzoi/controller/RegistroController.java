@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -21,6 +20,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.dao.DataIntegrityViolationException;
 
@@ -29,11 +30,18 @@ public class RegistroController {
 
     private final SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
+    private final UsuarioRepositorio usuarioRepository;
 
-    @Autowired
-    private UsuarioRepositorio usuarioRepository;
+    public RegistroController(PasswordEncoder passwordEncoder, UsuarioRepositorio usuarioRepository) {
+        this.passwordEncoder = passwordEncoder;
+        this.usuarioRepository = usuarioRepository;
+    }
+
+    @InitBinder("usuario")
+    void protegerCamposInternos(WebDataBinder binder) {
+        binder.setDisallowedFields("id", "tipoPerfil");
+    }
 
     @PostMapping("/registro")
     public String registrarUsuario(
@@ -62,6 +70,8 @@ public class RegistroController {
 
         String claveEncriptada = passwordEncoder.encode(usuario.getPassword());
         usuario.setPassword(claveEncriptada);
+        usuario.setId(null);
+        usuario.setTipoPerfil(null);
 
         UsuarioEntity usuarioGuardado;
         try {

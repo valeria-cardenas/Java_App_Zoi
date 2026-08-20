@@ -1,112 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Tu perfil profesional | Zoi</title>
-    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
-    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
-    <link rel="stylesheet" th:href="@{/css/cuenta.css}">
-    <link rel="stylesheet" th:href="@{/css/cuenta-veterinario.css}">
-    <link rel="stylesheet" th:href="@{/css/calificaciones.css}">
-    <link rel="stylesheet" th:href="@{/css/veterinario-profile.css}">
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/cuenta.css}"/>
+    <link rel="stylesheet" th:href="@{/css/cuenta-veterinario.css}"/>
+    <link rel="stylesheet" th:href="@{/css/calificaciones.css}"/>
+    <link rel="stylesheet" th:href="@{/css/veterinario-profile.css}"/>
 </head>
 <body class="zoi-ui">
-<header class="profile-header"><a th:href="@{/veterinario/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
-    <nav><a th:href="@{/veterinario/home}">← Volver al panel</a>
-        <form th:action="@{/logout}" method="post"><input type="hidden" th:name="${_csrf.parameterName}"
-                                                          th:value="${_csrf.token}">
+<header class="profile-header">
+    <a th:href="@{/veterinario/home}" class="header-logo-link"
+    ><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"
+    /></a>
+    <nav>
+        <a th:href="@{/veterinario/home}">← Volver al panel</a>
+        <form th:action="@{/logout}" method="post">
+            <input
+                    type="hidden"
+                    th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}"
+            />
             <button class="zoi-btn-secondary">Salir</button>
         </form>
     </nav>
 </header>
 <main class="account-page">
-    <aside class="account-aside"><img class="account-photo"
-                                      th:if="${perfil != null and perfil.fotoUrl != null and !#strings.isEmpty(perfil.fotoUrl)}"
-                                      th:src="${perfil.fotoUrl}" alt="Foto profesional">
-        <div class="account-avatar"
-             th:unless="${perfil != null and perfil.fotoUrl != null and !#strings.isEmpty(perfil.fotoUrl)}"
-             th:text="${#strings.substring(usuario.nombre,0,1)}">V
+    <aside class="account-aside">
+        <img
+                class="account-photo"
+                th:if="${perfil != null and perfil.fotoUrl != null and !#strings.isEmpty(perfil.fotoUrl)}"
+                th:src="${perfil.fotoUrl}"
+                alt="Foto profesional"
+        />
+        <div
+                class="account-avatar"
+                th:unless="${perfil != null and perfil.fotoUrl != null and !#strings.isEmpty(perfil.fotoUrl)}"
+                th:text="${#strings.substring(usuario.nombre,0,1)}"
+        >
+            V
         </div>
         <h1 th:text="${'Dr(a). '+usuario.nombre+' '+usuario.apellido}"></h1>
-        <p th:text="${perfil != null ? perfil.especialidad : 'Perfil profesional incompleto'}"></p>
-        <nav><a href="#profesional">Perfil profesional</a><a href="#datos">Información personal</a><a href="#seguridad">Contraseña
-            y seguridad</a><a href="#eliminar">Eliminar cuenta</a></nav>
+        <p
+                th:text="${perfil != null ? perfil.especialidad : 'Perfil profesional incompleto'}"
+        ></p>
+        <nav>
+            <a href="#profesional">Perfil profesional</a
+            ><a href="#datos">Información personal</a
+        ><a href="#seguridad">Contraseña y seguridad</a
+        ><a href="#eliminar">Eliminar cuenta</a>
+        </nav>
     </aside>
     <div class="account-content">
         <section id="profesional" class="account-card">
             <div class="card-header-action">
-                <div><p class="eyebrow">Presentación pública</p>
-                    <h2>Información profesional</h2></div>
-                <a class="zoi-btn-primary" th:href="@{/veterinario/perfil}"
-                   th:text="${perfil == null ? 'Completar perfil' : 'Editar información'}"></a></div>
-            <div class="professional-summary" th:if="${perfil != null}">
-                <div><small>Especialidad</small><strong th:text="${perfil.especialidad}"></strong></div>
-                <div><small>Experiencia</small><strong th:text="${perfil.experiencia ?: 'Sin registrar'}"></strong>
+                <div>
+                    <p class="eyebrow">Presentación pública</p>
+                    <h2>Información profesional</h2>
                 </div>
-                <div><small>Clínica veterinaria</small><strong th:text="${perfil.clinica ?: 'Sin registrar'}"></strong></div>
-                <div><small>Tarjeta profesional</small><strong
-                        th:text="${perfil.tarjetaProfesional ?: 'Sin registrar'}"></strong></div>
-                <div><small>Teléfono profesional</small><strong th:text="${perfil.telefono ?: 'Sin registrar'}"></strong></div>
-                <div><small>Ubicación</small><strong th:text="${perfil.localidad != null ? 'Bogotá · '+perfil.localidad : 'Sin registrar'}"></strong></div>
-                <div class="professional-rating"><small>Calificación</small><strong th:text="${promedio != null ? #numbers.formatDecimal(promedio,1,1)+' de 5 · '+totalCalificaciones+' opiniones' : 'Sin calificaciones'}"></strong></div>
-                <p th:text="${perfil.descripcion ?: 'Sin descripción profesional.'}"></p></div>
-            <div class="vet-credential" th:if="${perfil != null}"><div><strong>Título o certificado profesional</strong><p>Documento que respalda tu perfil público.</p></div><a class="zoi-btn-secondary" th:if="${perfil.tituloUrl}" th:href="${perfil.tituloUrl}" target="_blank" rel="noopener">Ver documento</a><span th:unless="${perfil.tituloUrl}">Pendiente</span></div>
-            <div class="profile-incomplete" th:if="${perfil == null}"><p>Completa tu especialidad, experiencia,
-                fotografía y credenciales para que los dueños puedan encontrarte.</p></div>
+                <a
+                        class="zoi-btn-primary"
+                        th:href="@{/veterinario/perfil}"
+                        th:text="${perfil == null ? 'Completar perfil' : 'Editar información'}"
+                ></a>
+            </div>
+            <div class="professional-summary" th:if="${perfil != null}">
+                <div>
+                    <small>Especialidad</small
+                    ><strong th:text="${perfil.especialidad}"></strong>
+                </div>
+                <div>
+                    <small>Experiencia</small
+                    ><strong
+                        th:text="${perfil.experiencia ?: 'Sin registrar'}"
+                ></strong>
+                </div>
+                <div>
+                    <small>Clínica veterinaria</small
+                    ><strong th:text="${perfil.clinica ?: 'Sin registrar'}"></strong>
+                </div>
+                <div>
+                    <small>Tarjeta profesional</small
+                    ><strong
+                        th:text="${perfil.tarjetaProfesional ?: 'Sin registrar'}"
+                ></strong>
+                </div>
+                <div>
+                    <small>Teléfono profesional</small
+                    ><strong th:text="${perfil.telefono ?: 'Sin registrar'}"></strong>
+                </div>
+                <div>
+                    <small>Ubicación</small
+                    ><strong
+                        th:text="${perfil.localidad != null ? 'Bogotá · '+perfil.localidad : 'Sin registrar'}"
+                ></strong>
+                </div>
+                <div class="professional-rating">
+                    <small>Calificación</small
+                    ><strong
+                        th:text="${promedio != null ? #numbers.formatDecimal(promedio,1,1)+' de 5 · '+totalCalificaciones+' opiniones' : 'Sin calificaciones'}"
+                ></strong>
+                </div>
+                <p
+                        th:text="${perfil.descripcion ?: 'Sin descripción profesional.'}"
+                ></p>
+            </div>
+            <div class="vet-credential" th:if="${perfil != null}">
+                <div>
+                    <strong>Título o certificado profesional</strong>
+                    <p>Documento que respalda tu perfil público.</p>
+                </div>
+                <a
+                        class="zoi-btn-secondary"
+                        th:if="${perfil.tituloUrl}"
+                        th:href="${perfil.tituloUrl}"
+                        target="_blank"
+                        rel="noopener"
+                >Ver documento</a
+                ><span th:unless="${perfil.tituloUrl}">Pendiente</span>
+            </div>
+            <div class="profile-incomplete" th:if="${perfil == null}">
+                <p>
+                    Completa tu especialidad, experiencia, fotografía y credenciales
+                    para que los dueños puedan encontrarte.
+                </p>
+            </div>
         </section>
-        <section id="datos" class="account-card"><p class="eyebrow">Tu cuenta</p>
+        <section id="datos" class="account-card">
+            <p class="eyebrow">Tu cuenta</p>
             <h2>Información personal</h2>
-            <p class="card-intro">Estos datos se utilizan para identificarte y contactarte.</p>
-            <div class="flash success-flash" th:if="${successPerfil}" th:text="${successPerfil}"></div>
-            <div class="flash error-flash" th:if="${errorPerfil}" th:text="${errorPerfil}"></div>
-            <form class="account-form" th:action="@{/veterinario/mi-perfil}" method="post"><input type="hidden"
-                                                                                                  th:name="${_csrf.parameterName}"
-                                                                                                  th:value="${_csrf.token}"><label>Nombre<input
-                    name="nombre" minlength="2" maxlength="80" required th:value="${usuario.nombre}"></label><label>Apellido<input
-                    name="apellido" minlength="2" maxlength="80" required th:value="${usuario.apellido}"></label><label
-                    class="full">Correo electrónico<input type="email" name="email" maxlength="120" required
-                                                          th:value="${usuario.email}"><small>Si cambias el correo
-                tendrás que iniciar sesión nuevamente.</small></label><label>Teléfono personal<input type="tel"
-                                                                                                     name="telefono"
-                                                                                                     maxlength="20"
-                                                                                                     th:value="${usuario.telefono}"></label><label>Fecha
-                de nacimiento<input type="date" name="fechaNacimiento" th:value="${usuario.fechaNacimiento}"></label><label>Ubicación profesional<input type="text" th:value="${perfil != null and perfil.localidad != null ? 'Bogotá · '+perfil.localidad : 'Sin registrar'}" readonly aria-readonly="true"><small>Puedes cambiarla en la información profesional.</small></label>
+            <p class="card-intro">
+                Estos datos se utilizan para identificarte y contactarte.
+            </p>
+            <div
+                    class="flash success-flash"
+                    th:if="${successPerfil}"
+                    th:text="${successPerfil}"
+            ></div>
+            <div
+                    class="flash error-flash"
+                    th:if="${errorPerfil}"
+                    th:text="${errorPerfil}"
+            ></div>
+            <form
+                    class="account-form"
+                    th:action="@{/veterinario/mi-perfil}"
+                    method="post"
+            >
+                <input
+                        type="hidden"
+                        th:name="${_csrf.parameterName}"
+                        th:value="${_csrf.token}"
+                /><label
+            >Nombre<input
+                    name="nombre"
+                    minlength="2"
+                    maxlength="80"
+                    required
+                    th:value="${usuario.nombre}"/></label
+            ><label
+            >Apellido<input
+                    name="apellido"
+                    minlength="2"
+                    maxlength="80"
+                    required
+                    th:value="${usuario.apellido}"/></label
+            ><label class="full"
+            >Correo electrónico<input
+                    type="email"
+                    name="email"
+                    maxlength="120"
+                    required
+                    th:value="${usuario.email}"
+            /><small
+            >Si cambias el correo tendrás que iniciar sesión
+                nuevamente.</small
+            ></label
+            ><label
+            >Teléfono personal<input
+                    type="tel"
+                    name="telefono"
+                    maxlength="20"
+                    th:value="${usuario.telefono}"/></label
+            ><label
+            >Fecha de nacimiento<input
+                    type="date"
+                    name="fechaNacimiento"
+                    th:value="${usuario.fechaNacimiento}"/></label
+            ><label
+            >Ubicación profesional<input
+                    type="text"
+                    th:value="${perfil != null and perfil.localidad != null ? 'Bogotá · '+perfil.localidad : 'Sin registrar'}"
+                    readonly
+                    aria-readonly="true"
+            /><small
+            >Puedes cambiarla en la información profesional.</small
+            ></label
+            >
                 <div class="full">
                     <button class="zoi-btn-primary">Guardar cambios</button>
                 </div>
             </form>
         </section>
-        <section id="seguridad" class="account-card"><p class="eyebrow">Seguridad</p>
+        <section id="seguridad" class="account-card">
+            <p class="eyebrow">Seguridad</p>
             <h2>Cambiar contraseña</h2>
-            <div class="flash success-flash" th:if="${successPassword}" th:text="${successPassword}"></div>
-            <div class="flash error-flash" th:if="${errorPassword}" th:text="${errorPassword}"></div>
-            <form class="security-form" th:action="@{/veterinario/mi-perfil/contrasena}" method="post"><input
-                    type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><label>Contraseña
-                actual<input type="password" name="passwordActual" autocomplete="current-password"
-                             required></label><label>Nueva contraseña<input type="password" name="passwordNueva"
-                                                                            minlength="8" maxlength="72"
-                                                                            autocomplete="new-password" required><small>Mínimo
-                8 caracteres, mayúscula, minúscula y número.</small></label><label>Confirmar nueva contraseña<input
-                    type="password" name="confirmarPassword" minlength="8" maxlength="72" autocomplete="new-password"
-                    required></label>
+            <div
+                    class="flash success-flash"
+                    th:if="${successPassword}"
+                    th:text="${successPassword}"
+            ></div>
+            <div
+                    class="flash error-flash"
+                    th:if="${errorPassword}"
+                    th:text="${errorPassword}"
+            ></div>
+            <form
+                    class="security-form"
+                    th:action="@{/veterinario/mi-perfil/contrasena}"
+                    method="post"
+            >
+                <input
+                        type="hidden"
+                        th:name="${_csrf.parameterName}"
+                        th:value="${_csrf.token}"
+                /><label
+            >Contraseña actual<input
+                    type="password"
+                    name="passwordActual"
+                    autocomplete="current-password"
+                    required/></label
+            ><label
+            >Nueva contraseña<input
+                    type="password"
+                    name="passwordNueva"
+                    minlength="8"
+                    maxlength="72"
+                    autocomplete="new-password"
+                    required
+            /><small
+            >Mínimo 8 caracteres, mayúscula, minúscula y número.</small
+            ></label
+            ><label
+            >Confirmar nueva contraseña<input
+                    type="password"
+                    name="confirmarPassword"
+                    minlength="8"
+                    maxlength="72"
+                    autocomplete="new-password"
+                    required
+            /></label>
                 <button class="zoi-btn-primary">Actualizar contraseña</button>
             </form>
         </section>
-        <section id="eliminar" class="account-card danger-zone"><p class="eyebrow">Zona de riesgo</p>
+        <section id="eliminar" class="account-card danger-zone">
+            <p class="eyebrow">Zona de riesgo</p>
             <h2>Eliminar mi cuenta profesional</h2>
-            <p>Se eliminarán tu perfil profesional, credenciales, conversaciones y mensajes. Esta acción no se puede
-                deshacer.</p>
-            <div class="flash error-flash" th:if="${errorEliminar}" th:text="${errorEliminar}"></div>
-            <form th:action="@{/perfil/eliminar}" method="post" class="account-delete-form"
-                  th:attr="data-user-name=${usuario.nombre}"><input type="hidden" th:name="${_csrf.parameterName}"
-                                                                    th:value="${_csrf.token}"><label>Escribe tu
-                contraseña para confirmar<input type="password" name="password" autocomplete="current-password"
-                                                required></label>
-                <button class="zoi-btn-danger">Eliminar mi cuenta definitivamente</button>
+            <p>
+                Se eliminarán tu perfil profesional, credenciales, conversaciones y
+                mensajes. Esta acción no se puede deshacer.
+            </p>
+            <div
+                    class="flash error-flash"
+                    th:if="${errorEliminar}"
+                    th:text="${errorEliminar}"
+            ></div>
+            <form
+                    th:action="@{/perfil/eliminar}"
+                    method="post"
+                    class="account-delete-form"
+                    th:attr="data-user-name=${usuario.nombre}"
+            >
+                <input
+                        type="hidden"
+                        th:name="${_csrf.parameterName}"
+                        th:value="${_csrf.token}"
+                /><label
+            >Escribe tu contraseña para confirmar<input
+                    type="password"
+                    name="password"
+                    autocomplete="current-password"
+                    required
+            /></label>
+                <button class="zoi-btn-danger">
+                    Eliminar mi cuenta definitivamente
+                </button>
             </form>
         </section>
-        <a class="bottom-return" th:href="@{/veterinario/home}">← Volver al panel veterinario</a></div>
+        <a class="bottom-return" th:href="@{/veterinario/home}"
+        >← Volver al panel veterinario</a
+        >
+    </div>
 </main>
 <script th:src="@{/js/account-delete.js}"></script>
 </body>

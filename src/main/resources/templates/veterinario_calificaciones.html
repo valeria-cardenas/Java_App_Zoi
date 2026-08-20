@@ -1,36 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Mis calificaciones | Zoi</title>
-    <link rel="stylesheet" th:href="@{/css/perfiles.css}">
-    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}">
-    <link rel="stylesheet" th:href="@{/css/calificaciones.css}">
+    <link rel="stylesheet" th:href="@{/css/perfiles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/zoi-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/calificaciones.css}"/>
 </head>
 <body class="zoi-ui">
-<header class="profile-header"><a th:href="@{/veterinario/home}" class="header-logo-link"><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"></a>
-    <nav><a th:href="@{/veterinario/home}">← Volver al panel</a><a th:href="@{/veterinario/mi-perfil}">Tu perfil</a>
+<header class="profile-header">
+    <a th:href="@{/veterinario/home}" class="header-logo-link"
+    ><img th:src="@{/img/logo.png}" alt="Zoi" class="logo-img"
+    /></a>
+    <nav>
+        <a th:href="@{/veterinario/home}">← Volver al panel</a
+        ><a th:href="@{/veterinario/mi-perfil}">Tu perfil</a>
     </nav>
 </header>
 <main class="profile-content">
-    <section class="rating-section"><p class="eyebrow">Reputación profesional</p>
+    <section class="rating-section">
+        <p class="eyebrow">Reputación profesional</p>
         <h1>Quién te ha calificado</h1>
-        <div class="rating-summary" th:if="${perfil != null}"><span class="stars">★★★★★</span><strong
-                th:text="${promedio != null ? #numbers.formatDecimal(promedio,1,1) : 'Sin calificar'}"></strong><small
-                th:text="${calificaciones != null ? #lists.size(calificaciones)+' opiniones' : '0 opiniones'}"></small>
+        <div class="rating-summary" th:if="${perfil != null}">
+          <span class="stars">★★★★★</span
+          ><strong
+                th:text="${promedio != null ? #numbers.formatDecimal(promedio,1,1) : 'Sin calificar'}"
+        ></strong
+        ><small
+                th:text="${calificaciones != null ? #lists.size(calificaciones)+' opiniones' : '0 opiniones'}"
+        ></small>
         </div>
-        <div class="reviews" th:if="${calificaciones != null and !#lists.isEmpty(calificaciones)}">
+        <div
+                class="reviews"
+                th:if="${calificaciones != null and !#lists.isEmpty(calificaciones)}"
+        >
             <article th:each="c:${calificaciones}">
-                <div><strong th:text="${c.dueno.nombre+' '+c.dueno.apellido}"></strong><span class="stars"
-                                                                                             th:text="${#strings.repeat('★',c.estrellas)+#strings.repeat('☆',5-c.estrellas)}"></span>
+                <div>
+                    <strong th:text="${c.dueno.nombre+' '+c.dueno.apellido}"></strong
+                    ><span
+                        class="stars"
+                        th:text="${#strings.repeat('★',c.estrellas)+#strings.repeat('☆',5-c.estrellas)}"
+                ></span>
                 </div>
-                <p th:text="${c.comentario}"></p><small
-                    th:text="${c.dueno.email+' · '+#temporals.format(c.actualizadaEn,'dd/MM/yyyy HH:mm')}"></small>
+                <p th:text="${c.comentario}"></p>
+                <small
+                        th:text="${c.dueno.email+' · '+#temporals.format(c.actualizadaEn,'dd/MM/yyyy HH:mm')}"
+                ></small>
             </article>
         </div>
-        <p th:if="${calificaciones == null or #lists.isEmpty(calificaciones)}">Todavía no has recibido
-            calificaciones.</p></section>
+        <p th:if="${calificaciones == null or #lists.isEmpty(calificaciones)}">
+            Todavía no has recibido calificaciones.
+        </p>
+    </section>
 </main>
 </body>
 </html>

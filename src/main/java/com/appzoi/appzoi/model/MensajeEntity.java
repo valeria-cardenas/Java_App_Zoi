@@ -3,7 +3,7 @@ package com.appzoi.appzoi.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity @Table(name = "Mensaje")
+@Entity @Table(name = "mensaje")
 public class MensajeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_mensaje") private Integer id;

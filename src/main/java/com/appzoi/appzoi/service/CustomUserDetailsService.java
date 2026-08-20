@@ -3,7 +3,6 @@ package com.appzoi.appzoi.service;
 import com.appzoi.appzoi.config.AdminUserSeeder;
 import com.appzoi.appzoi.model.UsuarioEntity;
 import com.appzoi.appzoi.repository.UsuarioRepositorio;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,8 +12,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    @Autowired
-    private UsuarioRepositorio usuarioRepository;
+    private final UsuarioRepositorio usuarioRepository;
+
+    public CustomUserDetailsService(UsuarioRepositorio usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

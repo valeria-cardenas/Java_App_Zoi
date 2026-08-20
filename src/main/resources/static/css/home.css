@@ -1,219 +1,252 @@
 /* --- VARIABLES BASE ZOI (Paleta Morado/Amarillo) --- */
 :root {
-    --color-primary: #8a2be2; /* Azul Violeta / Morado Intenso (Marca Principal) */
-    --color-secondary: #ffc107; /* Amarillo Ámbar / Dorado (Contraste y Acción) */
-    --color-tertiary: #f8f9fa; /* Fondo Muy Claro */
-    --color-background: #ffffff; /* Fondo Blanco */
-    --color-text-dark: #343a40; /* Texto Oscuro */
-    --color-text-light: #ffffff; 
-    --color-shadow: rgba(0, 0, 0, 0.1);
-    --color-admin: #dc3545; /* Rojo para alertas/logout */
+  --color-primary: #8a2be2; /* Azul Violeta / Morado Intenso (Marca Principal) */
+  --color-secondary: #ffc107; /* Amarillo Ámbar / Dorado (Contraste y Acción) */
+  --color-tertiary: #f8f9fa; /* Fondo Muy Claro */
+  --color-background: #ffffff; /* Fondo Blanco */
+  --color-text-dark: #343a40; /* Texto Oscuro */
+  --color-text-light: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-admin: #dc3545; /* Rojo para alertas/logout */
 }
 
 /* --- ESTILOS GENERALES Y LAYOUT --- */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--color-tertiary); /* Fondo ligero */
-    color: var(--color-text-dark);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: var(--color-tertiary); /* Fondo ligero */
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .content-wrapper {
-    flex-grow: 1; 
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+  flex-grow: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* --- HEADER Y NAVEGACIÓN --- */
 .main-header {
-    background-color: var(--color-background);
-    box-shadow: 0 2px 8px var(--color-shadow);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
+  background-color: var(--color-background);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
 }
 
 .logo-icon-text {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: var(--color-primary); /* Logo en Morado */
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--color-primary); /* Logo en Morado */
 }
 
 .user-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .welcome-text {
-    font-size: 0.95em;
-    color: var(--color-text-dark);
+  font-size: 0.95em;
+  color: var(--color-text-dark);
 }
 
 .nav-link {
-    text-decoration: none;
-    color: var(--color-primary); /* Enlaces en Morado */
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  text-decoration: none;
+  color: var(--color-primary); /* Enlaces en Morado */
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .nav-link:hover {
-    background-color: #f0e6ff; /* Morado muy claro al pasar el mouse */
+  background-color: #f0e6ff; /* Morado muy claro al pasar el mouse */
 }
 
 .logout-btn {
-    background-color: transparent;
-    border: 1px solid var(--color-admin);
-    color: var(--color-admin);
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 1px solid var(--color-admin);
+  color: var(--color-admin);
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .logout-btn:hover {
-    background-color: var(--color-admin);
-    color: var(--color-text-light);
+  background-color: var(--color-admin);
+  color: var(--color-text-light);
 }
-
 
 /* --- SECCIÓN DE BIENVENIDA --- */
 .bienvenida-section {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .bienvenida-section h1 {
-    font-size: 2.5em;
-    color: var(--color-primary); /* Título principal en Morado */
-    margin-bottom: 10px;
+  font-size: 2.5em;
+  color: var(--color-primary); /* Título principal en Morado */
+  margin-bottom: 10px;
 }
 
 .slogan {
-    font-size: 1.1em;
-    color: #6c757d;
-    margin-bottom: 40px;
+  font-size: 1.1em;
+  color: #6c757d;
+  margin-bottom: 40px;
 }
 
 /* --- TARJETAS DE ACCIÓN DE ROLES --- */
 .role-specific-actions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .action-card {
-    background-color: var(--color-background);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px var(--color-shadow);
-    padding: 30px;
-    text-align: left;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-    border-top: 5px solid transparent; 
+  background-color: var(--color-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--color-shadow);
+  padding: 30px;
+  text-align: left;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s;
+  border-top: 5px solid transparent;
 }
 
 .action-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .action-card h3 {
-    font-size: 1.5em;
-    margin-top: 0;
-    border-bottom: 1px solid #e9ecef; 
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  font-size: 1.5em;
+  margin-top: 0;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .action-card p {
-    color: #495057;
-    margin-bottom: 20px;
+  color: #495057;
+  margin-bottom: 20px;
 }
 
 /* Estilos de botones de acción */
 .btn-action {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s, transform 0.1s, color 0.3s;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    background-color 0.3s,
+    transform 0.1s,
+    color 0.3s;
 }
 
 /* Estilos Específicos por Tarjeta */
 
 /* 1. Usuario Estándar (Encuesta) - Enfasis en el Amarillo (Acción Principal) */
-.primary-action { border-top-color: var(--color-secondary); }
-.primary-action h3 { color: var(--color-text-dark); }
-.primary-action .btn-action { 
-    background-color: var(--color-secondary); 
-    color: var(--color-text-dark); /* Texto oscuro para contraste en fondo amarillo */
+.primary-action {
+  border-top-color: var(--color-secondary);
 }
-.primary-action .btn-action:hover { background-color: #ffda6a; } /* Amarillo más claro */
+.primary-action h3 {
+  color: var(--color-text-dark);
+}
+.primary-action .btn-action {
+  background-color: var(--color-secondary);
+  color: var(
+    --color-text-dark
+  ); /* Texto oscuro para contraste en fondo amarillo */
+}
+.primary-action .btn-action:hover {
+  background-color: #ffda6a;
+} /* Amarillo más claro */
 
 /* 2. Administrador - Enfasis en el Morado (Marca Zoi) */
-.admin-action { border-top-color: var(--color-primary); }
-.admin-action h3 { color: var(--color-primary); }
-.admin-action .btn-action { background-color: var(--color-primary); color: var(--color-text-light); }
-.admin-action .btn-action:hover { background-color: #7b24cc; } /* Morado más oscuro */
+.admin-action {
+  border-top-color: var(--color-primary);
+}
+.admin-action h3 {
+  color: var(--color-primary);
+}
+.admin-action .btn-action {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+.admin-action .btn-action:hover {
+  background-color: #7b24cc;
+} /* Morado más oscuro */
 
 /* 3. General (Perfil, Veterinario) - Enfasis en el Morado Suave */
-.general-action { border-top-color: var(--color-tertiary); }
-.general-action h3 { color: #5a3d70; } /* Un tono morado intermedio */
-.general-action .btn-action { background-color: #e9ecef; color: var(--color-text-dark); } /* Gris suave */
-.general-action .btn-action:hover { background-color: #dee2e6; }
-
+.general-action {
+  border-top-color: var(--color-tertiary);
+}
+.general-action h3 {
+  color: #5a3d70;
+} /* Un tono morado intermedio */
+.general-action .btn-action {
+  background-color: #e9ecef;
+  color: var(--color-text-dark);
+} /* Gris suave */
+.general-action .btn-action:hover {
+  background-color: #dee2e6;
+}
 
 /* --- FOOTER --- */
 .pie-pagina {
-    background-color: var(--color-text-dark); /* Footer oscuro para contraste */
-    color: #f8f9fa;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto; 
-    width: 100%;
+  background-color: var(--color-text-dark); /* Footer oscuro para contraste */
+  color: #f8f9fa;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+  width: 100%;
 }
 
 /* --- MEDIA QUERIES (Responsividad) --- */
 @media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 15px 20px;
-    }
-    
-    .user-nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        width: 100%;
-    }
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 20px;
+  }
 
-    .welcome-text, .nav-link, .logout-btn {
-        width: 100%;
-        text-align: left;
-    }
+  .user-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
 
-    .bienvenida-section h1 {
-        font-size: 2em;
-    }
+  .welcome-text,
+  .nav-link,
+  .logout-btn {
+    width: 100%;
+    text-align: left;
+  }
 
-    .role-specific-actions {
-        grid-template-columns: 1fr;
-    }
+  .bienvenida-section h1 {
+    font-size: 2em;
+  }
+
+  .role-specific-actions {
+    grid-template-columns: 1fr;
+  }
 }

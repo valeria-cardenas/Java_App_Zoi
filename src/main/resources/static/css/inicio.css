@@ -1,196 +1,203 @@
 /* Variables de Color (Se usan las mismas definidas en styles.css) */
 /* Asegúrate de que estas variables estén disponibles, o defínelas aquí si styles.css no se usa */
 :root {
-    --primary-purple: #552579;
-    --accent-yellow: #FFB300; 
-    --light-grey-bg: #F8F8F8;
-    --text-dark: #333333;
-    --btn-purple: #8B4DCC; /* Morado del botón primario */
+  --primary-purple: #552579;
+  --accent-yellow: #ffb300;
+  --light-grey-bg: #f8f8f8;
+  --text-dark: #333333;
+  --btn-purple: #8b4dcc; /* Morado del botón primario */
 }
 
 /* ======================================================================
    SECCIÓN HERO
    ====================================================================== */
 .hero {
-    background-color: #FFFFFF;
-    padding: 80px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 50px auto;
+  background-color: #ffffff;
+  padding: 80px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
 }
 
-
 .hero h1 {
-    color: var(--primary-purple);
-    font-size: 52px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    line-height: 1.1;
+  color: var(--primary-purple);
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.1;
 }
 
 .hero .slogan {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 30px;
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 30px;
 }
 
 .hero-btn {
-    /* Estilo del botón principal (CTA) */
-    display: inline-block;
-    text-decoration: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 8px;
-    font-weight: 700;
-    margin-top: 15px;
+  /* Estilo del botón principal (CTA) */
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-top: 15px;
 }
 
 .hero-image {
-    /* Placeholder para la imagen */
-    width: 100%;
-    border-radius: 12px;
-    justify-content: center;
-    align-items: center;
-    font-style: italic;
+  /* Placeholder para la imagen */
+  width: 100%;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
 }
-
 
 /* ======================================================================
    SECCIÓN DE FUNCIONALIDADES CLAVE
    ====================================================================== */
 .key-features {
-    text-align: center;
-    padding: 50px 5%;
-    background-color: var(--light-grey-bg);
+  text-align: center;
+  padding: 50px 5%;
+  background-color: var(--light-grey-bg);
 }
 
 .key-features h2 {
-    color: var(--primary-purple);
-    font-size: 34px;
-    margin-bottom: 10px;
+  color: var(--primary-purple);
+  font-size: 34px;
+  margin-bottom: 10px;
 }
 
 .key-subtitle {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 50px;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 50px;
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .feature-item {
-    background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    text-align: left;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
 }
 
 .feature-icon {
-    font-size: 36px;
-    color: var(--accent-yellow); /* Íconos en color de acento */
-    margin-bottom: 15px;
+  font-size: 36px;
+  color: var(--accent-yellow); /* Íconos en color de acento */
+  margin-bottom: 15px;
 }
 
 .feature-title {
-    color: var(--primary-purple);
-    font-size: 22px;
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 10px;
+  color: var(--primary-purple);
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .feature-item p {
-    font-size: 16px;
-    color: #555;
+  font-size: 16px;
+  color: #555;
 }
 
-.btn-primary-hero-btn{
-    font-size: 20px;
-    color:#8B4DCC
+.btn-primary-hero-btn {
+  font-size: 20px;
+  color: #8b4dcc;
 }
 
 /* ======================================================================
    SECCIÓN CTA SECUNDARIA
    ====================================================================== */
 .cta-secondary {
-    padding: 50px 5%;
-    text-align: center;
+  padding: 50px 5%;
+  text-align: center;
 }
 
 .cta-card {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #FFFFFF;
-    padding: 40px;
-    border: 1px solid #EEE;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .cta-icon {
-    font-size: 40px;
-    color: var(--primary-purple);
-    margin-bottom: 15px;
+  font-size: 40px;
+  color: var(--primary-purple);
+  margin-bottom: 15px;
 }
 
 .cta-card h3 {
-    color: var(--primary-purple);
-    font-size: 26px;
-    margin-bottom: 10px;
+  color: var(--primary-purple);
+  font-size: 26px;
+  margin-bottom: 10px;
 }
 
 .cta-card p {
-    font-size: 17px;
-    color: #555;
-    margin-bottom: 30px;
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 30px;
 }
-
 
 /* ======================================================================
    RESPONSIVE DESIGN (Móviles)
    ====================================================================== */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 5%;
-    }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5%;
+  }
 
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-    }
+  .hero-content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    text-align: center;
+  }
 
-    .hero h1 {
-        font-size: 40px;
-    }
+  .hero h1 {
+    font-size: 40px;
+  }
 
-    .hero-image {
-        width: 100%;
-        margin-top: 15px;
-    }
+  .hero-image {
+    width: 100%;
+    min-width: 0;
+    margin-top: 15px;
+  }
 
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
+  .btn-primary-hero-btn,
+  .hero-btn {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Botones Zoi: navegación y llamados a la acción */
 .auth-buttons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .auth-buttons a,
@@ -198,62 +205,67 @@
 .btn-secondary,
 .btn-primary-hero-btn,
 .hero-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 0 20px;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .btn-primary,
 .auth-buttons .btn-primary,
 .btn-primary-hero-btn,
 .hero-btn {
-    background: linear-gradient(135deg, #8B4DCC, #552579);
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(85, 37, 121, 0.18);
+  background: linear-gradient(135deg, #8b4dcc, #552579);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(85, 37, 121, 0.18);
 }
 
 .btn-secondary,
 .auth-buttons .btn-secondary {
-    background: #ffffff;
-    color: #552579;
-    border-color: rgba(85, 37, 121, 0.28);
+  background: #ffffff;
+  color: #552579;
+  border-color: rgba(85, 37, 121, 0.28);
 }
 
 .btn-primary:hover,
 .btn-secondary:hover,
 .btn-primary-hero-btn:hover,
 .hero-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 24px rgba(85, 37, 121, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(85, 37, 121, 0.22);
 }
 
 .btn-secondary:hover,
 .auth-buttons .btn-secondary.active-link {
-    border-color: #FFB300;
-    color: #552579;
-    background: #fff8e4;
+  border-color: #ffb300;
+  color: #552579;
+  background: #fff8e4;
 }
 
 .btn-primary.active-link,
 .auth-buttons .btn-primary.active-link {
-    background: #FFB300;
-    color: #552579;
-    box-shadow: 0 10px 18px rgba(255, 179, 0, 0.22);
+  background: #ffb300;
+  color: #552579;
+  box-shadow: 0 10px 18px rgba(255, 179, 0, 0.22);
 }
 
 .btn-primary-hero-btn,
 .hero-btn {
-    min-height: 52px;
-    padding: 0 28px;
-    font-size: 18px;
+  min-height: 52px;
+  padding: 0 28px;
+  font-size: 18px;
 }

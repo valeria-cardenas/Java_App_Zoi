@@ -23,7 +23,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -42,20 +41,21 @@ public class AdminController {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    @Autowired
-    private UsuarioRepositorio usuarioRepository;
+    private final UsuarioRepositorio usuarioRepository;
+    private final MascotaRepositorio mascotaRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final EliminacionCuentaService eliminacionCuentaService;
+    private final AdministradorRepositorio administradorRepository;
 
-    @Autowired
-    private MascotaRepositorio mascotaRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private EliminacionCuentaService eliminacionCuentaService;
-
-    @Autowired
-    private AdministradorRepositorio administradorRepository;
+    public AdminController(UsuarioRepositorio usuarioRepository, MascotaRepositorio mascotaRepository,
+            PasswordEncoder passwordEncoder, EliminacionCuentaService eliminacionCuentaService,
+            AdministradorRepositorio administradorRepository) {
+        this.usuarioRepository = usuarioRepository;
+        this.mascotaRepository = mascotaRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.eliminacionCuentaService = eliminacionCuentaService;
+        this.administradorRepository = administradorRepository;
+    }
 
 
     @GetMapping("/admin")
